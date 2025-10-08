@@ -1,0 +1,96 @@
+2025-10-05T00:51:50.2019840-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-05T00:51:50.2695923-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-05T00:51:50.2766688-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = False, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]

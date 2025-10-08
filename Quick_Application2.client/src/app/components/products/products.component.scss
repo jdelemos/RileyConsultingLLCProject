@@ -1,0 +1,66 @@
+/* products.css */
+
+/* Container styling */
+.products-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Header text */
+.products-container .text-muted {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Ordered list reset */
+.products-container ol {
+  list-style: none; /* remove default numbers */
+  padding: 0;
+  margin: 0;
+}
+
+/* Each list item becomes a card */
+.products-container li {
+  background: #ffffff;
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for interactivity */
+.products-container li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Name of the object */
+.products-container li span {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Images styling */
+.products-container li img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 6px;
+  margin-left: 15px;
+  border: 1px solid #dee2e6;
+}
+
+
+.prison-img {
+  width: 400px;
+  height: auto;
+}

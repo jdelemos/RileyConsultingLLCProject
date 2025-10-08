@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Portal - Jail Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+ 
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <header class="staff-header">
+      <div class="header-left">
+        <div class="user-avatar">JD</div>
+        <div class="user-info">
+          <h1>Welcome back, Officer Davis</h1>
+          <p class="user-role">Correctional Officer • Badge #4729</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="header-btn btn-secondary">
+          <i class="fa fa-bell"></i>
+          Notifications
+        </button>
+        <button class="header-btn btn-primary">
+          <i class="fa fa-clock"></i>
+          Clock In
+        </button>
+      </div>
+    </header>
+
+    <!-- Quick Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-header">
+          <div>
+            <div class="stat-value">127</div>
+            <div class="stat-label">Current Inmates</div>
+          </div>
+          <div class="stat-icon blue">
+            <i class="fa fa-users"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <div>
+            <div class="stat-value">8</div>
+            <div class="stat-label">Tasks Today</div>
+          </div>
+          <div class="stat-icon green">
+            <i class="fa fa-clipboard-check"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <div>
+            <div class="stat-value">3</div>
+            <div class="stat-label">Active Alerts</div>
+          </div>
+          <div class="stat-icon orange">
+            <i class="fa fa-exclamation-triangle"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <div>
+            <div class="stat-value">14</div>
+            <div class="stat-label">Staff On Duty</div>
+          </div>
+          <div class="stat-icon red">
+            <i class="fa fa-user-shield"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="content-grid">
+      <!-- Left Column -->
+      <div>
+        <!-- Today's Tasks -->
+        <div class="panel" style="margin-bottom: 30px;">
+          <div class="panel-header">
+            <h2 class="panel-title">
+              <i class="fa fa-tasks"></i>
+              Today's Tasks
+            </h2>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <ul class="task-list">
+            <li class="task-item">
+              <input type="checkbox" class="task-checkbox">
+              <div class="task-content">
+                <div class="task-title">Morning cell inspection - Block C</div>
+                <div class="task-time">Due by 10:00 AM</div>
+              </div>
+              <span class="task-priority priority-high">High</span>
+            </li>
+            <li class="task-item">
+              <input type="checkbox" class="task-checkbox" checked>
+              <div class="task-content">
+                <div class="task-title">Review incident reports</div>
+                <div class="task-time">Completed at 8:30 AM</div>
+              </div>
+              <span class="task-priority priority-medium">Medium</span>
+            </li>
+            <li class="task-item">
+              <input type="checkbox" class="task-checkbox">
+              <div class="task-content">
+                <div class="task-title">Escort inmates to medical appointments</div>
+                <div class="task-time">Due by 2:00 PM</div>
+              </div>
+              <span class="task-priority priority-high">High</span>
+            </li>
+            <li class="task-item">
+              <input type="checkbox" class="task-checkbox">
+              <div class="task-content">
+                <div class="task-title">Update equipment inventory</div>
+                <div class="task-time">Due by 4:00 PM</div>
+              </div>
+              <span class="task-priority priority-low">Low</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2 class="panel-title">
+              <i class="fa fa-bolt"></i>
+              Quick Actions
+            </h2>
+          </div>
+          <div class="quick-actions">
+            <button class="action-btn">
+              <i class="fa fa-file-lines"></i>
+              File Report
+            </button>
+            <button class="action-btn">
+              <i class="fa fa-user-plus"></i>
+              Inmate Intake
+            </button>
+            <button class="action-btn">
+              <i class="fa fa-key"></i>
+              Access Control
+            </button>
+            <button class="action-btn">
+              <i class="fa fa-truck"></i>
+              Request Supplies
+            </button>
+            <button class="action-btn">
+              <i class="fa fa-calendar-days"></i>
+              View Schedule
+            </button>
+            <button class="action-btn">
+              <i class="fa fa-phone"></i>
+              Emergency Contact
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div>
+        <!-- Today's Schedule -->
+        <div class="panel" style="margin-bottom: 30px;">
+          <div class="panel-header">
+            <h2 class="panel-title">
+              <i class="fa fa-calendar"></i>
+              Today's Schedule
+            </h2>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">08:00</div>
+            <div class="schedule-content">
+              <div class="schedule-title">Shift Briefing</div>
+              <div class="schedule-location">
+                <i class="fa fa-location-dot"></i>
+                Main Conference Room
+              </div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">10:00</div>
+            <div class="schedule-content">
+              <div class="schedule-title">Block C Patrol</div>
+              <div class="schedule-location">
+                <i class="fa fa-location-dot"></i>
+                Cell Block C
+              </div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">14:00</div>
+            <div class="schedule-content">
+              <div class="schedule-title">Medical Escort Duty</div>
+              <div class="schedule-location">
+                <i class="fa fa-location-dot"></i>
+                Medical Wing
+              </div>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">16:00</div>
+            <div class="schedule-content">
+              <div class="schedule-title">End of Shift Report</div>
+              <div class="schedule-location">
+                <i class="fa fa-location-dot"></i>
+                Security Office
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Alerts -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2 class="panel-title">
+              <i class="fa fa-bell"></i>
+              Active Alerts
+            </h2>
+          </div>
+          <div class="alert-item critical">
+            <i class="fa fa-exclamation-circle alert-icon"></i>
+            <div class="alert-content">
+              <div class="alert-title">Medical emergency - Block B</div>
+              <div class="alert-time">5 minutes ago</div>
+            </div>
+          </div>
+          <div class="alert-item">
+            <i class="fa fa-triangle-exclamation alert-icon"></i>
+            <div class="alert-content">
+              <div class="alert-title">Equipment maintenance scheduled</div>
+              <div class="alert-time">1 hour ago</div>
+            </div>
+          </div>
+          <div class="alert-item">
+            <i class="fa fa-info-circle alert-icon"></i>
+            <div class="alert-content">
+              <div class="alert-title">New policy updates available</div>
+              <div class="alert-time">2 hours ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Section -->
+    <div class="panel full-width">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <i class="fa fa-book"></i>
+          Staff Resources
+        </h2>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <i class="fa fa-book-open resource-icon"></i>
+          <div class="resource-title">Policy Manual</div>
+        </div>
+        <div class="resource-card">
+          <i class="fa fa-graduation-cap resource-icon"></i>
+          <div class="resource-title">Training Materials</div>
+        </div>
+        <div class="resource-card">
+          <i class="fa fa-heart resource-icon"></i>
+          <div class="resource-title">Employee Wellness</div>
+        </div>
+        <div class="resource-card">
+          <i class="fa fa-headset resource-icon"></i>
+          <div class="resource-title">IT Support</div>
+        </div>
+        <div class="resource-card">
+          <i class="fa fa-shield-halved resource-icon"></i>
+          <div class="resource-title">Safety Protocols</div>
+        </div>
+        <div class="resource-card">
+          <i class="fa fa-clipboard-list resource-icon"></i>
+          <div class="resource-title">Forms & Documents</div>
+        </div>
+        <div class="resource-card">
+          <i class="fa fa-users-gear resource-icon"></i>
+          <div class="resource-title">HR Portal</div>
+        </div>
+        <div class="resource-card">
+          <i class="fa fa-comments resource-icon"></i>
+          <div class="resource-title">Staff Forum</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Clock in button functionality
+    document.querySelector('.btn-primary').addEventListener('click', function () {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      alert(`Clocked in at ${time}`);
+      this.innerHTML = '<i class="fa fa-check"></i> Clocked In';
+      this.style.background = 'linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%)';
+    });
+
+    // Task checkbox functionality
+    document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const taskItem = this.closest('.task-item');
+        if (this.checked) {
+          taskItem.style.opacity = '0.6';
+          taskItem.querySelector('.task-title').style.textDecoration = 'line-through';
+        } else {
+          taskItem.style.opacity = '1';
+          taskItem.querySelector('.task-title').style.textDecoration = 'none';
+        }
+      });
+    });
+
+    // Action button click handlers
+    document.querySelectorAll('.action-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const action = this.textContent.trim();
+        alert(`Opening: ${action}`);
+      });
+    });
+
+    // Resource card click handlers
+    document.querySelectorAll('.resource-card').forEach(card => {
+      card.addEventListener('click', function () {
+        const resource = this.querySelector('.resource-title').textContent;
+        alert(`Opening: ${resource}`);
+      });
+    });
+  </script>
+</body>
+</html>

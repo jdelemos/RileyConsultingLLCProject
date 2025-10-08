@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northern California Correctional Facilities Directory</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      line-height: 1.6;
+    }
+
+    .top-bar {
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 0;
+      font-size: 14px;
+    }
+
+      .top-bar .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-bar a {
+        color: #ffc107;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-section h1 {
+      font-size: 28px;
+      color: #1a1a1a;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .logo-section p {
+      color: #6c757d;
+      font-size: 14px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+
+    nav a {
+      color: #495057;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+      nav a:hover {
+        color: #0066cc;
+      }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23334155" width="1200" height="400"/><path fill="%23475569" opacity="0.3" d="M0 200 L300 250 L600 150 L900 220 L1200 180 L1200 400 L0 400 Z"/></svg>');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 30px;
+      text-align: center;
+    }
+
+      .hero h2 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        opacity: 0.95;
+      }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+      color: #ffc107;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+      .section-header h2 {
+        font-size: 36px;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .section-header p {
+        color: #6c757d;
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 30px;
+    }
+
+    .facility-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+      .facility-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      }
+
+    .facility-image {
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+      .facility-image::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><rect fill="%234a5568" width="400" height="240"/><rect fill="%232d3748" x="50" y="60" width="80" height="120"/><rect fill="%232d3748" x="150" y="60" width="80" height="120"/><rect fill="%232d3748" x="250" y="60" width="80" height="120"/><rect fill="%231a202c" x="65" y="80" width="15" height="20"/><rect fill="%231a202c" x="95" y="80" width="15" height="20"/><rect fill="%231a202c" x="65" y="110" width="15" height="20"/><rect fill="%231a202c" x="95" y="110" width="15" height="20"/><rect fill="%231a202c" x="65" y="140" width="15" height="20"/><rect fill="%231a202c" x="95" y="140" width="15" height="20"/></svg>');
+        background-size: cover;
+        opacity: 0.6;
+      }
+
+    .status-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-operational {
+      background: rgba(16, 185, 129, 0.9);
+      color: white;
+    }
+
+    .status-capacity {
+      background: rgba(251, 191, 36, 0.9);
+      color: #78350f;
+    }
+
+    .status-expansion {
+      background: rgba(59, 130, 246, 0.9);
+      color: white;
+    }
+
+    .facility-content {
+      padding: 25px;
+    }
+
+      .facility-content h3 {
+        font-size: 22px;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+
+    .facility-location {
+      color: #6c757d;
+      font-size: 14px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .facility-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #6c757d;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .meta-value {
+      font-size: 16px;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .facility-history {
+      color: #495057;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .facility-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .feature-tag {
+      background: #e9ecef;
+      color: #495057;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .facility-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #0066cc;
+      color: white;
+    }
+
+      .btn-primary:hover {
+        background: #0052a3;
+      }
+
+    .btn-secondary {
+      background: white;
+      color: #495057;
+      border: 2px solid #dee2e6;
+    }
+
+      .btn-secondary:hover {
+        background: #f8f9fa;
+      }
+
+    .info-section {
+      background: white;
+      padding: 60px 30px;
+      margin-top: 60px;
+    }
+
+    .info-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .info-card {
+      text-align: center;
+    }
+
+    .info-icon {
+      width: 70px;
+      height: 70px;
+      background: #f8f9fa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+    }
+
+    .info-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .info-card p {
+      color: #6c757d;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+      footer p {
+        margin-bottom: 10px;
+      }
+
+      footer a {
+        color: #ffc107;
+        text-decoration: none;
+      }
+
+    @media (max-width: 768px) {
+      .facilities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .stats {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Emergency Contact: (916) 555-0100</span>
+      <div>
+        <a href="#contact">Contact</a>
+        <a href="#resources">Resources</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <h1>NorCal Corrections Directory</h1>
+        <p>Comprehensive Guide to Northern California Correctional Facilities</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#statistics">Statistics</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h2>Northern California Correctional Facilities</h2>
+    <p>Comprehensive information on county jails and detention centers across Northern California, including historical context, current operations, and facility capabilities</p>
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-number">28</div>
+        <div class="stat-label">Facilities</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">45,000+</div>
+        <div class="stat-label">Total Capacity</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Operations</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="facilities">
+    <div class="section-header">
+      <h2>Major Facilities</h2>
+      <p>Detailed information about the primary correctional facilities serving Northern California counties</p>
+    </div>
+
+    <div class="facilities-grid">
+      <!-- Sacramento County Main Jail -->
+      <div class="facility-card">
+        <div class="facility-image">
+          <span class="status-badge status-operational">Operational</span>
+        </div>
+        <div class="facility-content">
+          <h3>Sacramento County Main Jail</h3>
+          <div class="facility-location">📍 Sacramento, CA 95814</div>
+
+          <div class="facility-meta">
+            <div class="meta-item">
+              <span class="meta-label">Opened</span>
+              <span class="meta-value">1989</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Capacity</span>
+              <span class="meta-value">4,100</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">County Jail</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Security</span>
+              <span class="meta-value">Maximum</span>
+            </div>
+          </div>
+
+          <div class="facility-history">
+            The Sacramento County Main Jail serves as the primary intake and housing facility for the county. Built in 1989 to replace the aging downtown facility, it features modern security systems and comprehensive medical services. The facility underwent major renovations in 2015 to improve living conditions and add mental health units.
+          </div>
+
+          <div class="facility-features">
+            <span class="feature-tag">Medical Unit</span>
+            <span class="feature-tag">Mental Health</span>
+            <span class="feature-tag">Classification</span>
+            <span class="feature-tag">Video Visitation</span>
+          </div>
+
+          <div class="facility-actions">
+            <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-secondary">Contact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- San Francisco County Jail -->
+      <div class="facility-card">
+        <div class="facility-image">
+          <span class="status-badge status-operational">Operational</span>
+        </div>
+        <div class="facility-content">
+          <h3>San Francisco County Jail Complex</h3>
+          <div class="facility-location">📍 San Francisco, CA 94124</div>
+
+          <div class="facility-meta">
+            <div class="meta-item">
+              <span class="meta-label">Opened</span>
+              <span class="meta-value">1994</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Capacity</span>
+              <span class="meta-value">2,300</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">County Jail</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Security</span>
+              <span class="meta-value">Multi-Level</span>
+            </div>
+          </div>
+
+          <div class="facility-history">
+            Located in the Bayview district, the San Francisco County Jail complex consists of multiple buildings and houses pre-trial and sentenced inmates. The facility has pioneered progressive programs including education, substance abuse treatment, and reentry services. Recent reforms have focused on reducing the inmate population and expanding alternatives to incarceration.
+          </div>
+
+          <div class="facility-features">
+            <span class="feature-tag">Education Programs</span>
+            <span class="feature-tag">Substance Abuse</span>
+            <span class="feature-tag">Reentry Services</span>
+            <span class="feature-tag">Work Programs</span>
+          </div>
+
+          <div class="facility-actions">
+            <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-secondary">Contact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Santa Clara County Jail -->
+      <div class="facility-card">
+        <div class="facility-image">
+          <span class="status-badge status-capacity">At Capacity</span>
+        </div>
+        <div class="facility-content">
+          <h3>Santa Clara County Main Jail</h3>
+          <div class="facility-location">📍 San Jose, CA 95110</div>
+
+          <div class="facility-meta">
+            <div class="meta-item">
+              <span class="meta-label">Opened</span>
+              <span class="meta-value">1960</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Capacity</span>
+              <span class="meta-value">3,800</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">County Jail</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Security</span>
+              <span class="meta-value">Maximum</span>
+            </div>
+          </div>
+
+          <div class="facility-history">
+            One of California's largest county jail systems, Santa Clara County Main Jail serves Silicon Valley's diverse population. The facility has undergone multiple expansions since its opening, with the most recent addition completed in 2008. It houses both male and female inmates and operates specialized units for vulnerable populations.
+          </div>
+
+          <div class="facility-features">
+            <span class="feature-tag">Maximum Security</span>
+            <span class="feature-tag">Protective Custody</span>
+            <span class="feature-tag">Medical Infirmary</span>
+            <span class="feature-tag">Mental Health Crisis</span>
+          </div>
+
+          <div class="facility-actions">
+            <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-secondary">Contact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alameda County Jail -->
+      <div class="facility-card">
+        <div class="facility-image">
+          <span class="status-badge status-operational">Operational</span>
+        </div>
+        <div class="facility-content">
+          <h3>Alameda County Santa Rita Jail</h3>
+          <div class="facility-location">📍 Dublin, CA 94568</div>
+
+          <div class="facility-meta">
+            <div class="meta-item">
+              <span class="meta-label">Opened</span>
+              <span class="meta-value">1989</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Capacity</span>
+              <span class="meta-value">4,000</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">County Jail</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Security</span>
+              <span class="meta-value">Multi-Level</span>
+            </div>
+          </div>
+
+          <div class="facility-history">
+            Santa Rita Jail is one of the largest county jails in Northern California, serving Alameda County with sophisticated classification and housing systems. The facility features comprehensive medical and mental health services and has been recognized for innovative programming including vocational training and restorative justice initiatives.
+          </div>
+
+          <div class="facility-features">
+            <span class="feature-tag">Vocational Training</span>
+            <span class="feature-tag">Restorative Justice</span>
+            <span class="feature-tag">Family Visitation</span>
+            <span class="feature-tag">Library Services</span>
+          </div>
+
+          <div class="facility-actions">
+            <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-secondary">Contact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contra Costa County Jail -->
+      <div class="facility-card">
+        <div class="facility-image">
+          <span class="status-badge status-operational">Operational</span>
+        </div>
+        <div class="facility-content">
+          <h3>Contra Costa County Jail</h3>
+          <div class="facility-location">📍 Martinez, CA 94553</div>
+
+          <div class="facility-meta">
+            <div class="meta-item">
+              <span class="meta-label">Opened</span>
+              <span class="meta-value">1981</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Capacity</span>
+              <span class="meta-value">1,200</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">County Jail</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Security</span>
+              <span class="meta-value">Medium</span>
+            </div>
+          </div>
+
+          <div class="facility-history">
+            The Contra Costa County Jail serves as the central detention facility for the county's law enforcement agencies. Located in Martinez, the county seat, the facility has been expanded several times since its original construction. It operates a comprehensive booking and classification system and maintains strong community partnerships for reentry support.
+          </div>
+
+          <div class="facility-features">
+            <span class="feature-tag">Community Programs</span>
+            <span class="feature-tag">Drug Treatment</span>
+            <span class="feature-tag">GED Education</span>
+            <span class="feature-tag">Chaplain Services</span>
+          </div>
+
+          <div class="facility-actions">
+            <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-secondary">Contact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sonoma County Jail -->
+      <div class="facility-card">
+        <div class="facility-image">
+          <span class="status-badge status-expansion">Expanding</span>
+        </div>
+        <div class="facility-content">
+          <h3>Sonoma County Main Adult Detention Facility</h3>
+          <div class="facility-location">📍 Santa Rosa, CA 95403</div>
+
+          <div class="facility-meta">
+            <div class="meta-item">
+              <span class="meta-label">Opened</span>
+              <span class="meta-value">1992</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Capacity</span>
+              <span class="meta-value">1,150</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">County Jail</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Security</span>
+              <span class="meta-value">Multi-Level</span>
+            </div>
+          </div>
+
+          <div class="facility-history">
+            Serving Sonoma County's wine country region, this facility replaced an outdated downtown jail in 1992. The Main Adult Detention Facility features direct supervision housing and has been recognized for its emphasis on rehabilitation and behavior modification. Currently undergoing expansion to add mental health treatment beds and programming space.
+          </div>
+
+          <div class="facility-features">
+            <span class="feature-tag">Direct Supervision</span>
+            <span class="feature-tag">Behavior Modification</span>
+            <span class="feature-tag">Agricultural Work</span>
+            <span class="feature-tag">Expanding</span>
+          </div>
+
+          <div class="facility-actions">
+            <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-secondary">Contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-section" id="about">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">📊</div>
+        <h3>Comprehensive Data</h3>
+        <p>Detailed statistics on capacity, population trends, and facility operations across all Northern California counties</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🏛️</div>
+        <h3>Historical Context</h3>
+        <p>Understand the evolution of correctional facilities from their founding to present-day operations and reforms</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🔒</div>
+        <h3>Security Protocols</h3>
+        <p>Information about security levels, classification systems, and safety measures at each facility</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <h3>Location Information</h3>
+        <p>Complete addresses, contact details, and geographical context for all correctional facilities</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Northern California Corrections Directory. All rights reserved.</p>
+    <p>This resource is provided for informational purposes only. For official information, please contact individual facilities directly.</p>
+    <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Use</a> | <a href="#contact">Contact Us</a></p>
+  </footer>
+</body>
+</html>

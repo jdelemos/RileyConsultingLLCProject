@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inmate Query System - Admin Portal</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔒 Inmate Query System</h1>
+      <p>Admin Portal - Search and manage inmate records</p>
+    </div>
+
+    <div class="search-panel">
+      <form id="searchForm">
+        <div class="search-grid">
+          <div class="form-group">
+            <label for="inmateId">Inmate ID</label>
+            <input type="text" id="inmateId" placeholder="Enter ID number">
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="Enter first name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Enter last name">
+          </div>
+          <div class="form-group">
+            <label for="facility">Facility</label>
+            <select id="facility">
+              <option value="">All Facilities</option>
+              <option value="central">Central Detention</option>
+              <option value="north">North County Facility</option>
+              <option value="south">South Regional Center</option>
+              <option value="west">West Wing Complex</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status">
+              <option value="">All Statuses</option>
+              <option value="active">Active</option>
+              <option value="released">Released</option>
+              <option value="transferred">Transferred</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dateFrom">Booking Date From</label>
+            <input type="date" id="dateFrom">
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Filters</button>
+          <button type="submit" class="btn btn-primary">Search Inmates</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="results-panel" id="resultsPanel" style="display: none;">
+      <div class="results-header">
+        <h2>Search Results</h2>
+        <span class="results-count" id="resultsCount">0 Records Found</span>
+      </div>
+      <div class="table-wrapper">
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Inmate ID</th>
+              <th>Name</th>
+              <th>Booking Date</th>
+              <th>Facility</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody">
+          </tbody>
+        </table>
+      </div>
+      <div id="noResults" class="no-results" style="display: none;">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 12h.01M12 12h.01M12 12h.01M12 12h.01"></path>
+        </svg>
+        <h3>No inmates found</h3>
+        <p>Try adjusting your search criteria</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+        // Sample data
+        const sampleData = [
+            { id: 'INM-2024-001', firstName: 'John', lastName: 'Doe', bookingDate: '2024-08-15', facility: 'Central Detention', status: 'active' },
+            { id: 'INM-2024-002', firstName: 'Jane', lastName: 'Smith', bookingDate: '2024-09-22', facility: 'North County Facility', status: 'active' },
+            { id: 'INM-2024-003', firstName: 'Robert', lastName: 'Johnson', bookingDate: '2024-07-10', facility: 'South Regional Center', status: 'released' },
+            { id: 'INM-2024-004', firstName: 'Maria', lastName: 'Garcia', bookingDate: '2024-09-05', facility: 'West Wing Complex', status: 'transferred' },
+            { id: 'INM-2024-005', firstName: 'Michael', lastName: 'Brown', bookingDate: '2024-08-30', facility: 'Central Detention', status: 'active' }
+        ];
+
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            performSearch();
+        });
+
+        function performSearch() {
+            const inmateId = document.getElementById('inmateId').value.toLowerCase();
+            const firstName = document.getElementById('firstName').value.toLowerCase();
+            const lastName = document.getElementById('lastName').value.toLowerCase();
+            const facility = document.getElementById('facility').value;
+            const status = document.getElementById('status').value;
+            const dateFrom = document.getElementById('dateFrom').value;
+
+            let results = sampleData.filter(inmate => {
+                return (
+                    (inmateId === '' || inmate.id.toLowerCase().includes(inmateId)) &&
+                    (firstName === '' || inmate.firstName.toLowerCase().includes(firstName)) &&
+                    (lastName === '' || inmate.lastName.toLowerCase().includes(lastName)) &&
+                    (facility === '' || inmate.facility.toLowerCase().includes(facility)) &&
+                    (status === '' || inmate.status === status) &&
+                    (dateFrom === '' || new Date(inmate.bookingDate) >= new Date(dateFrom))
+                );
+            });
+
+            displayResults(results);
+        }
+
+        function displayResults(results) {
+            const resultsPanel = document.getElementById('resultsPanel');
+            const resultsBody = document.getElementById('resultsBody');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResults = document.getElementById('noResults');
+
+            resultsPanel.style.display = 'block';
+            resultsCount.textContent = `${results.length} Record${results.length !== 1 ? 's' : ''} Found`;
+
+            if (results.length === 0) {
+                resultsBody.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            resultsBody.innerHTML = results.map(inmate => `
+                <tr>
+                    <td><strong>${inmate.id}</strong></td>
+                    <td>${inmate.firstName} ${inmate.lastName}</td>
+                    <td>${new Date(inmate.bookingDate).toLocaleDateString()}</td>
+                    <td>${inmate.facility}</td>
+                    <td><span class="status-badge status-${inmate.status}">${inmate.status}</span></td>
+                    <td>
+                        <button class="action-btn view-btn" onclick="viewInmate('${inmate.id}')">View</button>
+                        <button class="action-btn edit-btn" onclick="editInmate('${inmate.id}')">Edit</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function clearForm() {
+            document.getElementById('searchForm').reset();
+            document.getElementById('resultsPanel').style.display = 'none';
+        }
+
+        function viewInmate(id) {
+            alert(`Viewing details for inmate: ${id}`);
+        }
+
+        function editInmate(id) {
+            alert(`Editing inmate record: ${id}`);
+        }
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\bin\Debug\net9.0\Quick_Application2.Core.deps.json
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\bin\Debug\net9.0\Quick_Application2.Core.dll
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\bin\Debug\net9.0\Quick_Application2.Core.pdb
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\Quick_Application2.Core.csproj.AssemblyReference.cache
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\Quick_Application2.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\Quick_Application2.Core.AssemblyInfoInputs.cache
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\Quick_Application2.Core.AssemblyInfo.cs
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\Quick_Application2.Core.csproj.CoreCompileInputs.cache
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\Quick_Application2.Core.dll
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\refint\Quick_Application2.Core.dll
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\Quick_Application2.Core.pdb
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\obj\Debug\net9.0\ref\Quick_Application2.Core.dll

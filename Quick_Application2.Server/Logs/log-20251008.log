@@ -1,0 +1,648 @@
+2025-10-08T00:17:54.9366645-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T00:17:54.9452355-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T00:17:55.0224087-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = False, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T01:17:54.9287837-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T01:17:54.9548643-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T01:17:54.9638470-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = False, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T11:56:33.5552870-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-08T11:56:33.7508119-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-08T11:56:35.1769307-07:00  [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-08T11:56:35.4571776-07:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-08T11:56:35.4729232-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-08T11:56:35.4760440-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-08T11:56:35.4828841-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-08T11:56:35.7694152-07:00  [INF] Executed DbCommand ("13"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:56:35.8530585-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:56:35.8686084-07:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:56:35.9076831-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:56:35.9106232-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:56:35.9268093-07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"AppCustomers\" AS a)" (0723d8ff)
+2025-10-08T11:56:35.9361695-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"AppJails\" AS a)" (0723d8ff)
+2025-10-08T11:56:35.9438923-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"AppInmates\" AS a)" (0723d8ff)
+2025-10-08T11:56:36.0039954-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:56:36.0399816-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:56:36.1994276-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-08T11:56:36.2008606-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-08T11:56:36.2023787-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-08T11:56:36.2036996-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-08T11:56:36.2052092-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-08T11:56:36.2064254-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-08T11:56:36.2375031-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-08T11:56:36.5033926-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-08T11:56:36.5048851-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-08T11:56:36.5069165-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-08T11:56:36.5082418-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-08T11:56:36.5093387-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-08T11:56:36.5131539-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-08T11:57:03.3312121-07:00 0HNG6JHK567TF:00000001 [INF] The request URI matched a server endpoint: Token. (956b2bc6)
+2025-10-08T11:57:03.3523095-07:00 0HNG6JHK567TF:00000001 [INF] The token request was successfully extracted: "{
+  \"username\": \"jdelemos\",
+  \"password\": \"[redacted]\",
+  \"client_id\": \"quickapp_spa\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (04f13da8)
+2025-10-08T11:57:03.3833377-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:57:03.4033543-07:00 0HNG6JHK567TF:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2025-10-08T11:57:03.4609844-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:57:03.6032962-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ClaimType\", a.\"ClaimValue\", a.\"UserId\"
+FROM \"AspNetUserClaims\" AS a
+WHERE a.\"UserId\" = @__user_Id_0" (0723d8ff)
+2025-10-08T11:57:03.6306857-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a0.\"Name\"
+FROM \"AspNetUserRoles\" AS a
+INNER JOIN \"AspNetRoles\" AS a0 ON a.\"RoleId\" = a0.\"Id\"
+WHERE a.\"UserId\" = @__userId_0" (0723d8ff)
+2025-10-08T11:57:03.6345447-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T11:57:03.6472982-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"ClaimType\", a.\"ClaimValue\"
+FROM \"AspNetRoleClaims\" AS a
+WHERE a.\"RoleId\" = @__role_Id_0" (0723d8ff)
+2025-10-08T11:57:03.8228308-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?', @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictAuthorizations\" (\"Id\", \"ApplicationId\", \"ConcurrencyToken\", \"CreationDate\", \"Properties\", \"Scopes\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2025-10-08T11:57:03.8414322-07:00 0HNG6JHK567TF:00000001 [INF] An ad hoc authorization was automatically created and associated with the '"quickapp_spa"' application: "5718c138-5b80-4d96-8a0b-22bea2567a1d". (1ff6b081)
+2025-10-08T11:57:03.9094772-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-08T11:57:03.9885344-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-08T11:57:04.0022958-07:00 0HNG6JHK567TF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-08T11:57:04.0134881-07:00 0HNG6JHK567TF:00000001 [INF] The response was successfully returned as a JSON document: "{
+  \"access_token\": \"[redacted]\",
+  \"token_type\": \"Bearer\",
+  \"expires_in\": 3599,
+  \"id_token\": \"[redacted]\",
+  \"refresh_token\": \"[redacted]\"
+}". (c5d7b905)
+2025-10-08T12:00:36.2160410-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T12:00:36.2301704-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T12:00:36.2366344-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = False, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-08T12:27:11.0206899-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-08T12:27:11.1799795-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-08T12:27:12.2406572-07:00  [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-08T12:27:12.8343341-07:00  [FTL] An error occurred whilst creating/seeding database (2f18fab3)
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'ApplicationDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`1.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam arg)
+   at Microsoft.EntityFrameworkCore.Diagnostics.RelationalLoggerExtensions.PendingModelChangesWarning(IDiagnosticsLogger`1 diagnostics, Type contextType)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.ValidateMigrations(Boolean useTransaction)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.MigrateAsync(String targetMigration, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Migrations.Internal.NpgsqlMigrator.MigrateAsync(String targetMigration, CancellationToken cancellationToken)
+   at Quick_Application2.Core.Infrastructure.DatabaseSeeder.SeedAsync() in C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Core\Infrastructure\DatabaseSeeder.cs:line 19
+   at Program.<Main>$(String[] args) in C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\Program.cs:line 267
+2025-10-08T13:13:20.9994250-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-08T13:13:21.1383332-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-08T13:13:22.3504648-07:00  [INF] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-08T13:13:22.3908163-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-08T13:13:22.5331704-07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-08T13:13:22.5493544-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-08T13:13:22.5549502-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-08T13:13:22.5622704-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-08T13:13:22.8236024-07:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:22.8735712-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:22.8870188-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:22.9222688-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:22.9249019-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:22.9402453-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"AppCustomers\" AS a)" (0723d8ff)
+2025-10-08T13:13:22.9495545-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"AppJails\" AS a)" (0723d8ff)
+2025-10-08T13:13:22.9579870-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"AppInmates\" AS a)" (0723d8ff)
+2025-10-08T13:13:23.0200732-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:23.0612724-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:23.1542674-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-08T13:13:23.1563951-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-08T13:13:23.1580655-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-08T13:13:23.1597771-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-08T13:13:23.1614940-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-08T13:13:23.1628822-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-08T13:13:23.1643406-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-08T13:13:23.4601027-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-08T13:13:23.4911155-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-08T13:13:23.4933861-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-08T13:13:23.4947663-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-08T13:13:23.4958741-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-08T13:13:23.5001461-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-08T13:13:50.0415827-07:00 0HNG6KSH1HBD3:00000001 [INF] The request URI matched a server endpoint: Token. (956b2bc6)
+2025-10-08T13:13:50.0606657-07:00 0HNG6KSH1HBD3:00000001 [INF] The token request was successfully extracted: "{
+  \"username\": \"jdelemos\",
+  \"password\": \"[redacted]\",
+  \"client_id\": \"quickapp_spa\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (04f13da8)
+2025-10-08T13:13:50.0867673-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:50.1064695-07:00 0HNG6KSH1HBD3:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2025-10-08T13:13:50.1294471-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:50.2709657-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ClaimType\", a.\"ClaimValue\", a.\"UserId\"
+FROM \"AspNetUserClaims\" AS a
+WHERE a.\"UserId\" = @__user_Id_0" (0723d8ff)
+2025-10-08T13:13:50.2963538-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a0.\"Name\"
+FROM \"AspNetUserRoles\" AS a
+INNER JOIN \"AspNetRoles\" AS a0 ON a.\"RoleId\" = a0.\"Id\"
+WHERE a.\"UserId\" = @__userId_0" (0723d8ff)
+2025-10-08T13:13:50.2994714-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-08T13:13:50.3087840-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"ClaimType\", a.\"ClaimValue\"
+FROM \"AspNetRoleClaims\" AS a
+WHERE a.\"RoleId\" = @__role_Id_0" (0723d8ff)
+2025-10-08T13:13:50.4622150-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?', @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictAuthorizations\" (\"Id\", \"ApplicationId\", \"ConcurrencyToken\", \"CreationDate\", \"Properties\", \"Scopes\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2025-10-08T13:13:50.4801434-07:00 0HNG6KSH1HBD3:00000001 [INF] An ad hoc authorization was automatically created and associated with the '"quickapp_spa"' application: "0d7aeed0-32ff-4592-bc4f-8fa1257e4428". (1ff6b081)
+2025-10-08T13:13:50.5483544-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-08T13:13:50.6382099-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-08T13:13:50.6519238-07:00 0HNG6KSH1HBD3:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-08T13:13:50.6634202-07:00 0HNG6KSH1HBD3:00000001 [INF] The response was successfully returned as a JSON document: "{
+  \"access_token\": \"[redacted]\",
+  \"token_type\": \"Bearer\",
+  \"expires_in\": 3599,
+  \"id_token\": \"[redacted]\",
+  \"refresh_token\": \"[redacted]\"
+}". (c5d7b905)

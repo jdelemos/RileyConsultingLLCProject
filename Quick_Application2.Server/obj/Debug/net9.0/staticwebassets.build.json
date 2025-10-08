@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "ZYQCWexAsDVMdsQVu5pszwtxPU4EoV4sDcF5fRPdvxI=",
+  "Source": "Quick_Application2.Server",
+  "BasePath": "_content/Quick_Application2.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\jonmi\\source\\repos\\Quick Application2\\Quick Application2\\Quick_Application2.client\\Quick_Application2.client.esproj",
+      "Version": 2,
+      "Source": "Quick_Application2.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

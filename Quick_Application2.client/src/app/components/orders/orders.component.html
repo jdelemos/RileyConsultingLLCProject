@@ -1,0 +1,55 @@
+<header class="pageHeader">
+  <h3>
+    <i class="fa fa-shopping-cart fa-lg page-caption" aria-hidden="true"></i>
+    {{'pageHeader.Orders' | translate}}
+  </h3>
+</header>
+
+<div class="order-form-container" [@fadeInOut]>
+  <form class="order-form">
+    <h4 class="form-title">Place an Order</h4>
+
+    <!-- Item Selection -->
+    <div class="form-group">
+      <label for="item">Select Item</label>
+      <select id="item" name="item" required>
+        <option value="">-- Choose an item --</option>
+        <option value="wheelchair">Wheel Chair</option>
+        <option value="bed">Bed</option>
+        <option value="pants">Pants</option>
+        <option value="shirt">Shirt</option>
+        <option value="alcatraz">Alcatraz</option>
+        <option value="sanquentin">San Quentin</option>
+      </select>
+    </div>
+
+    <!-- Quantity -->
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="100" required />
+    </div>
+
+    <!-- Notes -->
+    <div class="form-group">
+      <label for="notes">Prison</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Write your prison..."></textarea>
+    </div>
+
+    <!-- Notes -->
+    <div class="form-group">
+      <label for="notes">Prison Department</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Write your prison department..."></textarea>
+    </div>
+
+    <!-- Notes -->
+    <div class="form-group">
+      <label for="notes">Special Instructions</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Add delivery notes..."></textarea>
+    </div>
+
+
+
+    <!-- Submit -->
+    <button type="submit" class="submit-btn">Submit Order</button>
+  </form>
+</div>

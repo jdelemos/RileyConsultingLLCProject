@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA JMS - Jail Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="pageHeader">
+    <h3>
+      <i class="fa fa-tachometer fa-lg page-caption" aria-hidden="true"></i>
+      Jail Management System - Riley Consulting
+    </h3>
+  </header>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Np7qcOFim6w?si=duNTZ376CfgUFccP&amp;start=29" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin-right: 50px;"></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/8fp-iQPvlW0?si=TrXFkpTxle3YwHZj&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div class="fade-in">
+    <div class="row">
+      <!-- Dashboard Statistics Widget -->
+      <div id="dashboardStatistics" class="col-12 mb-4 widget-container px-0">
+        <button type="button" class="btn-close" aria-label="Close" title="Close"></button>
+        <div class="card card-body bg-light">
+          <h5 class="text-muted d-inline-block">Jail Assets</h5>
+          <div class="statistics-demo">
+            <div class="stat-card">
+              <div class="stat-value">152</div>
+              <div class="stat-label">Jail A</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">89</div>
+              <div class="stat-label">Jail B</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">375</div>
+              <div class="stat-label">Jail C</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">24</div>
+              <div class="stat-label">Available Items</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Notifications Widget -->
+      <div id="dashboardNotifications" class="col-12 mb-4 widget-container px-0">
+        <button type="button" class="btn-close" aria-label="Close" title="Close"></button>
+        <div class="notifications-card">
+          <div class="notifications-header">
+            <h5>Notifications</h5>
+          </div>
+          <ul class="notification-list">
+            <li class="notification-item">
+              <div class="notification-content">
+                <div class="notification-date">9:29 AM on Sunday, 28th May 2017</div>
+                <div class="notification-text">20 new "Food Shipments" were added to your Jail by "Jon" on 5/28/2017 4:54:13 PM</div>
+              </div>
+              <div class="notification-actions">
+                <button class="icon-btn" title="Delete"><i class="fa fa-times"></i></button>
+                <button class="icon-btn" title="Star"><i class="fa fa-star"></i></button>
+              </div>
+            </li>
+            <li class="notification-item">
+              <div class="notification-content">
+                <div class="notification-date">4:13 AM on Tuesday, 30th May 2017</div>
+                <div class="notification-text">Guys, tomorrow we close by midday. Please check in your sales before noon. Thanks. Jon.</div>
+              </div>
+              <div class="notification-actions">
+                <button class="icon-btn" title="Delete"><i class="fa fa-times"></i></button>
+                <button class="icon-btn" title="Star"><i class="fa fa-star"></i></button>
+              </div>
+            </li>
+            <li class="notification-item">
+              <div class="notification-content">
+                <div class="notification-date">12:54 PM on Sunday, 28th May 2017</div>
+                <div class="notification-text">You are running low on "Clothing". 2 Items remaining</div>
+              </div>
+              <div class="notification-actions">
+                <button class="icon-btn" title="Delete"><i class="fa fa-times"></i></button>
+                <button class="icon-btn" title="Star"><i class="fa fa-star"></i></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dashboard Todo Widget -->
+      <div id="dashboardTodo" class="col-12 mb-4 pt-1 widget-container px-0">
+        <button type="button" class="btn-close extra-down" aria-label="Close" title="Close"></button>
+        <div class="todo-card">
+          <div class="todo-header">
+            <h5>To-Do List</h5>
+          </div>
+          <ul class="todo-list">
+            <li class="todo-item">
+              <input type="checkbox" class="todo-checkbox" id="todo1">
+              <label for="todo1" class="todo-text">Review pending transfer requests</label>
+            </li>
+            <li class="todo-item">
+              <input type="checkbox" class="todo-checkbox" id="todo2">
+              <label for="todo2" class="todo-text">Update inmate records for Block C</label>
+            </li>
+            <li class="todo-item">
+              <input type="checkbox" class="todo-checkbox" id="todo3" checked>
+              <label for="todo3" class="todo-text">Complete monthly security audit</label>
+            </li>
+            <li class="todo-item">
+              <input type="checkbox" class="todo-checkbox" id="todo4">
+              <label for="todo4" class="todo-text">Schedule staff training session</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dashboard Banner Widget -->
+      <div id="dashboardBanner" class="col-12 mb-4 widget-container no-shadow px-0">
+        <button type="button" class="btn-close" aria-label="Close" title="Close"></button>
+        <div class="banner-container">
+          <div class="banner-content">
+            <h1>RILEY CONSULTING</h1>
+            <p>California Jail Management System</p>
+          </div>
+          <div class="banner-icon">
+            <i class="fa fa-building"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add functionality to close buttons
+    document.querySelectorAll('.btn-close').forEach(button => {
+      button.addEventListener('click', function () {
+        this.closest('.widget-container').style.display = 'none';
+      });
+    });</script>
+</body>
+</html>
