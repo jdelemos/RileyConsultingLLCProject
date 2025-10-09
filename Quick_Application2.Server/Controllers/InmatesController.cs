@@ -25,7 +25,7 @@ namespace Quick_Application2.Server.Controllers
             var inmates = await _db.Inmates
                 .Include(i => i.Jail)
                 .Include(i => i.Cell)
-                .OrderByDescending(i => i.BookingDate)
+                    .ThenInclude(c => c.Unit)
                 .Select(i => new
                 {
                     i.Id,
@@ -34,8 +34,9 @@ namespace Quick_Application2.Server.Controllers
                     i.LastName,
                     i.Status,
                     i.BookingDate,
-                    Jail = i.Jail != null ? i.Jail.Name : "N/A",
-                    Cell = i.Cell != null ? i.Cell.CellNumber : "N/A"
+                    Jail = i.Jail.Name,
+                    Cell = i.Cell.CellNumber,
+                    Unit = i.Cell.Unit.Name
                 })
                 .ToListAsync();
 
@@ -140,6 +141,7 @@ namespace Quick_Application2.Server.Controllers
             var query = _db.Inmates
                 .Include(i => i.Jail)
                 .Include(i => i.Cell)
+                    .ThenInclude(c => c.Unit)
                 .AsQueryable();
 
             // External ID (e.g., SCMJ-001)
@@ -176,11 +178,14 @@ namespace Quick_Application2.Server.Controllers
                     i.Status,
                     i.BookingDate,
                     Jail = i.Jail != null ? i.Jail.Name : "N/A",
-                    Cell = i.Cell != null ? i.Cell.CellNumber : "N/A"
+                    Cell = i.Cell != null ? i.Cell.CellNumber : "N/A",
+                    Unit = i.Cell != null && i.Cell.Unit != null ? i.Cell.Unit.Name : "N/A"
                 })
                 .ToListAsync();
 
             return Ok(results);
         }
+
+
     }
 }

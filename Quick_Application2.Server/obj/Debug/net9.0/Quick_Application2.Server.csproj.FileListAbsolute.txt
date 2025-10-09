@@ -194,3 +194,4 @@ C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Applicat
 C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\obj\Debug\net9.0\Quick_Application2.Server.genruntimeconfig.cache
 C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\obj\Debug\net9.0\ref\Quick_Application2.Server.dll
 C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\obj\Debug\net9.0\Quick_Application2.Server.sourcelink.json
+C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

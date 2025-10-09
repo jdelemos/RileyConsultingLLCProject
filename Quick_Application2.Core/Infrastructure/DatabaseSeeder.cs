@@ -19,7 +19,8 @@ namespace Quick_Application2.Core.Infrastructure
             await dbContext.Database.MigrateAsync();
             await SeedDefaultUsersAsync();
             await SeedDemoDataAsync();
-            await SeedJailsAsync(dbContext); 
+            await SeedJailsAsync(dbContext);
+            await SeedCells(dbContext);
             await SeedInmatesAsync(dbContext);
             await SeedTransfersAsync(dbContext);
             await SeedBookingsAsync(dbContext);
@@ -114,7 +115,7 @@ namespace Quick_Application2.Core.Infrastructure
             return applicationUser;
         }
 
-        /************ Jon's DATA **************/
+        
         /************ Jon's DATA **************/
         public async Task SeedJailsAsync(ApplicationDbContext db)
         {
@@ -156,46 +157,109 @@ namespace Quick_Application2.Core.Infrastructure
             await db.SaveChangesAsync();
         }
 
-
-
         public async Task SeedInmatesAsync(ApplicationDbContext db)
         {
-            if (await db.Inmates.AnyAsync()) return;
-
+            // 1️⃣  Get reference data
             var sacJail = await db.Jails.FirstAsync(j => j.Name == "Sacramento County Main Jail");
-            var sfJail = await db.Jails.FirstAsync(j => j.Name == "San Francisco County Jail Complex");
+            var cells = await db.Cells.Where(c => c.JailId == sacJail.Id).ToListAsync();
 
-            var inmates = new[]
-            {
+            // 2️⃣  Define your desired inmate list (including new ones)
+            var desiredInmates = new List<Inmate>
+    {
         new Inmate
         {
-            ExternalId = "SCMJ-001",
-            FirstName = "Alex",
-            LastName = "Rivera",
-            DateOfBirth = new DateTime(1985, 6, 15),
-            JailId = sacJail.Id,
-            Jail = sacJail,
-            Status = "0",                     // e.g., Active / Booked
-            BookingDate = DateTime.UtcNow.AddDays(-14),
-            CellId = null
+            ExternalId  = "SCMJ-001",
+            FirstName   = "Alex",
+            LastName    = "Rivera",
+            Status      = "0",
+            JailId      = sacJail.Id,
+            CellId      = cells.First(c => c.CellNumber == "A101").Id,
+            BookingDate = DateTime.UtcNow.AddDays(-5)
         },
         new Inmate
         {
-            ExternalId = "SFCJ-002",
-            FirstName = "Maria",
-            LastName = "Nguyen",
-            DateOfBirth = new DateTime(1991, 11, 5),
-            JailId = sfJail.Id,
-            Jail = sfJail,
-            Status = "0",                     // e.g., Active / Booked
-            BookingDate = DateTime.UtcNow.AddDays(-7),
-            CellId = null
+            ExternalId  = "SCMJ-002",
+            FirstName   = "Maria",
+            LastName    = "Nguyen",
+            Status      = "0",
+            JailId      = sacJail.Id,
+            CellId      = cells.First(c => c.CellNumber == "B201").Id,
+            BookingDate = DateTime.UtcNow.AddDays(-3)
+        },
+        new Inmate
+        {
+            ExternalId  = "SCMJ-003",
+            FirstName   = "Jamal",
+            LastName    = "Reed",
+            Status      = "0",
+            JailId      = sacJail.Id,
+            CellId      = cells.First(c => c.CellNumber == "C301").Id,
+            BookingDate = DateTime.UtcNow.AddDays(-1)
+        },
+        // 🆕  New inmates for seeding
+        new Inmate
+        {
+            ExternalId  = "SCMJ-004",
+            FirstName   = "Sofia",
+            LastName    = "Lopez",
+            Status      = "0",
+            JailId      = sacJail.Id,
+            CellId      = cells.First(c => c.CellNumber == "A102").Id,
+            BookingDate = DateTime.UtcNow.AddDays(-2)
+        },
+        new Inmate
+        {
+            ExternalId  = "SCMJ-005",
+            FirstName   = "David",
+            LastName    = "Kim",
+            Status      = "0",
+            JailId      = sacJail.Id,
+            CellId      = cells.First(c => c.CellNumber == "B202").Id,
+            BookingDate = DateTime.UtcNow.AddDays(-4)
         }
     };
 
-            db.Inmates.AddRange(inmates);
+            // 3️⃣  Fetch existing inmate IDs
+            var existingIds = await db.Inmates.Select(i => i.ExternalId).ToListAsync();
+
+            // 4️⃣  Add only missing inmates
+            var newInmates = desiredInmates
+                .Where(i => !existingIds.Contains(i.ExternalId))
+                .ToList();
+
+            if (newInmates.Count > 0)
+            {
+                await db.Inmates.AddRangeAsync(newInmates);
+                await db.SaveChangesAsync();
+                Console.WriteLine($"Added {newInmates.Count} new inmate(s).");
+            }
+
+            // 5️⃣  Assign missing CellIds to existing inmates
+            var missingCellAssignments = await db.Inmates
+                .Where(i => i.CellId == null)
+                .ToListAsync();
+
+            foreach (var inmate in missingCellAssignments)
+            {
+                // Default logic: pick a free cell (not occupied)
+                var openCell = cells.FirstOrDefault(c => !c.IsOccupied);
+                if (openCell != null)
+                {
+                    inmate.CellId = openCell.Id;
+                    openCell.IsOccupied = true;
+                }
+            }
+
+            // 6️⃣  Mark all occupied cells appropriately
+            var allInmates = await db.Inmates.ToListAsync();
+            foreach (var cell in cells)
+                cell.IsOccupied = allInmates.Any(i => i.CellId == cell.Id);
+
             await db.SaveChangesAsync();
         }
+
+
+
 
 
         public async Task SeedTransfersAsync(ApplicationDbContext db)
@@ -247,7 +311,7 @@ namespace Quick_Application2.Core.Infrastructure
         },
         new Booking
         {
-            JailId   = sfJail.Id,
+            JailId   = sacJail.Id,
             InmateId = maria.Id,
             IntakeDate = DateTime.UtcNow.AddDays(-7),
             Status = BookingStatus.OnHold,
@@ -268,6 +332,39 @@ namespace Quick_Application2.Core.Infrastructure
 
 
 
+        public async Task SeedCells(ApplicationDbContext db)
+        {
+            if (await db.Cells.AnyAsync()) return;
+
+            // Find the jail to attach the cells/units to
+            var sacJail = await db.Jails.FirstAsync(j => j.Name == "Sacramento County Main Jail");
+
+            // Create a few units (A, B, C) for this jail
+            var units = new[]
+            {
+        new Unit { Name = "Unit A", JailId = sacJail.Id },
+        new Unit { Name = "Unit B", JailId = sacJail.Id },
+        new Unit { Name = "Unit C", JailId = sacJail.Id }
+    };
+
+            // Add units to the context
+            await db.Units.AddRangeAsync(units);
+            await db.SaveChangesAsync(); // Save so we have real Unit.Id values
+
+            // Create cells and assign them to units
+            var cells = new[]
+            {
+        new Cell { CellNumber = "A101", JailId = sacJail.Id, UnitId = units[0].Id },
+        new Cell { CellNumber = "A102", JailId = sacJail.Id, UnitId = units[0].Id },
+        new Cell { CellNumber = "B201", JailId = sacJail.Id, UnitId = units[1].Id },
+        new Cell { CellNumber = "B202", JailId = sacJail.Id, UnitId = units[1].Id },
+        new Cell { CellNumber = "C301", JailId = sacJail.Id, UnitId = units[2].Id },
+        new Cell { CellNumber = "C302", JailId = sacJail.Id, UnitId = units[2].Id },
+    };
+
+            await db.Cells.AddRangeAsync(cells);
+            await db.SaveChangesAsync();
+        }
 
 
 

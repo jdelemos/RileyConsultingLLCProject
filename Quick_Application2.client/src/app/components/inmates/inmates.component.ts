@@ -49,8 +49,8 @@ export class InmatesComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.alertService.startLoadingMessage('', 'Retrieving inmate records...');
 
-    this.searchSubscription = this.inmateService.getAll().subscribe({
-      next: (data) => {
+    this.searchSubscription = this.inmateService.search({}).subscribe({
+      next: (data: Inmate[]) => {
         this.inmates = data;
         this.alertService.stopLoadingMessage();
         this.alertService.showMessage('Inmates', `${data.length} records loaded`, MessageSeverity.success);
@@ -62,6 +62,7 @@ export class InmatesComponent implements OnInit, OnDestroy {
     });
   }
 
+  /** Search inmates based on filters */
   /** Search inmates based on filters */
   searchInmates() {
     this.isLoading = true;
@@ -76,17 +77,18 @@ export class InmatesComponent implements OnInit, OnDestroy {
     };
 
     this.searchSubscription = this.inmateService.search(filters).subscribe({
-      next: (data) => {
+      next: (data: Inmate[]) => {
         this.inmates = data;
         this.alertService.stopLoadingMessage();
         this.alertService.showMessage('Search', `${data.length} result(s) found`, MessageSeverity.success);
         this.isLoading = false;
       },
-      error: (error) => {
+      error: (error: any) => {
         this.handleError('Search failed', error);
       }
     });
   }
+
 
   /** Handle HTTP/network errors consistently */
   private handleError(context: string, error: any) {
