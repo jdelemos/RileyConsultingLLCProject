@@ -49,5 +49,7 @@ namespace Quick_Application2.Core.Models.Jms
         // Transfers (in or out)
         [JsonIgnore]
         public ICollection<Transfer> Transfers { get; set; } = new List<Transfer>();
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+
     }
 }

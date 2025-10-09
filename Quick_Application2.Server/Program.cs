@@ -36,6 +36,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 var migrationsAssembly = "Quick_Application2.Core";
 
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(connectionString, b => b.MigrationsAssembly("Quick_Application2.Core"));
@@ -243,6 +245,8 @@ else
     // You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+
 
 app.UseHttpsRedirection();
 

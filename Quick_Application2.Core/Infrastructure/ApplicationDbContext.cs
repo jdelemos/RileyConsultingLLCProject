@@ -30,6 +30,12 @@ namespace Quick_Application2.Core.Infrastructure
         public DbSet<Cell> Cells { get; set; }
         public DbSet<Transfer> Transfers { get; set; }
 
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Charge> Charges { get; set; }
+        public DbSet<Bond> Bonds { get; set; }
+        public DbSet<Hold> Holds { get; set; }
+
+
 
 
 
@@ -37,7 +43,7 @@ namespace Quick_Application2.Core.Infrastructure
         {
             base.OnModelCreating(builder);
             const string priceDecimalType = "decimal(18,2)";
-            const string tablePrefix = "App";
+            const string tablePrefix = "";
 
             // Existing mappings
             builder.Entity<ApplicationUser>()
@@ -71,11 +77,11 @@ namespace Quick_Application2.Core.Infrastructure
             builder.Entity<Customer>().Property(c => c.Email).HasMaxLength(100);
             builder.Entity<Customer>().Property(c => c.PhoneNumber).IsUnicode(false).HasMaxLength(30);
             builder.Entity<Customer>().Property(c => c.City).HasMaxLength(50);
-            builder.Entity<Customer>().ToTable($"{tablePrefix}{nameof(Customers)}");
+            builder.Entity<Customer>().ToTable($"{nameof(Customers)}");
 
             builder.Entity<ProductCategory>().Property(p => p.Name).IsRequired().HasMaxLength(100);
             builder.Entity<ProductCategory>().Property(p => p.Description).HasMaxLength(500);
-            builder.Entity<ProductCategory>().ToTable($"{tablePrefix}{nameof(ProductCategories)}");
+            builder.Entity<ProductCategory>().ToTable($"{nameof(ProductCategories)}");
 
             builder.Entity<Product>().Property(p => p.Name).IsRequired().HasMaxLength(100);
             builder.Entity<Product>().HasIndex(p => p.Name);
@@ -84,15 +90,15 @@ namespace Quick_Application2.Core.Infrastructure
             builder.Entity<Product>().HasOne(p => p.Parent).WithMany(p => p.Children).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<Product>().Property(p => p.BuyingPrice).HasColumnType(priceDecimalType);
             builder.Entity<Product>().Property(p => p.SellingPrice).HasColumnType(priceDecimalType);
-            builder.Entity<Product>().ToTable($"{tablePrefix}{nameof(Products)}");
+            builder.Entity<Product>().ToTable($"{nameof(Products)}");
 
             builder.Entity<Order>().Property(o => o.Comments).HasMaxLength(500);
             builder.Entity<Order>().Property(p => p.Discount).HasColumnType(priceDecimalType);
-            builder.Entity<Order>().ToTable($"{tablePrefix}{nameof(Orders)}");
+            builder.Entity<Order>().ToTable($"{nameof(Orders)}");
 
             builder.Entity<OrderDetail>().Property(p => p.UnitPrice).HasColumnType(priceDecimalType);
             builder.Entity<OrderDetail>().Property(p => p.Discount).HasColumnType(priceDecimalType);
-            builder.Entity<OrderDetail>().ToTable($"{tablePrefix}{nameof(OrderDetails)}");
+            builder.Entity<OrderDetail>().ToTable($"{nameof(OrderDetails)}");
 
             builder.Entity<Jail>(entity =>
             {
@@ -109,7 +115,7 @@ namespace Quick_Application2.Core.Infrastructure
                 entity.Property(j => j.Security).HasConversion<int>();
                 entity.Property(j => j.Status).HasConversion<int>();
 
-                entity.ToTable($"{tablePrefix}{nameof(Jails)}");
+                entity.ToTable($"{nameof(Jails)}");
             });
 
             builder.Entity<Inmate>(entity =>
@@ -128,7 +134,7 @@ namespace Quick_Application2.Core.Infrastructure
                       .HasForeignKey(i => i.JailId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                entity.ToTable($"{tablePrefix}{nameof(Inmates)}");
+                entity.ToTable($"{nameof(Inmates)}");
             });
 
             // ===========================================================
@@ -144,7 +150,7 @@ namespace Quick_Application2.Core.Infrastructure
                       .HasForeignKey(u => u.JailId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-                entity.ToTable($"{tablePrefix}{nameof(Units)}");
+                entity.ToTable($"{nameof(Units)}");
             });
 
             // ===========================================================
@@ -165,7 +171,7 @@ namespace Quick_Application2.Core.Infrastructure
                       .HasForeignKey(c => c.UnitId)
                       .OnDelete(DeleteBehavior.Cascade);
 
-                entity.ToTable($"{tablePrefix}{nameof(Cells)}");
+                entity.ToTable($"{nameof(Cells)}");
             });
 
             // ===========================================================
@@ -190,8 +196,39 @@ namespace Quick_Application2.Core.Infrastructure
                       .HasForeignKey(t => t.ToJailId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                entity.ToTable($"{tablePrefix}{nameof(Transfers)}");
+                entity.ToTable($"{nameof(Transfers)}");
             });
+
+            builder.Entity<Booking>(entity =>
+            {
+                entity.Property(b => b.ReleaseReason).HasMaxLength(200);
+
+                entity.HasOne(b => b.Inmate)
+                    .WithMany(i => i.Bookings)
+                    .HasForeignKey(b => b.InmateId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(b => b.Jail)
+                    .WithMany(j => j.Bookings)
+                    .HasForeignKey(b => b.JailId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            builder.Entity<Charge>()
+                .HasOne(c => c.Booking)
+                .WithMany(b => b.Charges)
+                .HasForeignKey(c => c.BookingId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Bond>()
+                .HasOne(bd => bd.Booking)
+                .WithOne(b => b.Bond)
+                .HasForeignKey<Bond>(bd => bd.BookingId);
+
+            builder.Entity<Hold>()
+                .HasOne(h => h.Booking)
+                .WithMany(b => b.Holds)
+                .HasForeignKey(h => h.BookingId);
 
         }
 

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Quick_Application2.Core.Infrastructure;
@@ -11,9 +12,11 @@ using Quick_Application2.Core.Infrastructure;
 namespace Quick_Application2.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251008212516_AddBookings")]
+    partial class AddBookings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -494,7 +497,7 @@ namespace Quick_Application2.Server.Migrations
                     b.HasIndex("CellNumber", "JailId")
                         .IsUnique();
 
-                    b.ToTable("Cells", (string)null);
+                    b.ToTable("AppCells", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.JMS.Transfer", b =>
@@ -528,7 +531,7 @@ namespace Quick_Application2.Server.Migrations
 
                     b.HasIndex("ToJailId");
 
-                    b.ToTable("Transfers", (string)null);
+                    b.ToTable("AppTransfers", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.JMS.Unit", b =>
@@ -552,7 +555,7 @@ namespace Quick_Application2.Server.Migrations
                     b.HasIndex("Name", "JailId")
                         .IsUnique();
 
-                    b.ToTable("Units", (string)null);
+                    b.ToTable("AppUnits", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.Jms.Bond", b =>
@@ -736,7 +739,7 @@ namespace Quick_Application2.Server.Migrations
 
                     b.HasIndex("LastName", "FirstName");
 
-                    b.ToTable("Inmates", (string)null);
+                    b.ToTable("AppInmates", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.Jms.Jail", b =>
@@ -795,7 +798,7 @@ namespace Quick_Application2.Server.Migrations
                     b.HasIndex("Name", "City")
                         .IsUnique();
 
-                    b.ToTable("Jails", (string)null);
+                    b.ToTable("AppJails", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.Shop.Customer", b =>
@@ -849,7 +852,7 @@ namespace Quick_Application2.Server.Migrations
 
                     b.HasIndex("Name");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("AppCustomers", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.Shop.Order", b =>
@@ -893,7 +896,7 @@ namespace Quick_Application2.Server.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("AppOrders", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.Shop.OrderDetail", b =>
@@ -939,7 +942,7 @@ namespace Quick_Application2.Server.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetails", (string)null);
+                    b.ToTable("AppOrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.Shop.Product", b =>
@@ -1007,7 +1010,7 @@ namespace Quick_Application2.Server.Migrations
 
                     b.HasIndex("ProductCategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("AppProducts", (string)null);
                 });
 
             modelBuilder.Entity("Quick_Application2.Core.Models.Shop.ProductCategory", b =>
@@ -1046,7 +1049,7 @@ namespace Quick_Application2.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductCategories", (string)null);
+                    b.ToTable("AppProductCategories", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

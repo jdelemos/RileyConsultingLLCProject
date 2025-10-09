@@ -20,8 +20,11 @@ namespace Quick_Application2.Core.Infrastructure
             await SeedDefaultUsersAsync();
             await SeedDemoDataAsync();
             await SeedJailsAsync(dbContext); 
-            await SeedInmatesAsync(dbContext); 
-      
+            await SeedInmatesAsync(dbContext);
+            await SeedTransfersAsync(dbContext);
+            await SeedBookingsAsync(dbContext);
+
+
         }
 
         /************ DEFAULT USERS **************/
@@ -215,6 +218,54 @@ namespace Quick_Application2.Core.Infrastructure
             db.Transfers.Add(transfer);
             await db.SaveChangesAsync();
         }
+
+        public async Task SeedBookingsAsync(ApplicationDbContext db)
+        {
+            if (await db.Bookings.AnyAsync()) return;
+
+            // Pull in existing data
+            var sacJail = await db.Jails.FirstAsync(j => j.Name == "Sacramento County Main Jail");
+            var sfJail = await db.Jails.FirstAsync(j => j.Name == "San Francisco County Jail Complex");
+
+            var alex = await db.Inmates.FirstAsync(i => i.FirstName == "Alex" && i.LastName == "Rivera");
+            var maria = await db.Inmates.FirstAsync(i => i.FirstName == "Maria" && i.LastName == "Nguyen");
+
+            var bookings = new[]
+            {
+        new Booking
+        {
+            JailId   = sacJail.Id,
+            InmateId = alex.Id,
+            IntakeDate = DateTime.UtcNow.AddDays(-3),
+            Status = BookingStatus.Active,
+            Charges = new List<Charge>
+            {
+                new Charge { Offense = "Embezzlement", BondAmount = 15000, Statute = "PC 240" },
+                new Charge { Offense = "Fraud", BondAmount = 500, Statute = "PC 647" }
+            },
+            Bond = new Bond { Amount = 15500, IsPaid = false, Type = "Cash" }
+        },
+        new Booking
+        {
+            JailId   = sfJail.Id,
+            InmateId = maria.Id,
+            IntakeDate = DateTime.UtcNow.AddDays(-7),
+            Status = BookingStatus.OnHold,
+            Charges = new List<Charge>
+            {
+                new Charge { Offense = "Unauthorized Access to Computer and Fraud", BondAmount = 20000, Statute = "PC 459" }
+            },
+            Holds = new List<Hold>
+            {
+                new Hold { Agency = "ICE", Reason = "Federal detainer", CreatedAt = DateTime.UtcNow }
+            }
+        }
+    };
+
+            db.Bookings.AddRange(bookings);
+            await db.SaveChangesAsync();
+        }
+
 
 
 
