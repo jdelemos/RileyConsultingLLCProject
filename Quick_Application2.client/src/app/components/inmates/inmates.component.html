@@ -1,766 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inmate Query System - Admin Portal</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      background-attachment: fixed;
-      min-height: 300vh;
-      padding: 20px;
-      padding-bottom: 800px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .header {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-      .header h1 {
-        color: #2d3748;
-        margin-bottom: 10px;
-      }
-
-      .header p {
-        color: #718096;
-      }
-
-    .search-panel {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-
-      .search-panel h3 {
-        color: #2d3748;
-        margin-bottom: 20px;
-      }
-
-    .search-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-      .form-group label {
-        font-weight: 600;
-        color: #4a5568;
-        margin-bottom: 8px;
-        font-size: 14px;
-      }
-
-      .form-group input,
-      .form-group select {
-        padding: 10px 12px;
-        border: 2px solid #e2e8f0;
-        border-radius: 6px;
-        font-size: 14px;
-        transition: border-color 0.2s;
-      }
-
-        .form-group input:focus,
-        .form-group select:focus {
-          outline: none;
-          border-color: #667eea;
-        }
-
-    .button-group {
-      display: flex;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-
-    .btn {
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-primary {
-      background: #667eea;
-      color: white;
-    }
-
-      .btn-primary:hover {
-        background: #5568d3;
-        transform: translateY(-1px);
-      }
-
-    .btn-secondary {
-      background: #e2e8f0;
-      color: #4a5568;
-    }
-
-      .btn-secondary:hover {
-        background: #cbd5e0;
-      }
-
-    .results-panel {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-
-    .results-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-      .results-header h2 {
-        color: #2d3748;
-      }
-
-    .results-count {
-      background: #667eea;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .table-wrapper {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th {
-      background: #f7fafc;
-      padding: 12px;
-      text-align: left;
-      font-weight: 600;
-      color: #4a5568;
-      border-bottom: 2px solid #e2e8f0;
-    }
-
-    td {
-      padding: 12px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    tr:hover {
-      background: #f7fafc;
-    }
-
-    .status-badge {
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: capitalize;
-    }
-
-    .status-active {
-      background: #c6f6d5;
-      color: #22543d;
-    }
-
-    .status-released {
-      background: #bee3f8;
-      color: #2c5282;
-    }
-
-    .status-transferred {
-      background: #feebc8;
-      color: #7c2d12;
-    }
-
-    .action-btn {
-      padding: 6px 12px;
-      margin-right: 5px;
-      border: none;
-      border-radius: 4px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .view-btn {
-      background: #4299e1;
-      color: white;
-    }
-
-      .view-btn:hover {
-        background: #3182ce;
-      }
-
-    .edit-btn {
-      background: #48bb78;
-      color: white;
-    }
-
-      .edit-btn:hover {
-        background: #38a169;
-      }
-
-    .transfer-btn {
-      background: #ed8936;
-      color: white;
-    }
-
-      .transfer-btn:hover {
-        background: #dd6b20;
-      }
-
-    .no-results {
-      text-align: center;
-      padding: 40px;
-      color: #718096;
-    }
-
-      .no-results svg {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 20px;
-      }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      animation: fadeIn 0.3s;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    .modal-content {
-      background: white;
-      margin: 5% auto;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 500px;
-      position: relative;
-      animation: slideIn 0.3s;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .close-btn {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #718096;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-      .close-btn:hover {
-        color: #2d3748;
-      }
-
-    .modal-content h2 {
-      color: #2d3748;
-      margin-bottom: 10px;
-    }
-
-    .modal-content p {
-      color: #718096;
-      margin-bottom: 20px;
-      padding: 10px;
-      background: #f7fafc;
-      border-radius: 6px;
-    }
-
-    .transfer-message {
-      margin-top: 15px;
-      padding: 10px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    .search-results {
-      margin-top: 20px;
-      padding: 15px;
-      background: #f7fafc;
-      border-radius: 6px;
-      display: none;
-    }
-
-      .search-results h4 {
-        color: #2d3748;
-        margin-bottom: 10px;
-      }
-
-      .search-results ul {
-        list-style: none;
-      }
-
-      .search-results li {
-        padding: 10px;
-        background: white;
-        margin-bottom: 8px;
-        border-radius: 4px;
-        border-left: 4px solid #667eea;
-      }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>🔒 Inmate Query System</h1>
-      <p>Admin Portal - Search and manage inmate records</p>
-    </div>
-
-    <!-- FUNCTION 1: Search Inmates -->
-    <div class="search-panel">
-      <h3>Search Inmates</h3>
-      <form id="searchForm">
-        <div class="search-grid">
-          <div class="form-group">
-            <label for="inmateId">Inmate ID</label>
-            <input type="text" id="inmateId" placeholder="Enter ID number">
-          </div>
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="Enter first name">
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" placeholder="Enter last name">
-          </div>
-          <div class="form-group">
-            <label for="facility">Facility</label>
-            <select id="facility">
-              <option value="">All Facilities</option>
-              <option value="central">Central Detention</option>
-              <option value="north">North County Facility</option>
-              <option value="south">South Regional Center</option>
-              <option value="west">West Wing Complex</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="status">Status</label>
-            <select id="status">
-              <option value="">All Statuses</option>
-              <option value="active">Active</option>
-              <option value="released">Released</option>
-              <option value="transferred">Transferred</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="dateFrom">Booking Date From</label>
-            <input type="date" id="dateFrom">
-          </div>
-        </div>
-        <div class="button-group">
-          <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Filters</button>
-          <button type="submit" class="btn btn-primary">Search Inmates</button>
-        </div>
-      </form>
-    </div>
-
-    <div class="results-panel" id="resultsPanel" style="display: none;">
-      <div class="results-header">
-        <h2>Search Results</h2>
-        <span class="results-count" id="resultsCount">0 Records Found</span>
-      </div>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Inmate ID</th>
-              <th>Name</th>
-              <th>Booking Date</th>
-              <th>Facility</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="resultsBody"></tbody>
-        </table>
-      </div>
-      <div id="noResults" class="no-results" style="display: none;">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 12h.01"></path>
-        </svg>
-        <h3>No inmates found</h3>
-        <p>Try adjusting your search criteria</p>
-      </div>
-    </div>
-
-    <!-- FUNCTION 2: Search by Jail, Unit, or Cell -->
-    <div class="search-panel">
-      <h3>Search by Jail, Unit, or Cell</h3>
-      <form id="jailSearchForm">
-        <div class="search-grid">
-          <div class="form-group">
-            <label for="jailSelect">Jail</label>
-            <select id="jailSelect" required>
-              <option value="">Select Jail</option>
-              <option value="Sacramento County Main Jail">Sacramento County Main Jail</option>
-              <option value="San Francisco County Jail Complex">San Francisco County Jail Complex</option>
-              <option value="Santa Clara County Main Jail">Santa Clara County Main Jail</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="unitInput">Unit</label>
-            <input type="text" id="unitInput" placeholder="e.g., B-Block">
-          </div>
-          <div class="form-group">
-            <label for="cellInput">Cell</label>
-            <input type="text" id="cellInput" placeholder="e.g., 203">
-          </div>
-        </div>
-        <div class="button-group">
-          <button type="submit" class="btn btn-primary">Search by Location</button>
-        </div>
-      </form>
-      <div id="jailSearchResults" class="search-results"></div>
-    </div>
-
-    <!-- FUNCTION 3: Transfer Inmate -->
-    <div class="search-panel">
-      <h3>🔄 Transfer Inmate</h3>
-      <form id="standaloneTransferForm">
-        <div class="search-grid">
-          <div class="form-group">
-            <label for="transferInmateId">Inmate ID</label>
-            <select id="transferInmateId" required>
-              <option value="">Select Inmate</option>
-              <option value="INM-2024-001">INM-2024-001 - John Doe</option>
-              <option value="INM-2024-002">INM-2024-002 - Jane Smith</option>
-              <option value="INM-2024-003">INM-2024-003 - Robert Johnson</option>
-              <option value="INM-2024-004">INM-2024-004 - Maria Garcia</option>
-              <option value="INM-2024-005">INM-2024-005 - Michael Brown</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="standaloneNewFacility">New Facility</label>
-            <select id="standaloneNewFacility" required>
-              <option value="">Select Facility</option>
-              <option value="Central Detention">Central Detention</option>
-              <option value="North County Facility">North County Facility</option>
-              <option value="South Regional Center">South Regional Center</option>
-              <option value="West Wing Complex">West Wing Complex</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="standaloneNewUnit">New Unit</label>
-            <input type="text" id="standaloneNewUnit" placeholder="e.g., B-Block" required>
-          </div>
-          <div class="form-group">
-            <label for="standaloneNewCell">New Cell</label>
-            <input type="text" id="standaloneNewCell" placeholder="e.g., 203" required>
-          </div>
-        </div>
-        <div id="currentLocationInfo" style="background: #edf2f7; padding: 15px; border-radius: 6px; margin-bottom: 15px; display: none;">
-          <strong>Current:</strong> <span id="currentLocationText"></span>
-        </div>
-        <div class="button-group">
-          <button type="button" class="btn btn-secondary" onclick="clearTransferForm()">Clear</button>
-          <button type="submit" class="btn btn-primary">Process Transfer</button>
-        </div>
-      </form>
-      <div id="standaloneTransferMessage" style="margin-top: 15px;margin-bottom:50px; padding: 10px; border-radius: 6px; font-weight: 600; display: none;"></div>
-    </div>
+<div class="container">
+  <div class="header">
+    <h1>🔒 Inmate Query System</h1>
+    <p>Admin Portal – Search and manage inmate records</p>
   </div>
 
-  <div id="transferModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeTransferModal()">&times;</span>
-      <h2> Transfer Inmate</h2>
-      <p id="transferInmateLabel"></p>
-      <form id="transferForm">
+  <!-- Search Inmates Panel -->
+  <div class="search-panel">
+    <h3>Search Inmates</h3>
+
+    <form (ngSubmit)="searchInmates()" #searchForm="ngForm">
+      <div class="search-grid">
         <div class="form-group">
-          <label for="newFacility">New Facility</label>
-          <select id="newFacility" required>
-            <option value="">Select Facility</option>
+          <label>Inmate ID</label>
+          <input type="text" [(ngModel)]="inmateId" name="inmateId" placeholder="Enter ID number">
+        </div>
+
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="Enter first name">
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="Enter last name">
+        </div>
+
+        <div class="form-group">
+          <label>Facility</label>
+          <select [(ngModel)]="facility" name="facility">
+            <option value="">All Facilities</option>
             <option value="Central Detention">Central Detention</option>
             <option value="North County Facility">North County Facility</option>
             <option value="South Regional Center">South Regional Center</option>
             <option value="West Wing Complex">West Wing Complex</option>
           </select>
         </div>
+
         <div class="form-group">
-          <label for="newUnit">New Unit</label>
-          <input type="text" id="newUnit" placeholder="e.g., B-Block" required>
+          <label>Status</label>
+          <select [(ngModel)]="status" name="status">
+            <option value="">All Statuses</option>
+            <option value="active">Active</option>
+            <option value="released">Released</option>
+            <option value="transferred">Transferred</option>
+          </select>
         </div>
-        <div class="form-group">
-          <label for="newCell">New Cell</label>
-          <input type="text" id="newCell" placeholder="e.g., 203" required>
-        </div>
-        <div class="button-group">
-          <button type="button" class="btn btn-secondary" onclick="closeTransferModal()">Cancel</button>
-          <button type="submit" class="btn btn-primary">Confirm Transfer</button>
-        </div>
-      </form>
-      <div id="transferMessage" class="transfer-message"></div>
+      </div>
+
+      <div class="button-group">
+        <button type="button" class="btn btn-secondary" (click)="resetSearch()">Clear Filters</button>
+        <button type="submit" class="btn btn-primary" [disabled]="isLoading">
+          {{ isLoading ? 'Searching...' : 'Search Inmates' }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Results -->
+  <div class="results-panel" *ngIf="inmates && inmates.length > 0">
+    <div class="results-header">
+      <h2>Search Results</h2>
+      <span class="results-count">{{ inmates.length }} Record{{ inmates.length !== 1 ? 's' : '' }} Found</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Inmate ID</th>
+            <th>Name</th>
+            <th>Booking Date</th>
+            <th>Facility</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let inmate of inmates">
+            <td><strong>{{ inmate.id }}</strong></td>
+            <td>{{ inmate.firstName }} {{ inmate.lastName }}</td>
+            <td>{{ inmate.bookingDate | date: 'mediumDate' }}</td>
+            <td>{{ inmate.facility }}</td>
+            <td>
+              <span class="status-badge"
+                    [ngClass]="{
+                      'status-active': inmate.status === 'active',
+                      'status-released': inmate.status === 'released',
+                      'status-transferred': inmate.status === 'transferred'
+                    }">
+                {{ inmate.status }}
+              </span>
+            </td>
+            <td>
+              <button class="action-btn view-btn" (click)="alertService.showMessage('View', inmate.id, 0)">View</button>
+              <button class="action-btn edit-btn" (click)="alertService.showMessage('Edit', inmate.id, 0)">Edit</button>
+              <button class="action-btn transfer-btn" (click)="alertService.showMessage('Transfer', inmate.id, 0)">Transfer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <script>
-    const sampleData = [
-      { id: 'INM-2024-001', firstName: 'John', lastName: 'Doe', bookingDate: '2024-08-15', facility: 'Central Detention', status: 'active', unit: 'A-Block', cell: '101' },
-      { id: 'INM-2024-002', firstName: 'Jane', lastName: 'Smith', bookingDate: '2024-09-22', facility: 'North County Facility', status: 'active', unit: 'B-Block', cell: '205' },
-      { id: 'INM-2024-003', firstName: 'Robert', lastName: 'Johnson', bookingDate: '2024-07-10', facility: 'South Regional Center', status: 'released', unit: 'C-Block', cell: '310' },
-      { id: 'INM-2024-004', firstName: 'Maria', lastName: 'Garcia', bookingDate: '2024-09-05', facility: 'West Wing Complex', status: 'transferred', unit: 'D-Block', cell: '412' },
-      { id: 'INM-2024-005', firstName: 'Michael', lastName: 'Brown', bookingDate: '2024-08-30', facility: 'Central Detention', status: 'active', unit: 'A-Block', cell: '115' }
-    ];
-
-    document.getElementById('searchForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      performSearch();
-    });
-
-    function performSearch() {
-      const inmateId = document.getElementById('inmateId').value.toLowerCase();
-      const firstName = document.getElementById('firstName').value.toLowerCase();
-      const lastName = document.getElementById('lastName').value.toLowerCase();
-      const facility = document.getElementById('facility').value;
-      const status = document.getElementById('status').value;
-      const dateFrom = document.getElementById('dateFrom').value;
-
-      let results = sampleData.filter(inmate => {
-        return (
-          (inmateId === '' || inmate.id.toLowerCase().includes(inmateId)) &&
-          (firstName === '' || inmate.firstName.toLowerCase().includes(firstName)) &&
-          (lastName === '' || inmate.lastName.toLowerCase().includes(lastName)) &&
-          (facility === '' || inmate.facility.toLowerCase().includes(facility)) &&
-          (status === '' || inmate.status === status) &&
-          (dateFrom === '' || new Date(inmate.bookingDate) >= new Date(dateFrom))
-        );
-      });
-
-      displayResults(results);
-    }
-
-    function displayResults(results) {
-      const resultsPanel = document.getElementById('resultsPanel');
-      const resultsBody = document.getElementById('resultsBody');
-      const resultsCount = document.getElementById('resultsCount');
-      const noResults = document.getElementById('noResults');
-
-      resultsPanel.style.display = 'block';
-      resultsCount.textContent = `${results.length} Record${results.length !== 1 ? 's' : ''} Found`;
-
-      if (results.length === 0) {
-        resultsBody.innerHTML = '';
-        noResults.style.display = 'block';
-        return;
-      }
-
-      noResults.style.display = 'none';
-      resultsBody.innerHTML = results.map(inmate => `
-          <tr>
-            <td><strong>${inmate.id}</strong></td>
-            <td>${inmate.firstName} ${inmate.lastName}</td>
-            <td>${new Date(inmate.bookingDate).toLocaleDateString()}</td>
-            <td>${inmate.facility}</td>
-            <td><span class="status-badge status-${inmate.status}">${inmate.status}</span></td>
-            <td>
-              <button class="action-btn view-btn" onclick="viewInmate('${inmate.id}')">View</button>
-              <button class="action-btn edit-btn" onclick="editInmate('${inmate.id}')">Edit</button>
-              <button class="action-btn transfer-btn" onclick="openTransferModal('${inmate.id}')">Transfer</button>
-            </td>
-          </tr>
-        `).join('');
-    }
-
-    function clearForm() {
-      document.getElementById('searchForm').reset();
-      document.getElementById('resultsPanel').style.display = 'none';
-    }
-
-    function viewInmate(id) {
-      const inmate = sampleData.find(i => i.id === id);
-      alert(`ID: ${inmate.id}\nName: ${inmate.firstName} ${inmate.lastName}\nFacility: ${inmate.facility}\nUnit: ${inmate.unit}\nCell: ${inmate.cell}`);
-    }
-
-    function editInmate(id) {
-      alert(`Editing inmate: ${id}`);
-    }
-
-    document.getElementById('jailSearchForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const jail = document.getElementById('jailSelect').value;
-      const unit = document.getElementById('unitInput').value.trim();
-      const cell = document.getElementById('cellInput').value.trim();
-      const resultsDiv = document.getElementById('jailSearchResults');
-
-      resultsDiv.style.display = 'block';
-      resultsDiv.innerHTML = `<p>🔍 Searching...</p>`;
-
-      await new Promise(r => setTimeout(r, 500));
-
-      const results = sampleData.filter(i => {
-        return (unit === '' || i.unit.toLowerCase().includes(unit.toLowerCase())) &&
-          (cell === '' || i.cell.includes(cell));
-      });
-
-      if (results.length === 0) {
-        resultsDiv.innerHTML = `<p>No inmates found</p>`;
-        return;
-      }
-
-      resultsDiv.innerHTML = `<h4>Results (${results.length})</h4><ul>${results.map(p =>
-        `<li><strong>${p.firstName} ${p.lastName}</strong> (${p.id}) — Unit: ${p.unit}, Cell: ${p.cell}</li>`
-      ).join('')}</ul>`;
-    });
-
-    document.getElementById('transferInmateId').addEventListener('change', function () {
-      const inmateId = this.value;
-      if (!inmateId) {
-        document.getElementById('currentLocationInfo').style.display = 'none';
-        return;
-      }
-      const inmate = sampleData.find(i => i.id === inmateId);
-      if (inmate) {
-        document.getElementById('currentLocationInfo').style.display = 'block';
-        document.getElementById('currentLocationText').textContent =
-          `${inmate.facility}, Unit ${inmate.unit}, Cell ${inmate.cell}`;
-      }
-    });
-
-    document.getElementById('standaloneTransferForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const inmateId = document.getElementById('transferInmateId').value;
-      const newFacility = document.getElementById('standaloneNewFacility').value;
-      const newUnit = document.getElementById('standaloneNewUnit').value;
-      const newCell = document.getElementById('standaloneNewCell').value;
-      const message = document.getElementById('standaloneTransferMessage');
-      const inmate = sampleData.find(i => i.id === inmateId);
-
-      message.style.display = 'block';
-      message.style.color = '#667eea';
-      message.style.background = '#edf2f7';
-      message.textContent = '⏳ Processing...';
-
-      await new Promise(r => setTimeout(r, 1500));
-
-      const oldFacility = inmate.facility;
-      inmate.facility = newFacility;
-      inmate.unit = newUnit;
-      inmate.cell = newCell;
-      inmate.status = 'transferred';
-
-      message.style.color = '#22543d';
-      message.style.background = '#c6f6d5';
-      message.textContent = `✅ ${inmate.firstName} ${inmate.lastName} transferred from ${oldFacility} to ${newFacility}`;
-
-      document.getElementById('currentLocationText').textContent =
-        `${inmate.facility}, Unit ${inmate.unit}, Cell ${inmate.cell}`;
-
-      setTimeout(() => clearTransferForm(), 3000);
-    });
-
-    function clearTransferForm() {
-      document.getElementById('standaloneTransferForm').reset();
-      document.getElementById('currentLocationInfo').style.display = 'none';
-      document.getElementById('standaloneTransferMessage').style.display = 'none';
-    }
-
-    let currentTransferId = null;
-
-    function openTransferModal(inmateId) {
-      const inmate = sampleData.find(i => i.id === inmateId);
-      if (!inmate) return;
-      currentTransferId = inmate.id;
-      document.getElementById('transferInmateLabel').textContent =
-        `${inmate.firstName} ${inmate.lastName} (${inmate.facility}, Unit ${inmate.unit}, Cell ${inmate.cell})`;
-      document.getElementById('transferModal').style.display = 'block';
-    }
-
-    function closeTransferModal() {
-      document.getElementById('transferModal').style.display = 'none';
-      document.getElementById('transferForm').reset();
-      document.getElementById('transferMessage').textContent = '';
-    }
-
-    document.getElementById('transferForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const newFacility = document.getElementById('newFacility').value;
-      const newUnit = document.getElementById('newUnit').value;
-      const newCell = document.getElementById('newCell').value;
-      const message = document.getElementById('transferMessage');
-      const inmate = sampleData.find(i => i.id === currentTransferId);
-
-      message.style.color = '#667eea';
-      message.style.background = '#edf2f7';
-      message.textContent = '⏳ Processing...';
-
-      await new Promise(r => setTimeout(r, 1500));
-
-      inmate.facility = newFacility;
-      inmate.unit = newUnit;
-      inmate.cell = newCell;
-      inmate.status = 'transferred';
-
-      message.style.color = '#22543d';
-      message.style.background = '#c6f6d5';
-      message.textContent = `✅ Transfer complete to ${newFacility}`;
-
-      performSearch();
-      setTimeout(() => closeTransferModal(), 2000);
-    });
-
-    window.onclick = function (event) {
-      if (event.target === document.getElementById('transferModal')) {
-        closeTransferModal();
-      }
-    }
-  </script>
-</body>
-</html>
+  <div class="no-results" *ngIf="!isLoading && inmates && inmates.length === 0">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 12h.01"></path>
+    </svg>
+    <h3>No inmates found</h3>
+    <p>Try adjusting your search criteria</p>
+  </div>
+</div>
