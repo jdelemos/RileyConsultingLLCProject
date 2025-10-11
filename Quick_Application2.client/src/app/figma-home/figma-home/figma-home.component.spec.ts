@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { FigmaHomeComponent } from './figma-home/figma-home.component';
+import { FigmaHomeComponent } from './figma-home.component';
 
 describe('FigmaHomeComponent', () => {
   let component: FigmaHomeComponent;

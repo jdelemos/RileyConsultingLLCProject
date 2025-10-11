@@ -56,6 +56,13 @@ export const routes: Routes = [
     title: 'inmates'
   },
   {
+    path: 'figma-home',
+    loadComponent: () =>
+      import('./figma-home/figma-home/figma-home.component').then(m => m.FigmaHomeComponent),
+    title: 'figma-home'
+  },
+
+  {
     path: 'home',
     redirectTo: '/',
     pathMatch: 'full'

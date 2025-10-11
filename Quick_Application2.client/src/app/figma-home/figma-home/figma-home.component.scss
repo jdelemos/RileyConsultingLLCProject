@@ -1,0 +1,138 @@
+:host {
+  --accent: #0f4d66;
+  --muted: #6b7280;
+  --card-bg: #fff;
+  --card-shadow: 0 8px 24px rgba(8,16,30,0.06);
+  display: block;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #12232f;
+}
+
+/* hero */
+.fh-hero {
+  padding: 24px;
+  background: linear-gradient(90deg, rgba(11,94,215,0.05), rgba(10,88,202,0.02));
+}
+
+.fh-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.fh-title {
+  font-size: 26px;
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+
+.fh-sub {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+/* shortcuts */
+.fh-shortcuts.card {
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  background: var(--card-bg);
+}
+
+.fh-shortcuts-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shortcut {
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f8fafb;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* right stats */
+.fh-stats {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+}
+
+.stat {
+  background: #f3f7fb;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat .value {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* widgets grid */
+.fh-widgets {
+  padding: 16px 24px;
+}
+
+.fh-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.widget.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.w-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.meta.overdue {
+  color: #d9534f;
+}
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 8px;
+}
+
+/* footer */
+.fh-footer {
+  padding: 12px 24px;
+  color: var(--muted);
+}
+
+/* responsive */
+@media (max-width: 920px) {
+  .fh-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .fh-grid {
+    grid-template-columns: 1fr;
+  }
+}

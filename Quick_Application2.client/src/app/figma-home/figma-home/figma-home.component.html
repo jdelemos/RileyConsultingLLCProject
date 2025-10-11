@@ -1,0 +1,77 @@
+<!-- figma-home.component.html -->
+<section class="fh-hero">
+  <div class="fh-hero-inner">
+    <div class="fh-left">
+      <h1 class="fh-title">California Jail Management</h1>
+      <p class="fh-sub">A single dashboard for inmate, booking, and facility operations.</p>
+
+      <div class="fh-shortcuts card">
+        <div class="fh-shortcuts-head">
+          <span>Shortcuts</span>
+          <button class="btn-minor">Customize</button>
+        </div>
+        <div class="fh-shortcuts-grid">
+          <button class="shortcut"><span>📄</span><small>Bookings</small></button>
+          <button class="shortcut"><span>🔎</span><small>Inmates</small></button>
+          <button class="shortcut"><span>👥</span><small>Staff</small></button>
+          <button class="shortcut"><span>⚕️</span><small>Medical</small></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="fh-right">
+      <div class="fh-stats">
+        <div class="stat"><div class="value">247</div><div class="label">Total Inmates</div></div>
+        <div class="stat"><div class="value">18</div><div class="label">On Duty</div></div>
+        <div class="stat"><div class="value">13</div><div class="label">Medical</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fh-widgets">
+  <div class="fh-grid">
+    <article class="widget card">
+      <header class="w-head"><h3>Assignments</h3><a>See all</a></header>
+      <div class="w-body">
+        <ul>
+          <li><strong>Cell Inspection</strong> — Block C · Cell 15 <span class="meta overdue">Overdue</span></li>
+          <li><strong>Intake Processing</strong> — Block A <span class="meta today">Today</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="widget card">
+      <header class="w-head"><h3>Work Queue</h3><a>See all</a></header>
+      <div class="w-body">
+        <ul>
+          <li>New intake — Block A <span class="meta today">3:00 PM</span></li>
+          <li>Medical escort — Inmate #4521 <span class="meta tomorrow">Tomorrow</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="widget card">
+      <header class="w-head"><h3>Activity Log</h3><a>See all</a></header>
+      <div class="w-body">
+        <ol>
+          <li>Inmate #4521 medical checkup completed — 2h ago</li>
+          <li>Cell inspection — Block C — 3h ago</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="widget card">
+      <header class="w-head"><h3>Quick Summary</h3></header>
+      <div class="w-body mini-stats">
+        <div class="mini"><div class="v">247</div><div class="l">Inmates</div></div>
+        <div class="mini"><div class="v">18</div><div class="l">On Duty</div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="fh-footer">
+  <div>© Jail Management System</div>
+  <div class="links"><a routerLink="/help">Help</a> · <a routerLink="/about">About</a></div>
+</footer>
