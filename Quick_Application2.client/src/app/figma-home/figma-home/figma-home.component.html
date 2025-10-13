@@ -1,77 +1,147 @@
-<!-- figma-home.component.html -->
-<section class="fh-hero">
-  <div class="fh-hero-inner">
-    <div class="fh-left">
-      <h1 class="fh-title">California Jail Management</h1>
-      <p class="fh-sub">A single dashboard for inmate, booking, and facility operations.</p>
+<div class="page-wrapper">
 
-      <div class="fh-shortcuts card">
-        <div class="fh-shortcuts-head">
-          <span>Shortcuts</span>
-          <button class="btn-minor">Customize</button>
+
+  <!-- Main Content Area -->
+  <div class="page-inner">
+    <div class="dashboard-container">
+      <h1 class="page-title">My Dashboard</h1>
+
+      <!-- Shortcuts card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>My Shortcuts</h2>
+          <div class="card-actions"><button class="link-btn">Customize</button></div>
         </div>
-        <div class="fh-shortcuts-grid">
-          <button class="shortcut"><span>📄</span><small>Bookings</small></button>
-          <button class="shortcut"><span>🔎</span><small>Inmates</small></button>
-          <button class="shortcut"><span>👥</span><small>Staff</small></button>
-          <button class="shortcut"><span>⚕️</span><small>Medical</small></button>
+        <div class="card-body">
+          <div class="shortcuts-grid">
+            <!-- example shortcut items -->
+            <div class="shortcut-item" *ngFor="let s of quickActions">
+              <div class="shortcut-icon-wrapper"><span class="material-icons">shield</span></div>
+              <div class="shortcut-label">{{ s.label }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- My Shortcuts (Second Row) -->
+        <div class="card">
+          <div class="card-header">
+            <h2>My Shortcuts</h2>
+            <div class="card-actions">
+              <button class="icon-btn customize-btn" type="button">
+                <span class="material-icons">settings</span>
+                <span class="btn-text">Customize</span>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="shortcuts-grid">
+              <button *ngFor="let action of inmateActions"
+                      class="shortcut-item"
+                      type="button"
+                      (click)="onQuickAction(action)">
+                <div class="shortcut-icon-wrapper">
+                  <span class="material-icons">{{ action.icon }}</span>
+                </div>
+                <span class="shortcut-label">{{ action.label }}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Column Layout for Assignments and Activity -->
+        <div class="two-column-layout">
+          <!-- Left Column: My Assignments & Officer Work Queue -->
+          <div class="left-column">
+            <!-- My Assignments -->
+            <div class="card assignments-card">
+              <div class="card-header">
+                <h2>My Assignments (14)</h2>
+                <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
+              </div>
+              <div class="card-body">
+                <div class="assignments-list">
+                  <div *ngFor="let inspection of cellInspections.slice(0, 6)"
+                       class="assignment-item"
+                       (click)="onInspectionClick(inspection)">
+                    <div class="assignment-info">
+                      <div class="assignment-title">{{ inspection.type }}</div>
+                      <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
+                    </div>
+                    <div class="assignment-status">
+                      <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
+                        {{ inspection.status }}
+                      </span>
+                      <span class="status-time">{{ inspection.statusTime }}</span>
+                    </div>
+                    <span class="material-icons chevron">chevron_right</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Officers' Recent Activity Log -->
+            <div class="card activity-card">
+              <div class="card-header">
+                <h2>Officers' Recent Activity Log</h2>
+                <button class="link-btn" type="button" (click)="viewAllActivity()">See All</button>
+              </div>
+              <div class="card-body">
+                <div class="activity-log-list">
+                  <div *ngFor="let activity of recentActivity"
+                       class="activity-log-item"
+                       (click)="onActivityClick(activity)">
+                    <div class="activity-bullet"></div>
+                    <div class="activity-content">
+                      <div class="activity-main-text">{{ activity.text }}</div>
+                      <div class="activity-meta">{{ activity.subtext }} • {{ activity.time }}</div>
+                    </div>
+                    <span class="material-icons chevron">chevron_right</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Officer Work Queue & Stats -->
+          <div class="right-column">
+            <!-- Officer Work Queue -->
+            <div class="card work-queue-card">
+              <div class="card-header">
+                <h2>Officer Work Queue (30)</h2>
+                <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
+              </div>
+              <div class="card-body">
+                <div class="assignments-list">
+                  <div *ngFor="let inspection of dueInspections"
+                       class="assignment-item"
+                       (click)="onInspectionClick(inspection)">
+                    <div class="assignment-info">
+                      <div class="assignment-title">{{ inspection.type }}</div>
+                      <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
+                    </div>
+                    <div class="assignment-status">
+                      <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
+                        {{ inspection.status }}
+                      </span>
+                      <span class="status-time">{{ inspection.statusTime }}</span>
+                    </div>
+                    <span class="material-icons chevron">chevron_right</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+              <div *ngFor="let stat of stats; let i = index"
+                   class="stat-card"
+                   [ngClass]="getStatColorClass(i)">
+                <div class="stat-value">{{ stat.value }}</div>
+                <div class="stat-label">{{ stat.label }}</div>
+                <div class="stat-sublabel">{{ stat.sublabel }}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="fh-right">
-      <div class="fh-stats">
-        <div class="stat"><div class="value">247</div><div class="label">Total Inmates</div></div>
-        <div class="stat"><div class="value">18</div><div class="label">On Duty</div></div>
-        <div class="stat"><div class="value">13</div><div class="label">Medical</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="fh-widgets">
-  <div class="fh-grid">
-    <article class="widget card">
-      <header class="w-head"><h3>Assignments</h3><a>See all</a></header>
-      <div class="w-body">
-        <ul>
-          <li><strong>Cell Inspection</strong> — Block C · Cell 15 <span class="meta overdue">Overdue</span></li>
-          <li><strong>Intake Processing</strong> — Block A <span class="meta today">Today</span></li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="widget card">
-      <header class="w-head"><h3>Work Queue</h3><a>See all</a></header>
-      <div class="w-body">
-        <ul>
-          <li>New intake — Block A <span class="meta today">3:00 PM</span></li>
-          <li>Medical escort — Inmate #4521 <span class="meta tomorrow">Tomorrow</span></li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="widget card">
-      <header class="w-head"><h3>Activity Log</h3><a>See all</a></header>
-      <div class="w-body">
-        <ol>
-          <li>Inmate #4521 medical checkup completed — 2h ago</li>
-          <li>Cell inspection — Block C — 3h ago</li>
-        </ol>
-      </div>
-    </article>
-
-    <article class="widget card">
-      <header class="w-head"><h3>Quick Summary</h3></header>
-      <div class="w-body mini-stats">
-        <div class="mini"><div class="v">247</div><div class="l">Inmates</div></div>
-        <div class="mini"><div class="v">18</div><div class="l">On Duty</div></div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<footer class="fh-footer">
-  <div>© Jail Management System</div>
-  <div class="links"><a routerLink="/help">Help</a> · <a routerLink="/about">About</a></div>
-</footer>

@@ -19,16 +19,17 @@ import { Alertify } from './models/Alertify';
 import { Permissions } from './models/permission.model';
 import { LoginComponent } from './components/login/login.component';
 import { NotificationsViewerComponent } from './components/controls/notifications-viewer.component';
+import { FormsModule } from '@angular/forms';
 
 declare let alertify: Alertify;
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
     imports: [
         ToastaModule, RouterLink, RouterLinkActive, NgbCollapseModule, NgbPopover, NotificationsViewerComponent,
-        RouterOutlet, TranslateModule
+        RouterOutlet, TranslateModule, FormsModule
     ]
 })
 export class AppComponent implements OnInit, OnDestroy {
@@ -67,6 +68,10 @@ export class AppComponent implements OnInit, OnDestroy {
     } else {
       return this.gT('app.Notifications');
     }
+  }
+
+  goToInmates(): void {
+    this.router.navigate(['/inmates']);
   }
 
   constructor() {
@@ -133,6 +138,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private unsubscribeNotifications() {
     this.notificationsLoadingSubscription?.unsubscribe();
   }
+  
 
   initNotificationsLoading() {
     this.notificationsLoadingSubscription = this.notificationService.getNewNotificationsPeriodically()

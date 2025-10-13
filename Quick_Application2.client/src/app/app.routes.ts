@@ -7,9 +7,8 @@ import { AuthGuard } from './services/auth-guard';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
-    canActivate: [AuthGuard],
-    title: 'Home'
+    redirectTo: 'figma-home',
+    pathMatch: 'full'
   },
   {
     path: 'login',
@@ -59,6 +58,7 @@ export const routes: Routes = [
     path: 'figma-home',
     loadComponent: () =>
       import('./figma-home/figma-home/figma-home.component').then(m => m.FigmaHomeComponent),
+    canActivate: [AuthGuard],
     title: 'figma-home'
   },
 

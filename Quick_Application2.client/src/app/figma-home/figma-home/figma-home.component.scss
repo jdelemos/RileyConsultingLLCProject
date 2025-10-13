@@ -1,138 +1,223 @@
-:host {
-  --accent: #0f4d66;
-  --muted: #6b7280;
-  --card-bg: #fff;
-  --card-shadow: 0 8px 24px rgba(8,16,30,0.06);
-  display: block;
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  color: #12232f;
-}
+/* ================================
+   FIGMA HOME DASHBOARD STYLES
+   ================================ */
 
-/* hero */
-.fh-hero {
-  padding: 24px;
-  background: linear-gradient(90deg, rgba(11,94,215,0.05), rgba(10,88,202,0.02));
-}
+/* ---------- Color & Style Variables ---------- */
+$card-border: #e6eaee;
+$card-radius: 8px;
+$dark-navy: #2c4557;
+$primary-blue: #1e5f8c;
+$text-dark: #2c3e50;
+$light-bg: #f5f7fa;
 
-.fh-hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 18px;
-  align-items: start;
-}
-
-.fh-title {
-  font-size: 26px;
-  color: var(--accent);
-  margin: 0 0 6px;
-}
-
-.fh-sub {
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-
-/* shortcuts */
-.fh-shortcuts.card {
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: var(--card-shadow);
-  background: var(--card-bg);
-}
-
-.fh-shortcuts-grid {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.shortcut {
-  width: 110px;
+/* ---------- Layout Wrappers ---------- */
+.page-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border-radius: 8px;
-  background: #f8fafb;
-  border: 1px solid rgba(0,0,0,0.03);
+  min-height: 100vh;
+  background: $light-bg;
+  padding-top: 1rem; // keeps content below navbar
 }
 
-/* right stats */
-.fh-stats {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 10px;
+.page-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  background: transparent;
+  overflow-y: auto;
 }
 
-.stat {
-  background: #f3f7fb;
-  padding: 12px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.stat .value {
-  font-weight: 700;
-  color: var(--accent);
-}
-
-/* widgets grid */
-.fh-widgets {
-  padding: 16px 24px;
-}
-
-.fh-grid {
+/* ---------- Dashboard Container ---------- */
+.dashboard-container {
+  background: transparent;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+}
+
+/* ---------- Page Title ---------- */
+.page-title {
+  font-family: 'Inter', sans-serif;
+  color: $dark-navy;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Card Styling ---------- */
+.card {
+  background: white;
+  border-radius: $card-radius;
+  border: 1px solid $card-border;
+  box-shadow: 0 6px 18px rgba(8, 16, 30, 0.03);
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+
+  .card-header {
+    background: $dark-navy;
+    color: white;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* ---------- Shortcuts Grid ---------- */
+.shortcuts-grid {
   display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+  align-items: start;
+
+  .shortcut-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid $card-border;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .shortcut-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: $dark-navy;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+
+      .material-icons {
+        color: white;
+        font-size: 2rem;
+      }
+    }
+
+    .shortcut-label {
+      text-align: center;
+      font-weight: 600;
+      color: $text-dark;
+      font-size: 0.95rem;
+    }
+  }
 }
 
-.widget.card {
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: var(--card-shadow);
+/* ---------- Two-Column Layout ---------- */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-.w-head {
+/* ---------- Lists (Assignments / Activity) ---------- */
+.assignments-list .assignment-item,
+.activity-log-list .activity-log-item {
+  padding: 0.85rem;
+  border-radius: 8px;
+  border: 1px solid $card-border;
+  background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0.6rem;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #f8fafc;
+  }
 }
 
-.meta {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.meta.overdue {
-  color: #d9534f;
-}
-
-.mini-stats {
+/* ---------- Stats Grid ---------- */
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  // Light color tints for each stat card
+  .stat-card:nth-child(1) {
+    background: #e3f2fd;
+  }
+  // light blue
+  .stat-card:nth-child(2) {
+    background: #e8f5e9;
+  }
+  // light green
+  .stat-card:nth-child(3) {
+    background: #fff8e1;
+  }
+  // light yellow
+  .stat-card:nth-child(4) {
+    background: #ffebee;
+  }
+  // light red
+  // light red
+
+
+  .stat-card {
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $primary-blue;
+    }
+
+    .stat-label {
+      color: #6c757d;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+  }
 }
 
-/* footer */
-.fh-footer {
-  padding: 12px 24px;
-  color: var(--muted);
-}
-
-/* responsive */
-@media (max-width: 920px) {
-  .fh-hero-inner {
-    grid-template-columns: 1fr;
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 768px) {
+  .page-inner {
+    padding: 1rem;
   }
 
-  .fh-grid {
-    grid-template-columns: 1fr;
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .shortcuts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   }
 }

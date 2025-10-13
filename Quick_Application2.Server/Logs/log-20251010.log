@@ -1,0 +1,1686 @@
+2025-10-10T19:52:49.5118914-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T19:52:49.6579672-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T19:52:51.0269306-07:00  [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T19:52:51.0785156-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T19:52:51.2654027-07:00  [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T19:52:51.2817805-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T19:52:51.2855743-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T19:52:51.2941339-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T19:52:51.6002873-07:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:51.6629542-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:51.6894871-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:51.7325710-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:51.7350139-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:51.7495031-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T19:52:51.7584442-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T19:52:51.7662269-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T19:52:51.7813538-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:51.8307092-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T19:52:51.8700998-07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T19:52:51.8802632-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T19:52:51.8871514-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T19:52:51.9921588-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T19:52:51.9996953-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T19:52:52.0296936-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:52.0743092-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:52:52.1910712-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T19:52:52.1927741-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T19:52:52.1947303-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T19:52:52.1964140-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T19:52:52.1985704-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T19:52:52.1999283-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T19:52:52.2016598-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T19:52:52.4811195-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T19:52:52.4822875-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T19:52:52.4839323-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T19:52:52.4852870-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T19:52:52.4864055-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T19:52:52.4908267-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T19:56:42.5007483-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T19:56:42.6399824-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T19:56:43.6692382-07:00  [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T19:56:43.7110114-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T19:56:43.8655175-07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T19:56:43.8805805-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T19:56:43.8858154-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T19:56:43.8933263-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T19:56:44.1413445-07:00  [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.1936926-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.2081395-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.2544984-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.2573844-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.2706423-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T19:56:44.2776438-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T19:56:44.2843987-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T19:56:44.2984513-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.3420649-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T19:56:44.3758499-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T19:56:44.3839394-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T19:56:44.3899400-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T19:56:44.4879310-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T19:56:44.4948957-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T19:56:44.5236156-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.5631587-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T19:56:44.6397154-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T19:56:44.6410103-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T19:56:44.6426904-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T19:56:44.6442470-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T19:56:44.6456601-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T19:56:44.6467697-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T19:56:44.6482228-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T19:56:44.9058821-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T19:56:44.9074674-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T19:56:44.9102168-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T19:56:44.9118440-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T19:56:44.9129472-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T19:56:44.9168127-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T20:05:20.8154502-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T20:05:20.9774777-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T20:05:22.1376774-07:00  [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T20:05:22.1849717-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T20:05:22.3904477-07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T20:05:22.4078303-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T20:05:22.4133805-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T20:05:22.4242775-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T20:05:22.7429759-07:00  [INF] Executed DbCommand ("9"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:22.8049682-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:22.8208204-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:22.8679409-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:22.8700853-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:22.8845734-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T20:05:22.8915284-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T20:05:22.8989009-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T20:05:22.9127695-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:22.9584665-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T20:05:22.9986939-07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T20:05:23.0086270-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T20:05:23.0147913-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T20:05:23.1144334-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T20:05:23.1212332-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T20:05:23.1488154-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:23.1858413-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:23.2956280-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T20:05:23.2973298-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T20:05:23.2988664-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T20:05:23.3001123-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T20:05:23.3014986-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T20:05:23.3025295-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T20:05:23.3036832-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T20:05:23.5290498-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T20:05:23.5573607-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T20:05:23.5598147-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T20:05:23.5613310-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T20:05:23.5622860-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T20:05:23.5668350-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T20:05:29.4415288-07:00 0HNG8EC2KM0MH:00000001 [INF] The request URI matched a server endpoint: Token. (956b2bc6)
+2025-10-10T20:05:29.4707511-07:00 0HNG8EC2KM0MH:00000001 [INF] The token request was successfully extracted: "{
+  \"username\": \"jdelemos\",
+  \"password\": \"[redacted]\",
+  \"client_id\": \"quickapp_spa\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (04f13da8)
+2025-10-10T20:05:29.5029431-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:29.5237486-07:00 0HNG8EC2KM0MH:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2025-10-10T20:05:29.5761882-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:29.7120796-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ClaimType\", a.\"ClaimValue\", a.\"UserId\"
+FROM \"AspNetUserClaims\" AS a
+WHERE a.\"UserId\" = @__user_Id_0" (0723d8ff)
+2025-10-10T20:05:29.7349593-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a0.\"Name\"
+FROM \"AspNetUserRoles\" AS a
+INNER JOIN \"AspNetRoles\" AS a0 ON a.\"RoleId\" = a0.\"Id\"
+WHERE a.\"UserId\" = @__userId_0" (0723d8ff)
+2025-10-10T20:05:29.7383024-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:05:29.7500154-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"ClaimType\", a.\"ClaimValue\"
+FROM \"AspNetRoleClaims\" AS a
+WHERE a.\"RoleId\" = @__role_Id_0" (0723d8ff)
+2025-10-10T20:05:29.9047504-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("9"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?', @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictAuthorizations\" (\"Id\", \"ApplicationId\", \"ConcurrencyToken\", \"CreationDate\", \"Properties\", \"Scopes\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2025-10-10T20:05:29.9241962-07:00 0HNG8EC2KM0MH:00000001 [INF] An ad hoc authorization was automatically created and associated with the '"quickapp_spa"' application: "1581dc90-3b6c-430f-b0b5-4875b07de2e5". (1ff6b081)
+2025-10-10T20:05:29.9883581-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T20:05:30.0730538-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T20:05:30.0894108-07:00 0HNG8EC2KM0MH:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T20:05:30.1042119-07:00 0HNG8EC2KM0MH:00000001 [INF] The response was successfully returned as a JSON document: "{
+  \"access_token\": \"[redacted]\",
+  \"token_type\": \"Bearer\",
+  \"expires_in\": 3599,
+  \"id_token\": \"[redacted]\",
+  \"refresh_token\": \"[redacted]\"
+}". (c5d7b905)
+2025-10-10T20:05:32.6154175-07:00 0HNG8EC2KM0MI:00000001 [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"ExternalId\", i.\"FirstName\", i.\"LastName\", i.\"Status\", i.\"BookingDate\", j.\"Name\" AS \"Jail\", CASE
+    WHEN c.\"Id\" IS NOT NULL THEN c.\"CellNumber\"
+    ELSE 'N/A'
+END AS \"Cell\", CASE
+    WHEN c.\"Id\" IS NOT NULL AND u.\"Id\" IS NOT NULL THEN u.\"Name\"
+    ELSE 'N/A'
+END AS \"Unit\"
+FROM \"Inmates\" AS i
+INNER JOIN \"Jails\" AS j ON i.\"JailId\" = j.\"Id\"
+LEFT JOIN \"Cells\" AS c ON i.\"CellId\" = c.\"Id\"
+LEFT JOIN \"Units\" AS u ON c.\"UnitId\" = u.\"Id\"
+ORDER BY i.\"BookingDate\" DESC" (0723d8ff)
+2025-10-10T20:09:23.2951858-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-10T20:09:23.3073035-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-10T20:09:23.3154877-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = False, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-10T20:14:18.4136609-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T20:14:18.6052983-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T20:14:19.8632277-07:00  [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T20:14:19.9105046-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T20:14:20.0738337-07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T20:14:20.0884645-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T20:14:20.0922627-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T20:14:20.0990277-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T20:14:20.4001209-07:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.4993501-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.5342653-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.5773800-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.5799614-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.5940627-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T20:14:20.6010740-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T20:14:20.6089277-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T20:14:20.6241722-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.6710429-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T20:14:20.7133273-07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T20:14:20.7222108-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T20:14:20.7288236-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T20:14:20.8290573-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T20:14:20.8371610-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T20:14:20.8615726-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.9038184-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:20.9973275-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T20:14:20.9986469-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T20:14:21.0001086-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T20:14:21.0014488-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T20:14:21.0034777-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T20:14:21.0050816-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T20:14:21.0064663-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T20:14:21.1998243-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T20:14:21.2009707-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T20:14:21.2029746-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T20:14:21.2043837-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T20:14:21.2055338-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T20:14:21.2092581-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T20:14:40.7023475-07:00 0HNG8EH2TTA3A:00000001 [INF] The request URI matched a server endpoint: Token. (956b2bc6)
+2025-10-10T20:14:40.7311454-07:00 0HNG8EH2TTA3A:00000001 [INF] The token request was successfully extracted: "{
+  \"username\": \"jdelemos\",
+  \"password\": \"[redacted]\",
+  \"client_id\": \"quickapp_spa\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (04f13da8)
+2025-10-10T20:14:40.7654677-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:40.7853076-07:00 0HNG8EH2TTA3A:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2025-10-10T20:14:40.8423287-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:40.9900788-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ClaimType\", a.\"ClaimValue\", a.\"UserId\"
+FROM \"AspNetUserClaims\" AS a
+WHERE a.\"UserId\" = @__user_Id_0" (0723d8ff)
+2025-10-10T20:14:41.0117720-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a0.\"Name\"
+FROM \"AspNetUserRoles\" AS a
+INNER JOIN \"AspNetRoles\" AS a0 ON a.\"RoleId\" = a0.\"Id\"
+WHERE a.\"UserId\" = @__userId_0" (0723d8ff)
+2025-10-10T20:14:41.0150211-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T20:14:41.0238809-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"ClaimType\", a.\"ClaimValue\"
+FROM \"AspNetRoleClaims\" AS a
+WHERE a.\"RoleId\" = @__role_Id_0" (0723d8ff)
+2025-10-10T20:14:41.1605849-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("9"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?', @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictAuthorizations\" (\"Id\", \"ApplicationId\", \"ConcurrencyToken\", \"CreationDate\", \"Properties\", \"Scopes\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2025-10-10T20:14:41.1774302-07:00 0HNG8EH2TTA3A:00000001 [INF] An ad hoc authorization was automatically created and associated with the '"quickapp_spa"' application: "bcdef7f6-6ee7-4db7-a0a5-abb7c7dd0452". (1ff6b081)
+2025-10-10T20:14:41.2394801-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T20:14:41.3080884-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T20:14:41.3238434-07:00 0HNG8EH2TTA3A:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T20:14:41.3347340-07:00 0HNG8EH2TTA3A:00000001 [INF] The response was successfully returned as a JSON document: "{
+  \"access_token\": \"[redacted]\",
+  \"token_type\": \"Bearer\",
+  \"expires_in\": 3600,
+  \"id_token\": \"[redacted]\",
+  \"refresh_token\": \"[redacted]\"
+}". (c5d7b905)
+2025-10-10T20:14:47.5548764-07:00 0HNG8EH2TTA3B:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"ExternalId\", i.\"FirstName\", i.\"LastName\", i.\"Status\", i.\"BookingDate\", j.\"Name\" AS \"Jail\", CASE
+    WHEN c.\"Id\" IS NOT NULL THEN c.\"CellNumber\"
+    ELSE 'N/A'
+END AS \"Cell\", CASE
+    WHEN c.\"Id\" IS NOT NULL AND u.\"Id\" IS NOT NULL THEN u.\"Name\"
+    ELSE 'N/A'
+END AS \"Unit\"
+FROM \"Inmates\" AS i
+INNER JOIN \"Jails\" AS j ON i.\"JailId\" = j.\"Id\"
+LEFT JOIN \"Cells\" AS c ON i.\"CellId\" = c.\"Id\"
+LEFT JOIN \"Units\" AS u ON c.\"UnitId\" = u.\"Id\"
+ORDER BY i.\"BookingDate\" DESC" (0723d8ff)
+2025-10-10T22:58:52.1155865-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T22:58:52.2701165-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T22:58:53.6588598-07:00  [INF] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T22:58:53.7142780-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T22:58:53.8854842-07:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T22:58:53.9028289-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T22:58:53.9060953-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T22:58:53.9137186-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T22:58:54.2392241-07:00  [INF] Executed DbCommand ("10"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.3012920-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.3178901-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.3725505-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.3751789-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.3925872-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T22:58:54.4036908-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T22:58:54.4124089-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T22:58:54.4281949-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.4787191-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T22:58:54.5185822-07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T22:58:54.5270449-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T22:58:54.5335326-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T22:58:54.6324519-07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T22:58:54.6404806-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T22:58:54.6717874-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.7174350-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:58:54.8389410-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T22:58:54.8405875-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T22:58:54.8430455-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T22:58:54.8451544-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T22:58:54.8475364-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T22:58:54.8491807-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T22:58:54.8507145-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T22:58:55.1170749-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T22:58:55.1526803-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T22:58:55.1550591-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T22:58:55.1564916-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T22:58:55.1579230-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T22:58:55.1630715-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T22:59:49.3236621-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T22:59:49.4539929-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T22:59:50.4850903-07:00  [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T22:59:50.5291225-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T22:59:50.7814153-07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T22:59:50.7957666-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T22:59:50.7999797-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T22:59:50.8072522-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T22:59:51.0887363-07:00  [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.1456719-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.1585921-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.2129167-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.2153703-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.2291531-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T22:59:51.2373777-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T22:59:51.2450168-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T22:59:51.2579469-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.3054325-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T22:59:51.3416643-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T22:59:51.3549102-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T22:59:51.3617795-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T22:59:51.4487215-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T22:59:51.4563769-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T22:59:51.4816591-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.5519967-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T22:59:51.6325727-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T22:59:51.6599495-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T22:59:51.6618319-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T22:59:51.6632177-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T22:59:51.6648030-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T22:59:51.6661626-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T22:59:51.6675230-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T22:59:51.9004941-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T22:59:51.9015230-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T22:59:51.9032841-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T22:59:51.9044993-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T22:59:51.9055103-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T22:59:51.9092915-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T23:00:48.8020782-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:00:48.9358479-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:00:49.9189410-07:00  [INF] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:00:49.9582696-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T23:00:50.1112934-07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T23:00:50.1247907-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T23:00:50.1294882-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:00:50.1364311-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T23:00:50.3780654-07:00  [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.4428612-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.4569476-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.5082507-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.5116027-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.5269533-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T23:00:50.5349190-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T23:00:50.5418928-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T23:00:50.5546598-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.5955281-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T23:00:50.6299219-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:00:50.6397263-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T23:00:50.6460067-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:00:50.7359492-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T23:00:50.7432804-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T23:00:50.7690029-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.8107801-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:00:50.8889414-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T23:00:50.8906642-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T23:00:50.8926642-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T23:00:50.8941270-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T23:00:50.8955981-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T23:00:50.8967869-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T23:00:50.8981957-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T23:00:51.1209815-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T23:00:51.1449912-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T23:00:51.1474253-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T23:00:51.1488994-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T23:00:51.1500150-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T23:00:51.1538285-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T23:02:50.1516996-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:02:50.2980380-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:02:51.2901519-07:00  [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:02:51.3322452-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T23:02:51.5981548-07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T23:02:51.6136120-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T23:02:51.6179665-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:02:51.6247420-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T23:02:51.9410488-07:00  [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:51.9968989-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:52.0102631-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:52.0580387-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:52.0609208-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:52.0759536-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T23:02:52.0834634-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T23:02:52.0912853-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T23:02:52.1060663-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:52.1508320-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T23:02:52.1854070-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:02:52.1936282-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T23:02:52.1992351-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:02:52.2844989-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T23:02:52.2923827-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T23:02:52.3175888-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:52.3577704-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:02:52.4468035-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T23:02:52.4481743-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T23:02:52.4495883-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T23:02:52.4507977-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T23:02:52.4521279-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T23:02:52.4533349-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T23:02:52.4545969-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T23:02:52.6745592-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T23:02:52.6763728-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T23:02:52.6784227-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T23:02:52.6796753-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T23:02:52.6807845-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T23:02:52.6843553-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T23:05:39.6710160-07:00 0HNG8HF8DUCG8:00000001 [INF] The request URI matched a server endpoint: Token. (956b2bc6)
+2025-10-10T23:05:39.6934463-07:00 0HNG8HF8DUCG8:00000001 [INF] The token request was successfully extracted: "{
+  \"username\": \"jdelemos\",
+  \"password\": \"[redacted]\",
+  \"client_id\": \"quickapp_spa\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (04f13da8)
+2025-10-10T23:05:39.7600414-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:05:39.7823635-07:00 0HNG8HF8DUCG8:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2025-10-10T23:05:39.8442654-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:05:39.9717250-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ClaimType\", a.\"ClaimValue\", a.\"UserId\"
+FROM \"AspNetUserClaims\" AS a
+WHERE a.\"UserId\" = @__user_Id_0" (0723d8ff)
+2025-10-10T23:05:39.9983396-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a0.\"Name\"
+FROM \"AspNetUserRoles\" AS a
+INNER JOIN \"AspNetRoles\" AS a0 ON a.\"RoleId\" = a0.\"Id\"
+WHERE a.\"UserId\" = @__userId_0" (0723d8ff)
+2025-10-10T23:05:40.0020353-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:05:40.0123831-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"ClaimType\", a.\"ClaimValue\"
+FROM \"AspNetRoleClaims\" AS a
+WHERE a.\"RoleId\" = @__role_Id_0" (0723d8ff)
+2025-10-10T23:05:40.1689462-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?', @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictAuthorizations\" (\"Id\", \"ApplicationId\", \"ConcurrencyToken\", \"CreationDate\", \"Properties\", \"Scopes\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2025-10-10T23:05:40.1877963-07:00 0HNG8HF8DUCG8:00000001 [INF] An ad hoc authorization was automatically created and associated with the '"quickapp_spa"' application: "d15d3fdd-5b75-4b99-9190-8af77a4ab703". (1ff6b081)
+2025-10-10T23:05:40.2560535-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:05:40.3358925-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:05:40.3505422-07:00 0HNG8HF8DUCG8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:05:40.3620243-07:00 0HNG8HF8DUCG8:00000001 [INF] The response was successfully returned as a JSON document: "{
+  \"access_token\": \"[redacted]\",
+  \"token_type\": \"Bearer\",
+  \"expires_in\": 3600,
+  \"id_token\": \"[redacted]\",
+  \"refresh_token\": \"[redacted]\"
+}". (c5d7b905)
+2025-10-10T23:05:42.8502064-07:00 0HNG8HF8DUCG9:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"ExternalId\", i.\"FirstName\", i.\"LastName\", i.\"Status\", i.\"BookingDate\", j.\"Name\" AS \"Jail\", CASE
+    WHEN c.\"Id\" IS NOT NULL THEN c.\"CellNumber\"
+    ELSE 'N/A'
+END AS \"Cell\", CASE
+    WHEN c.\"Id\" IS NOT NULL AND u.\"Id\" IS NOT NULL THEN u.\"Name\"
+    ELSE 'N/A'
+END AS \"Unit\"
+FROM \"Inmates\" AS i
+INNER JOIN \"Jails\" AS j ON i.\"JailId\" = j.\"Id\"
+LEFT JOIN \"Cells\" AS c ON i.\"CellId\" = c.\"Id\"
+LEFT JOIN \"Units\" AS u ON c.\"UnitId\" = u.\"Id\"
+ORDER BY i.\"BookingDate\" DESC" (0723d8ff)
+2025-10-10T23:06:52.4660911-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-10T23:06:52.4784380-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = True, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-10T23:06:52.4858698-07:00  [ERR] Job OpenIddict/Quartz.NET integration.OpenIddict job threw a JobExecutionException:  (f1c848c9)
+Parameters: refire = False, unscheduleFiringTrigger = False, unscheduleAllTriggers = False 
+ Quartz.JobExecutionException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+
+   --- End of inner exception stack trace ---
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   at Quartz.Core.JobRunShell.Run(CancellationToken cancellationToken) [See nested exception: System.AggregateException: One or more errors occurred. (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.) (Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.)
+ ---> System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreTokenStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.MissingMethodException: Method not found: 'System.Threading.Tasks.Task`1<Int32> Microsoft.EntityFrameworkCore.RelationalQueryableExtensions.ExecuteDeleteAsync(System.Linq.IQueryable`1<!!0>, System.Threading.CancellationToken)'.
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at OpenIddict.EntityFrameworkCore.OpenIddictEntityFrameworkCoreAuthorizationStore`5.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Core.OpenIddictAuthorizationManager`1.OpenIddict.Abstractions.IOpenIddictAuthorizationManager.PruneAsync(DateTimeOffset threshold, CancellationToken cancellationToken)
+   at OpenIddict.Quartz.OpenIddictQuartzJob.Execute(IJobExecutionContext context)<---
+]
+2025-10-10T23:11:06.6454957-07:00 0HNG8HF8DUCGA:00000001 [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"ExternalId\", i.\"FirstName\", i.\"LastName\", i.\"Status\", i.\"BookingDate\", j.\"Name\" AS \"Jail\", CASE
+    WHEN c.\"Id\" IS NOT NULL THEN c.\"CellNumber\"
+    ELSE 'N/A'
+END AS \"Cell\", CASE
+    WHEN c.\"Id\" IS NOT NULL AND u.\"Id\" IS NOT NULL THEN u.\"Name\"
+    ELSE 'N/A'
+END AS \"Unit\"
+FROM \"Inmates\" AS i
+INNER JOIN \"Jails\" AS j ON i.\"JailId\" = j.\"Id\"
+LEFT JOIN \"Cells\" AS c ON i.\"CellId\" = c.\"Id\"
+LEFT JOIN \"Units\" AS u ON c.\"UnitId\" = u.\"Id\"
+ORDER BY i.\"BookingDate\" DESC" (0723d8ff)
+2025-10-10T23:34:39.5033795-07:00 0HNG8HF8DUCGB:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"ExternalId\", i.\"FirstName\", i.\"LastName\", i.\"Status\", i.\"BookingDate\", j.\"Name\" AS \"Jail\", CASE
+    WHEN c.\"Id\" IS NOT NULL THEN c.\"CellNumber\"
+    ELSE 'N/A'
+END AS \"Cell\", CASE
+    WHEN c.\"Id\" IS NOT NULL AND u.\"Id\" IS NOT NULL THEN u.\"Name\"
+    ELSE 'N/A'
+END AS \"Unit\"
+FROM \"Inmates\" AS i
+INNER JOIN \"Jails\" AS j ON i.\"JailId\" = j.\"Id\"
+LEFT JOIN \"Cells\" AS c ON i.\"CellId\" = c.\"Id\"
+LEFT JOIN \"Units\" AS u ON c.\"UnitId\" = u.\"Id\"
+ORDER BY i.\"BookingDate\" DESC" (0723d8ff)
+2025-10-10T23:37:45.4718426-07:00 0HNG8HF8DUCGC:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"ExternalId\", i.\"FirstName\", i.\"LastName\", i.\"Status\", i.\"BookingDate\", j.\"Name\" AS \"Jail\", CASE
+    WHEN c.\"Id\" IS NOT NULL THEN c.\"CellNumber\"
+    ELSE 'N/A'
+END AS \"Cell\", CASE
+    WHEN c.\"Id\" IS NOT NULL AND u.\"Id\" IS NOT NULL THEN u.\"Name\"
+    ELSE 'N/A'
+END AS \"Unit\"
+FROM \"Inmates\" AS i
+INNER JOIN \"Jails\" AS j ON i.\"JailId\" = j.\"Id\"
+LEFT JOIN \"Cells\" AS c ON i.\"CellId\" = c.\"Id\"
+LEFT JOIN \"Units\" AS u ON c.\"UnitId\" = u.\"Id\"
+ORDER BY i.\"BookingDate\" DESC" (0723d8ff)
+2025-10-10T23:41:46.4670910-07:00 0HNG8HF8DUCGD:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"ExternalId\", i.\"FirstName\", i.\"LastName\", i.\"Status\", i.\"BookingDate\", j.\"Name\" AS \"Jail\", CASE
+    WHEN c.\"Id\" IS NOT NULL THEN c.\"CellNumber\"
+    ELSE 'N/A'
+END AS \"Cell\", CASE
+    WHEN c.\"Id\" IS NOT NULL AND u.\"Id\" IS NOT NULL THEN u.\"Name\"
+    ELSE 'N/A'
+END AS \"Unit\"
+FROM \"Inmates\" AS i
+INNER JOIN \"Jails\" AS j ON i.\"JailId\" = j.\"Id\"
+LEFT JOIN \"Cells\" AS c ON i.\"CellId\" = c.\"Id\"
+LEFT JOIN \"Units\" AS u ON c.\"UnitId\" = u.\"Id\"
+ORDER BY i.\"BookingDate\" DESC" (0723d8ff)
+2025-10-10T23:44:35.8510809-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:44:36.0340206-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:44:37.1093343-07:00  [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:44:37.1471763-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T23:44:37.2924864-07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T23:44:37.3081022-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T23:44:37.3130225-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:44:37.3199469-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T23:44:37.5626545-07:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:37.6084426-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:37.6221389-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:37.6662976-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:37.6689597-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:37.6832616-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T23:44:37.7175979-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T23:44:37.7489558-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T23:44:37.7617967-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:37.8033123-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T23:44:37.8391002-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:44:37.8494686-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T23:44:37.8555553-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:44:37.9396716-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T23:44:37.9466573-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T23:44:37.9726505-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:38.0098695-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:38.0932891-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T23:44:38.0948103-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T23:44:38.0964469-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T23:44:38.0979247-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T23:44:38.0992382-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T23:44:38.1003003-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T23:44:38.1015328-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T23:44:38.2986442-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T23:44:38.2997463-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T23:44:38.3012990-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T23:44:38.3024930-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T23:44:38.3035254-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T23:44:38.3071463-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T23:44:42.0625064-07:00 0HNG8I6J2O65U:00000001 [INF] The request URI matched a server endpoint: Token. (956b2bc6)
+2025-10-10T23:44:42.0892338-07:00 0HNG8I6J2O65U:00000001 [INF] The token request was successfully extracted: "{
+  \"username\": \"jdelemos\",
+  \"password\": \"[redacted]\",
+  \"client_id\": \"quickapp_spa\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (04f13da8)
+2025-10-10T23:44:42.1173858-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:42.1386529-07:00 0HNG8I6J2O65U:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2025-10-10T23:44:42.1867071-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:42.3194819-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ClaimType\", a.\"ClaimValue\", a.\"UserId\"
+FROM \"AspNetUserClaims\" AS a
+WHERE a.\"UserId\" = @__user_Id_0" (0723d8ff)
+2025-10-10T23:44:42.3425055-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a0.\"Name\"
+FROM \"AspNetUserRoles\" AS a
+INNER JOIN \"AspNetRoles\" AS a0 ON a.\"RoleId\" = a0.\"Id\"
+WHERE a.\"UserId\" = @__userId_0" (0723d8ff)
+2025-10-10T23:44:42.3470030-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:44:42.3565701-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"ClaimType\", a.\"ClaimValue\"
+FROM \"AspNetRoleClaims\" AS a
+WHERE a.\"RoleId\" = @__role_Id_0" (0723d8ff)
+2025-10-10T23:44:42.4984315-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?', @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictAuthorizations\" (\"Id\", \"ApplicationId\", \"ConcurrencyToken\", \"CreationDate\", \"Properties\", \"Scopes\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2025-10-10T23:44:42.5154659-07:00 0HNG8I6J2O65U:00000001 [INF] An ad hoc authorization was automatically created and associated with the '"quickapp_spa"' application: "91ac8025-6383-4b2f-b741-3dc85189ffeb". (1ff6b081)
+2025-10-10T23:44:42.6042821-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:44:42.6754790-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:44:42.6895283-07:00 0HNG8I6J2O65U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:44:42.7009015-07:00 0HNG8I6J2O65U:00000001 [INF] The response was successfully returned as a JSON document: "{
+  \"access_token\": \"[redacted]\",
+  \"token_type\": \"Bearer\",
+  \"expires_in\": 3599,
+  \"id_token\": \"[redacted]\",
+  \"refresh_token\": \"[redacted]\"
+}". (c5d7b905)
+2025-10-10T23:55:49.4270483-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:55:49.5560851-07:00  [WRN] The WebRootPath was not found: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server\wwwroot". Static files may be unavailable. (3ae2c740)
+2025-10-10T23:55:50.5317766-07:00  [INF] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:55:50.5789457-07:00  [INF] No migrations were found in assembly '"Quick_Application2.Core"'. A migration needs to be added before the database can be updated. (83a5efa3)
+2025-10-10T23:55:50.7191674-07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE IF NOT EXISTS \"__EFMigrationsHistory\" (
+    \"MigrationId\" character varying(150) NOT NULL,
+    \"ProductVersion\" character varying(32) NOT NULL,
+    CONSTRAINT \"PK___EFMigrationsHistory\" PRIMARY KEY (\"MigrationId\")
+);" (0723d8ff)
+2025-10-10T23:55:50.7337659-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""LOCK TABLE \"__EFMigrationsHistory\" IN ACCESS EXCLUSIVE MODE" (0723d8ff)
+2025-10-10T23:55:50.7377642-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"MigrationId\", \"ProductVersion\"
+FROM \"__EFMigrationsHistory\"
+ORDER BY \"MigrationId\";" (0723d8ff)
+2025-10-10T23:55:50.7449099-07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2025-10-10T23:55:50.9931697-07:00  [INF] Executed DbCommand ("9"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.0415832-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.0548741-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.1105444-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.1141661-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.1349140-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Customers\" AS c)" (0723d8ff)
+2025-10-10T23:55:51.1429975-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Jails\" AS j)" (0723d8ff)
+2025-10-10T23:55:51.1510311-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Cells\" AS c)" (0723d8ff)
+2025-10-10T23:55:51.1641256-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT j.\"Id\", j.\"Capacity\", j.\"City\", j.\"Description\", j.\"FeaturesCsv\", j.\"Name\", j.\"OpenedYear\", j.\"Security\", j.\"State\", j.\"Status\", j.\"Type\", j.\"Zip\"
+FROM \"Jails\" AS j
+WHERE j.\"Name\" = 'Sacramento County Main Jail'
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.2065272-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__sacJail_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT c.\"Id\", c.\"CellNumber\", c.\"IsOccupied\", c.\"JailId\", c.\"UnitId\"
+FROM \"Cells\" AS c
+WHERE c.\"JailId\" = @__sacJail_Id_0" (0723d8ff)
+2025-10-10T23:55:51.2370696-07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"ExternalId\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:55:51.2455441-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i
+WHERE i.\"CellId\" IS NULL" (0723d8ff)
+2025-10-10T23:55:51.2514619-07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT i.\"Id\", i.\"BookingDate\", i.\"CellId\", i.\"DateOfBirth\", i.\"ExternalId\", i.\"FirstName\", i.\"JailId\", i.\"LastName\", i.\"Notes\", i.\"Status\"
+FROM \"Inmates\" AS i" (0723d8ff)
+2025-10-10T23:55:51.3395165-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Transfers\" AS t)" (0723d8ff)
+2025-10-10T23:55:51.3472793-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM \"Bookings\" AS b)" (0723d8ff)
+2025-10-10T23:55:51.3751436-07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.4186916-07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:51.5009330-07:00  [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl (d6ab0d5f)
+2025-10-10T23:55:51.5360664-07:00  [INF] Quartz Scheduler created (389d80b0)
+2025-10-10T23:55:51.5386970-07:00  [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory (17471663)
+2025-10-10T23:55:51.5404600-07:00  [INF] RAMJobStore initialized. (8c5a21db)
+2025-10-10T23:55:51.5422603-07:00  [INF] Quartz Scheduler 3.13.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized (70e8852b)
+2025-10-10T23:55:51.5435418-07:00  [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10 (7942d54d)
+2025-10-10T23:55:51.5448070-07:00  [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False (46d3fae1)
+2025-10-10T23:55:51.7921782-07:00  [INF] Now listening on: "https://localhost:7085" (d826f4b8)
+2025-10-10T23:55:51.8154623-07:00  [INF] Now listening on: "http://localhost:5225" (d826f4b8)
+2025-10-10T23:55:51.8174109-07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2025-10-10T23:55:51.8189846-07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2025-10-10T23:55:51.8205110-07:00  [INF] Content root path: "C:\Users\jonmi\source\repos\Quick Application2\Quick Application2\Quick_Application2.Server" (cc26f24e)
+2025-10-10T23:55:51.8245839-07:00  [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started. (51b2cfb9)
+2025-10-10T23:55:54.9029994-07:00 0HNG8ICROU2V9:00000001 [INF] The request URI matched a server endpoint: Token. (956b2bc6)
+2025-10-10T23:55:54.9295720-07:00 0HNG8ICROU2V9:00000001 [INF] The token request was successfully extracted: "{
+  \"username\": \"jdelemos\",
+  \"password\": \"[redacted]\",
+  \"client_id\": \"quickapp_spa\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (04f13da8)
+2025-10-10T23:55:54.9584931-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__identifier_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT o.\"Id\", o.\"ApplicationType\", o.\"ClientId\", o.\"ClientSecret\", o.\"ClientType\", o.\"ConcurrencyToken\", o.\"ConsentType\", o.\"DisplayName\", o.\"DisplayNames\", o.\"JsonWebKeySet\", o.\"Permissions\", o.\"PostLogoutRedirectUris\", o.\"Properties\", o.\"RedirectUris\", o.\"Requirements\", o.\"Settings\"
+FROM \"OpenIddictApplications\" AS o
+WHERE o.\"ClientId\" = @__identifier_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:54.9767388-07:00 0HNG8ICROU2V9:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2025-10-10T23:55:55.0234404-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"AccessFailedCount\", a.\"ConcurrencyStamp\", a.\"Configuration\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Email\", a.\"EmailConfirmed\", a.\"FullName\", a.\"IsEnabled\", a.\"JobTitle\", a.\"LockoutEnabled\", a.\"LockoutEnd\", a.\"NormalizedEmail\", a.\"NormalizedUserName\", a.\"PasswordHash\", a.\"PhoneNumber\", a.\"PhoneNumberConfirmed\", a.\"SecurityStamp\", a.\"TwoFactorEnabled\", a.\"UpdatedBy\", a.\"UpdatedDate\", a.\"UserName\"
+FROM \"AspNetUsers\" AS a
+WHERE a.\"NormalizedUserName\" = @__normalizedUserName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:55.1773132-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ClaimType\", a.\"ClaimValue\", a.\"UserId\"
+FROM \"AspNetUserClaims\" AS a
+WHERE a.\"UserId\" = @__user_Id_0" (0723d8ff)
+2025-10-10T23:55:55.2044517-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a0.\"Name\"
+FROM \"AspNetUserRoles\" AS a
+INNER JOIN \"AspNetRoles\" AS a0 ON a.\"RoleId\" = a0.\"Id\"
+WHERE a.\"UserId\" = @__userId_0" (0723d8ff)
+2025-10-10T23:55:55.2100355-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"Id\", a.\"ConcurrencyStamp\", a.\"CreatedBy\", a.\"CreatedDate\", a.\"Description\", a.\"Name\", a.\"NormalizedName\", a.\"UpdatedBy\", a.\"UpdatedDate\"
+FROM \"AspNetRoles\" AS a
+WHERE a.\"NormalizedName\" = @__normalizedName_0
+LIMIT 1" (0723d8ff)
+2025-10-10T23:55:55.2216055-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT a.\"ClaimType\", a.\"ClaimValue\"
+FROM \"AspNetRoleClaims\" AS a
+WHERE a.\"RoleId\" = @__role_Id_0" (0723d8ff)
+2025-10-10T23:55:55.3915657-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?', @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictAuthorizations\" (\"Id\", \"ApplicationId\", \"ConcurrencyToken\", \"CreationDate\", \"Properties\", \"Scopes\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2025-10-10T23:55:55.4140444-07:00 0HNG8ICROU2V9:00000001 [INF] An ad hoc authorization was automatically created and associated with the '"quickapp_spa"' application: "18198ced-7910-49a2-bcff-3d7038ebe99d". (1ff6b081)
+2025-10-10T23:55:55.5011854-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:55:55.5717044-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:55:55.5869830-07:00 0HNG8ICROU2V9:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"OpenIddictTokens\" (\"Id\", \"ApplicationId\", \"AuthorizationId\", \"ConcurrencyToken\", \"CreationDate\", \"ExpirationDate\", \"Payload\", \"Properties\", \"RedemptionDate\", \"ReferenceId\", \"Status\", \"Subject\", \"Type\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);" (0723d8ff)
+2025-10-10T23:55:55.5988428-07:00 0HNG8ICROU2V9:00000001 [INF] The response was successfully returned as a JSON document: "{
+  \"access_token\": \"[redacted]\",
+  \"token_type\": \"Bearer\",
+  \"expires_in\": 3599,
+  \"id_token\": \"[redacted]\",
+  \"refresh_token\": \"[redacted]\"
+}". (c5d7b905)

@@ -1,109 +1,240 @@
-.modal {
-  display: none;
+/* Global top + left nav visuals (scoped to AppComponent) */
+
+/* color palette inspired by screenshot */
+$brand-dark: #153d47;
+$brand-mid: #214c56;
+$brand-light: #f4f7f9;
+$accent: #1770a1;
+$muted: #8a9aa3;
+$sidebar-width: 78px; /* narrow icon bar like screenshot */
+$topbar-height: 64px;
+
+//:host {
+//  display: block;
+//  min-height: 100vh;
+//  background: $brand-light;
+//}
+
+///* prevent inherited text color and font from leaking */
+//:host > * {
+//  color: inherit;
+//  font-family: inherit;
+//}
+
+
+/* Topbar */
+.topbar {
   position: fixed;
-  z-index: 1000;
-  left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-}
+  left: 0;
+  right: 0;
+  height: $topbar-height;
+  background: $brand-dark;
+  color: #ffffff;
+  z-index: 50;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 
-.modal-content {
-  background: #fff;
-  margin: 10% auto;
-  padding: 25px;
-  border-radius: 10px;
-  max-width: 400px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+  .topbar-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 18px;
+  }
 
-.close-btn {
-  float: right;
-  font-size: 22px;
-  cursor: pointer;
-}
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-.transfer-message {
-  margin-top: 10px;
-  font-size: 14px;
-}
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: $brand-dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
 
-.action-btn.transfer-btn {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 8px;
-  border-radius: 5px;
-}
+    .app-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #e6f2f6;
+    }
+  }
 
-.action-btn.transfer-btn:hover {
-  background: #0056b3;
-}
+  .topbar-center {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
 
+    .global-search {
+      width: 60%;
+      max-width: 640px;
+      height: 36px;
+      border-radius: 18px;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      outline: none;
+      background: rgba(255,255,255,0.95);
+      color: #222;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+  }
 
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
+    .icon-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      position: relative;
+      padding: 6px;
+    }
 
-$footerHeight: 40px;
+    .notifications {
+      position: relative;
 
-.app-container {
-  height: 100%;
-}
+      .badge {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        min-width: 18px;
+        height: 18px;
+        border-radius: 10px;
+        background: #ff4d4f;
+        color: #fff;
+        font-size: 11px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px;
+      }
+    }
 
-main {
-  height: calc(100% - #{$footerHeight});
-  padding-top: 60px;
-}
+    .user-info {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: #d9eef4;
 
-.footer-height {
-  height: $footerHeight;
-}
+      .user-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: $brand-mid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+      }
 
-footer {
-  width: 100%;
-  height: $footerHeight;
-  line-height: $footerHeight;
-  background-color: #f5f5f5;
-}
-
-.navbar-brand > img {
-  height: 30px;
-}
-
-.navbar .nav-pills a:focus,
-.navbar .nav-pills a:hover {
-  color: #575757;
-}
-
-.navbar .nav-pills > .active > a,
-.navbar .nav-pills > .active > a:hover,
-.navbar .nav-pills > .active > a:focus {
-  background-color: #efefef;
-  color: #808080;
-}
-
-.navbar .nav-link,
-.navbar .navbar-text {
-  color: white;
-}
-
-
-.navbar .nav-pills > li > a {
-  font-weight: bold;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-}
-
-
-@media screen and (max-width: 991px) {
-  .navbar .nav-pills > li + li {
-    margin-left: 0;
-    margin-top: 1px;
+      .user-name {
+        font-size: 13px;
+        opacity: 0.95;
+      }
+    }
   }
 }
 
-@media screen and (min-width: 992px) {
-  .navbar .nav-pills > li + li {
-    margin-left: 2px;
+/* Left sidebar */
+.left-sidebar {
+  position: fixed;
+  top: $topbar-height;
+  left: 0;
+  bottom: 0;
+  width: $sidebar-width;
+  background: $brand-mid;
+  color: #fff;
+  padding: 12px 8px;
+  box-shadow: 1px 0 0 rgba(0,0,0,0.06);
+  z-index: 40;
+}
+
+.left-sidebar .left-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.primary-nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .nav-item {
+      margin: 8px 0;
+
+      .nav-btn {
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: left;
+        font-size: 12px;
+        justify-content: flex-start;
+      }
+
+      .nav-btn:hover {
+        background: rgba(255,255,255,0.04);
+      }
+
+      .nav-icon {
+        width: 40px;
+        min-width: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .nav-label {
+        display: none; /* keep narrow icon-only left bar like screenshot */
+        white-space: nowrap;
+      }
+    }
   }
+}
+
+/* Main content area space */
+.app-content {
+  margin-top: $topbar-height;
+  margin-left: $sidebar-width;
+  padding: 28px;
+  min-height: calc(100vh - $topbar-height);
+  background: $brand-light;
+}
+
+/* Small responsive tweaks */
+@media (min-width: 1100px) {
+  .left-sidebar .primary-nav .nav-item .nav-label {
+    display: none; /* still icon-first */
+  }
+}
+
+/* Accessibility focus ring */
+button:focus, .nav-btn:focus, .icon-btn:focus, .global-search:focus {
+  outline: 3px solid rgba(23,112,161,0.18);
+  outline-offset: 2px;
 }

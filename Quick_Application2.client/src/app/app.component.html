@@ -1,141 +1,92 @@
-<div class="app-component app-container">
-  <ngx-toasta></ngx-toasta>
+@if (isUserLoggedIn) {
 
-  <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-    <div class="container-xl px-md-3 px-xxl-4">
-      <a ngPreserveWhitespaces class="navbar-brand" routerLink="/" (click)="isMenuCollapsed = true">
-        <img src="images/scales_edit.png" class="d-inline-block align-top" alt="logo">
-        <span class="d-lg-none d-xl-inline">{{appTitle}}</span>
-      </a>
-      <button type="button" class="navbar-toggler" (click)="isMenuCollapsed = !isMenuCollapsed">
-        <span class="navbar-toggler-icon"></span>
+
+<!-- Top navigation (global) -->
+<header class="topbar" role="banner" aria-label="Application top bar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="logo">JMS</div>
+      <div class="app-title">{{ appTitle }}</div>
+    </div>
+
+    <div class="topbar-center">
+      <input type="search"
+             class="global-search"
+             placeholder="Search inmates, staff, or records..."
+             aria-label="Search" />
+    </div>
+
+    <div class="topbar-actions" aria-hidden="false">
+      <button class="icon-btn notifications" title="Notifications" [attr.aria-label]="'Notifications'">
+        <span class="badge" *ngIf="newNotificationCount > 0">{{ newNotificationCount }}</span>
+        🔔
       </button>
 
-      @if (isUserLoggedIn) {
-      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-        <ul class="nav nav-pills flex-column flex-lg-row flex-fill">
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link" routerLink="" (click)="isMenuCollapsed = true">
-              <i class="fa fa-home"></i>
-            </a>
-          </li>
-          @if (canViewCustomers) {
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/customers" (click)="isMenuCollapsed = true">
-              {{'Tasks' | translate}}
-            </a>
-          </li>
-          }
-          @if (canViewProducts) {
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/products" (click)="isMenuCollapsed = true">
-              {{'Jails' | translate}}
-            </a>
-          </li>
-          }
-          @if (canViewOrders) {
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/orders" (click)="isMenuCollapsed = true">
-              {{'Transfers' | translate}}
-            </a>
-          </li>
-          }
-          @if (canViewStaff) {
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/staff" (click)="isMenuCollapsed = true">
-              {{'Staff' | translate}}
-            </a>
-          </li>
-          }
-          @if (canViewInmates) {
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/inmates" (click)="isMenuCollapsed = true">
-              {{'Inmates' | translate}}
-            </a>
-          </li>
-          }
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/about" (click)="isMenuCollapsed = true">
-              {{'' | translate}}
-            </a>
-          </li>
-          <li class="nav-item ms-lg-auto me-lg-2" routerLinkActive="active">
-            <a class="nav-link" routerLink="/settings" (click)="isMenuCollapsed = true">
-              <i class="fa fa-cog"></i>
-            </a>
-          </li>
-        </ul>
-        <span class="navbar-text notifications-popup d-lg-none d-xl-inline-block">{{'app.Welcome' | translate}}</span>
-        <a class="nav-link user-name d-inline-block px-1" [ngbPopover]="popTemplate"
-           (hidden)="markNotificationsAsRead()" placement="bottom" [popoverTitle]="notificationsTitle"
-           href="javascript:;" triggers="focus" popoverClass="notifications-popup">
-          {{userName}}
-          @if (newNotificationCount > 0) {
-          <span class="badge bg-secondary">{{newNotificationCount}}</span>
-          }
-        </a>
-        <ng-template #popTemplate>
-          <app-notifications-viewer [isViewOnly]="true"></app-notifications-viewer>
-        </ng-template>
-        @if (newNotificationCount > 0) {
-        <span class="navbar-text d-none d-lg-inline">, </span>
-        }
-        <ul class="nav nav-pills flex-column flex-lg-row ms-lg-1">
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:;" (click)="logout(); isMenuCollapsed = true">
-              <i class="fa fa-sign-out"></i> {{'mainMenu.Logout' | translate}}
-            </a>
-          </li>
-        </ul>
+      <div class="user-info" title="User">
+        <div class="user-avatar" aria-hidden="true">OJ</div>
+        <div class="user-name">{{ fullName || userName || 'Officer' }}</div>
       </div>
-      }
-      @else {
-      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-        <ul class="nav nav-pills flex-column flex-lg-row ms-auto">
-          <li class="nav-item" routerLinkActive="active">
-            @if (router.isActive('/about', false)) {
-            <a class="nav-link" routerLink="/login" (click)="isMenuCollapsed = true">
-              <i class="fa fa-sign-in"></i>
-            </a>
-            } @else {
-            <a class="nav-link" routerLink="/about" (click)="isMenuCollapsed = true">
-              <i class="fa fa-info-circle"></i>
-            </a>
-            }
-          </li>
-        </ul>
-      </div>
-      }
-    </div>
-  </nav>
-
-  @if (!isAppLoaded) {
-  <div id="pre-bootstrap" class="prebootStep prebootShow">
-    <div class="messaging">
-      <h1>
-        Loaded!
-      </h1>
-      <p>
-        Riley Consulting LLC - <span style="font-style:italic">Mock</span>App &copy;
-        <a class="text-link" href="https://www.ebenmonney.com">Jail Management System</a>
-      </p>
+      <button class="icon-btn logout-btn"
+              title="Logout"
+              (click)="logout()"
+              aria-label="Logout">
+        ⎋
+      </button>
     </div>
   </div>
-  }
+</header>
 
-  <main class="container-xl px-3 px-md-4 px-xxl-5">
-    <router-outlet></router-outlet>
-    <div class="footer-height"></div>
-  </main>
+<!-- Left navigation (global) -->
+<aside class="left-sidebar" role="navigation" aria-label="Primary navigation">
+  <div class="left-inner">
+    <nav class="primary-nav">
+      <ul>
+        <li class="nav-item">
+          <button class="nav-btn" title="Dashboard" (click)="$event.preventDefault(); router.navigate(['/'])">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Dashboard</span>
+          </button>
+        </li>
 
-  <footer class="footer fixed-bottom">
-    <div class="container">
-      <p class="text-center text-muted">
-        <span style="font-style:italic">Jail</span>App &copy; {{getYear()}}
-        <a class="text-link" href="Riley Consulting" target="_blank">Mock App</a>
-        <!--<span class="small display-none">- Powered by <a href="https://www.ebenmonney.com/quickapp"
-        target="_blank"><span style="font-style:italic">quick</span>App</a></span>-->
-      </p>
-    </div>
-  </footer>
-</div>
+        <li class="nav-item">
+          <button class="nav-btn" title="Inmates" (click)="goToInmates()">
+            <span class="nav-icon">🧾</span>
+            <span class="nav-label">Inmates</span>
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-btn" title="Staff" (click)="$event.preventDefault(); router.navigate(['/staff'])">
+            <span class="nav-icon">👮</span>
+            <span class="nav-label">Staff</span>
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-btn" title="Cell Management" (click)="$event.preventDefault(); router.navigate(['/cells'])">
+            <span class="nav-icon">🧱</span>
+            <span class="nav-label">Cell Mgmt</span>
+          </button>
+        </li>
+
+        <!-- Add more items here as needed (these are simple buttons, not external components) -->
+      </ul>
+    </nav>
+  </div>
+</aside>
+
+<!-- App content placeholder - only top/left nav built here -->
+<main class="app-content" role="main" aria-live="polite">
+  <!-- Router outlet is present but the global styles file intentionally only includes top/left nav -->
+  <router-outlet></router-outlet>
+</main>
+
+
+}
+
+@else {
+<main class="app-content guest" role="main" aria-live="polite">
+  <router-outlet></router-outlet>
+</main>
+
+}

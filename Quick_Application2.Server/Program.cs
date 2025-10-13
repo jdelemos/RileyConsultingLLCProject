@@ -27,6 +27,7 @@ using static OpenIddict.Abstractions.OpenIddictConstants;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 var builder = WebApplication.CreateBuilder(args);
 
 /************* ADD SERVICES *************/

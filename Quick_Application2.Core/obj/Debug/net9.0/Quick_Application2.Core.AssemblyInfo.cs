@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2024 www.ebenmonney.com")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Data Access Layer for the Quick Application template")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("9.19.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("9.19.0+8a8032b16b4764f5cead65b31fb55385fd21cd3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("9.19.0+9d45945a2ea0fd726f5d676b80def618c4aa976e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Quick_Application2.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Quick_Application2.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("9.19.0.0")]
