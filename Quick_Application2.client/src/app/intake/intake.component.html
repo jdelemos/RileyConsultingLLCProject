@@ -1,0 +1,286 @@
+<div class="page-container">
+  <!-- Header Card -->
+  <div class="header-card">
+    <div class="header-left">
+      <h1 class="page-title">Personal Identification Information</h1>
+      <div class="header-meta">
+        <span class="meta-item">
+          <span class="material-symbols-outlined">check_circle</span>
+          0 of 8 sections completed
+        </span>
+        <span class="meta-item">
+          <span class="material-symbols-outlined">schedule</span>
+          Started: 5:44
+        </span>
+        <span class="meta-item">
+          <span class="material-symbols-outlined">schedule</span>
+          Last Saved
+        </span>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="intake-progress">
+        <label>Intake Progress</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 12.5%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inmate Photo Card -->
+    <div class="inmate-card">
+      <img src="https://via.placeholder.com/80" alt="Inmate photo" class="inmate-photo">
+      <div class="inmate-info">
+        <div class="inmate-name">Vezey, Colton</div>
+        <div class="inmate-id">ID: #RIM-3024-0881</div>
+        <div class="inmate-dob">DOB: 03/15/1987</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs">
+    <button class="nav-tab active">
+      <span class="material-symbols-outlined">person</span>
+      Personal ID
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">fingerprint</span>
+      Legal Info
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">medical_services</span>
+      Medical
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">security</span>
+      Security
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">dashboard</span>
+      Background
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">inventory_2</span>
+      Property
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">gavel</span>
+      Orientation
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">more_horiz</span>
+      Misc.
+    </button>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="content-grid">
+    <!-- Left Column: Forms -->
+    <div class="form-column">
+      <!-- Basic Information Section -->
+      <div class="form-section">
+        <h2 class="section-title">
+          <span class="material-symbols-outlined">badge</span>
+          Basic Information
+        </h2>
+
+        <div class="form-group">
+          <label>Full Legal Name *</label>
+          <input type="text" placeholder="Last, First, Middle" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label>Aliases/Nicknames</label>
+          <input type="text" placeholder="Known aliases or nicknames" class="form-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date of Birth *</label>
+            <input type="text" placeholder="mm/dd/yyyy" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Gender *</label>
+            <select class="form-input">
+              <option>Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Race/Ethnicity *</label>
+            <select class="form-input">
+              <option>Select Race/Ethnicity</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" placeholder="123 Apple St, Townsville, CA 12345" class="form-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nationality</label>
+            <input type="text" placeholder="Citizenship" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Marital Status</label>
+            <input type="text" placeholder="Single, Married, etc." class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Languages Spoken</label>
+          <input type="text" placeholder="English, Spanish, etc." class="form-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Social Security Number</label>
+            <input type="text" placeholder="XXX-XX-XXXX" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Government ID</label>
+            <input type="text" placeholder="Driver's License or State ID" class="form-input">
+          </div>
+        </div>
+      </div>
+
+      <!-- Physical Description Section -->
+      <div class="form-section">
+        <h2 class="section-title">
+          <span class="material-symbols-outlined">straighten</span>
+          Physical Description
+        </h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Height *</label>
+            <input type="text" placeholder="5'10&quot;" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Weight *</label>
+            <input type="text" placeholder="lbs" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Hair Color *</label>
+            <input type="text" placeholder="Black, Blonde" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Eye Color *</label>
+            <input type="text" placeholder="Brown, Green" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Scars, Tattoos, Marks</label>
+          <textarea placeholder="Describe visible identifying marks, scars, tattoos, etc." class="form-input" rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Contact & Emergency Information Section -->
+      <div class="form-section">
+        <h2 class="section-title">
+          <span class="material-symbols-outlined">contact_emergency</span>
+          Contact & Emergency Information
+        </h2>
+
+        <div class="form-group">
+          <label>Full Legal Name *</label>
+          <input type="text" placeholder="Last, First, Middle" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" placeholder="123 Apple St, Townsville, CA 12345" class="form-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone #</label>
+            <input type="text" placeholder="555-123-4567" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Relationship*</label>
+            <input type="text" placeholder="Mother, Brother, etc." class="form-input">
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Page Button -->
+      <div class="form-actions">
+        <button class="btn-next" (click)="nextPage()">
+          Next Page
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column: Photos & Biometrics -->
+    <div class="sidebar-column">
+      <!-- Photographs Section -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <span class="material-symbols-outlined">photo_camera</span>
+          Photographs
+        </h3>
+
+        <div class="photo-capture">
+          <div class="photo-placeholder">
+            <span class="material-symbols-outlined">account_circle</span>
+            <div class="photo-label">Front Mugshot</div>
+            <div class="photo-sublabel">Required - Not captured</div>
+          </div>
+          <button class="btn-capture" (click)="capturePhoto('front')">
+            <span class="material-symbols-outlined">photo_camera</span>
+            Capture Photo
+          </button>
+        </div>
+
+        <div class="photo-capture">
+          <div class="photo-placeholder">
+            <span class="material-symbols-outlined">account_circle</span>
+            <div class="photo-label">Profile Mugshot</div>
+            <div class="photo-sublabel">Required - Not captured</div>
+          </div>
+          <button class="btn-capture" (click)="capturePhoto('profile')">
+            <span class="material-symbols-outlined">photo_camera</span>
+            Capture Photo
+          </button>
+        </div>
+      </div>
+
+      <!-- Biometric Data Collection Section -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <span class="material-symbols-outlined">fingerprint</span>
+          Biometric Data Collection
+        </h3>
+
+        <div class="biometric-item">
+          <div class="biometric-icon">
+            <span class="material-symbols-outlined">fingerprint</span>
+          </div>
+          <div class="biometric-info">
+            <div class="biometric-label">Fingerprints</div>
+            <div class="biometric-status">All 10 digits required</div>
+          </div>
+        </div>
+
+        <div class="biometric-item">
+          <div class="biometric-icon">
+            <span class="material-symbols-outlined">visibility</span>
+          </div>
+          <div class="biometric-info">
+            <div class="biometric-label">Iris Scan</div>
+            <div class="biometric-status">Both eyes - Optional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

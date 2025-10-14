@@ -63,6 +63,12 @@ export const routes: Routes = [
   },
 
   {
+    path: 'intake',
+    loadComponent: () => import('./intake/intake.component').then(m => m.IntakeComponent),
+    title: 'intake'
+  },
+
+  {
     path: 'home',
     redirectTo: '/',
     pathMatch: 'full'
