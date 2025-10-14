@@ -1,147 +1,154 @@
 <div class="page-wrapper">
-
-
   <!-- Main Content Area -->
   <div class="page-inner">
     <div class="dashboard-container">
       <h1 class="page-title">My Dashboard</h1>
 
-      <!-- Shortcuts card -->
+      <!-- My Shortcuts Card -->
       <div class="card">
         <div class="card-header">
           <h2>My Shortcuts</h2>
-          <div class="card-actions"><button class="link-btn">Customize</button></div>
+          <div class="card-actions">
+            <button class="icon-btn customize-btn" type="button">
+              <span class="material-icons">settings</span>
+              <span class="btn-text">Customize</span>
+            </button>
+          </div>
         </div>
         <div class="card-body">
           <div class="shortcuts-grid">
-            <!-- example shortcut items -->
-            <div class="shortcut-item" *ngFor="let s of quickActions">
-              <div class="shortcut-icon-wrapper"><span class="material-icons">shield</span></div>
-              <div class="shortcut-label">{{ s.label }}</div>
+            <button *ngFor="let action of quickActions"
+                    class="shortcut-item"
+                    type="button"
+                    (click)="onQuickAction(action)">
+              <div class="shortcut-icon-wrapper">
+                <span class="material-icons">{{ action.icon }}</span>
+              </div>
+              <span class="shortcut-label">{{ action.label }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Shortcuts (Secondary) -->
+      <div class="card">
+        <div class="card-header">
+          <h2>My Shortcuts</h2>
+          <div class="card-actions">
+            <button class="icon-btn customize-btn" type="button">
+              <span class="material-icons">settings</span>
+              <span class="btn-text">Customize</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="shortcuts-grid">
+            <button *ngFor="let action of quickActions2"
+                    class="shortcut-item"
+                    type="button"
+                    (click)="onQuickAction(action)">
+              <div class="shortcut-icon-wrapper">
+                <span class="material-icons">{{ action.icon }}</span>
+              </div>
+              <span class="shortcut-label">{{ action.label }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Column Layout for Assignments and Activity -->
+      <div class="two-column-layout">
+        <!-- Left Column: My Assignments & Officer Work Queue -->
+        <div class="left-column">
+          <!-- My Assignments -->
+          <div class="card assignments-card">
+            <div class="card-header">
+              <h2>My Assignments ({{ cellInspections?.length || 0 }})</h2>
+              <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
+            </div>
+            <div class="card-body">
+              <div class="assignments-list">
+                <div *ngFor="let inspection of cellInspections?.slice(0, 6)"
+                     class="assignment-item"
+                     (click)="onInspectionClick(inspection)">
+                  <div class="assignment-info">
+                    <div class="assignment-title">{{ inspection.type }}</div>
+                    <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
+                  </div>
+                  <div class="assignment-status">
+                    <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
+                      {{ inspection.status }}
+                    </span>
+                    <span class="status-time">{{ inspection.statusTime }}</span>
+                  </div>
+                  <span class="material-icons chevron">chevron_right</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officers' Recent Activity Log -->
+          <div class="card activity-card">
+            <div class="card-header">
+              <h2>Officers' Recent Activity Log</h2>
+              <button class="link-btn" type="button" (click)="viewAllActivity()">See All</button>
+            </div>
+            <div class="card-body">
+              <div class="activity-log-list">
+                <div *ngFor="let activity of recentActivity"
+                     class="activity-log-item"
+                     (click)="onActivityClick(activity)">
+                  <div class="activity-bullet"></div>
+                  <div class="activity-content">
+                    <div class="activity-main-text">{{ activity.text }}</div>
+                    <div class="activity-meta">{{ activity.subtext }} • {{ activity.time }}</div>
+                  </div>
+                  <span class="material-icons chevron">chevron_right</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- My Shortcuts (Second Row) -->
-        <div class="card">
-          <div class="card-header">
-            <h2>My Shortcuts</h2>
-            <div class="card-actions">
-              <button class="icon-btn customize-btn" type="button">
-                <span class="material-icons">settings</span>
-                <span class="btn-text">Customize</span>
-              </button>
+        <!-- Right Column: Officer Work Queue & Stats -->
+        <div class="right-column">
+          <!-- Officer Work Queue -->
+          <div class="card work-queue-card">
+            <div class="card-header">
+              <h2>Officer Work Queue ({{ dueInspections?.length || 0 }})</h2>
+              <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
             </div>
-          </div>
-          <div class="card-body">
-            <div class="shortcuts-grid">
-              <button *ngFor="let action of inmateActions"
-                      class="shortcut-item"
-                      type="button"
-                      (click)="onQuickAction(action)">
-                <div class="shortcut-icon-wrapper">
-                  <span class="material-icons">{{ action.icon }}</span>
-                </div>
-                <span class="shortcut-label">{{ action.label }}</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Two Column Layout for Assignments and Activity -->
-        <div class="two-column-layout">
-          <!-- Left Column: My Assignments & Officer Work Queue -->
-          <div class="left-column">
-            <!-- My Assignments -->
-            <div class="card assignments-card">
-              <div class="card-header">
-                <h2>My Assignments (14)</h2>
-                <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
-              </div>
-              <div class="card-body">
-                <div class="assignments-list">
-                  <div *ngFor="let inspection of cellInspections.slice(0, 6)"
-                       class="assignment-item"
-                       (click)="onInspectionClick(inspection)">
-                    <div class="assignment-info">
-                      <div class="assignment-title">{{ inspection.type }}</div>
-                      <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
-                    </div>
-                    <div class="assignment-status">
-                      <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
-                        {{ inspection.status }}
-                      </span>
-                      <span class="status-time">{{ inspection.statusTime }}</span>
-                    </div>
-                    <span class="material-icons chevron">chevron_right</span>
+            <div class="card-body">
+              <div class="assignments-list">
+                <div *ngFor="let inspection of dueInspections"
+                     class="assignment-item"
+                     (click)="onInspectionClick(inspection)">
+                  <div class="assignment-info">
+                    <div class="assignment-title">{{ inspection.type }}</div>
+                    <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Officers' Recent Activity Log -->
-            <div class="card activity-card">
-              <div class="card-header">
-                <h2>Officers' Recent Activity Log</h2>
-                <button class="link-btn" type="button" (click)="viewAllActivity()">See All</button>
-              </div>
-              <div class="card-body">
-                <div class="activity-log-list">
-                  <div *ngFor="let activity of recentActivity"
-                       class="activity-log-item"
-                       (click)="onActivityClick(activity)">
-                    <div class="activity-bullet"></div>
-                    <div class="activity-content">
-                      <div class="activity-main-text">{{ activity.text }}</div>
-                      <div class="activity-meta">{{ activity.subtext }} • {{ activity.time }}</div>
-                    </div>
-                    <span class="material-icons chevron">chevron_right</span>
+                  <div class="assignment-status">
+                    <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
+                      {{ inspection.status }}
+                    </span>
+                    <span class="status-time">{{ inspection.statusTime }}</span>
                   </div>
+                  <span class="material-icons chevron">chevron_right</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Right Column: Officer Work Queue & Stats -->
-          <div class="right-column">
-            <!-- Officer Work Queue -->
-            <div class="card work-queue-card">
-              <div class="card-header">
-                <h2>Officer Work Queue (30)</h2>
-                <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
-              </div>
-              <div class="card-body">
-                <div class="assignments-list">
-                  <div *ngFor="let inspection of dueInspections"
-                       class="assignment-item"
-                       (click)="onInspectionClick(inspection)">
-                    <div class="assignment-info">
-                      <div class="assignment-title">{{ inspection.type }}</div>
-                      <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
-                    </div>
-                    <div class="assignment-status">
-                      <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
-                        {{ inspection.status }}
-                      </span>
-                      <span class="status-time">{{ inspection.statusTime }}</span>
-                    </div>
-                    <span class="material-icons chevron">chevron_right</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Statistics Cards -->
-            <div class="stats-grid">
-              <div *ngFor="let stat of stats; let i = index"
-                   class="stat-card"
-                   [ngClass]="getStatColorClass(i)">
-                <div class="stat-value">{{ stat.value }}</div>
-                <div class="stat-label">{{ stat.label }}</div>
-                <div class="stat-sublabel">{{ stat.sublabel }}</div>
-              </div>
+          <!-- Statistics Cards -->
+          <div class="stats-grid">
+            <div *ngFor="let stat of stats; let i = index" class="stat-card">
+              <div class="stat-value">{{ stat.value }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+              <div class="stat-sublabel" *ngIf="stat.sublabel">{{ stat.sublabel }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

@@ -1,343 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Staff Portal - Jail Management System</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
- 
-  </style>
-</head>
-<body>
-  <div class="main-container">
-    <!-- Header -->
-    <header class="staff-header">
-      <div class="header-left">
-        <div class="user-avatar">JD</div>
-        <div class="user-info">
-          <h1>Welcome back, Officer Davis</h1>
-          <p class="user-role">Correctional Officer • Badge #4729</p>
-        </div>
-      </div>
-      <div class="header-right">
-        <button class="header-btn btn-secondary">
-          <i class="fa fa-bell"></i>
-          Notifications
-        </button>
-        <button class="header-btn btn-primary">
-          <i class="fa fa-clock"></i>
-          Clock In
-        </button>
-      </div>
-    </header>
+<div class="page-wrapper">
+  <!-- Main Content Area -->
+  <div class="page-inner">
+    <div class="dashboard-container">
+      <h1 class="page-title">My Dashboard</h1>
 
-    <!-- Quick Stats -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-header">
-          <div>
-            <div class="stat-value">127</div>
-            <div class="stat-label">Current Inmates</div>
-          </div>
-          <div class="stat-icon blue">
-            <i class="fa fa-users"></i>
+      <!-- My Shortcuts Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>My Shortcuts</h2>
+          <div class="card-actions">
+            <button class="icon-btn customize-btn" type="button">
+              <span class="material-icons">settings</span>
+              <span class="btn-text">Customize</span>
+            </button>
           </div>
         </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-header">
-          <div>
-            <div class="stat-value">8</div>
-            <div class="stat-label">Tasks Today</div>
-          </div>
-          <div class="stat-icon green">
-            <i class="fa fa-clipboard-check"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-header">
-          <div>
-            <div class="stat-value">3</div>
-            <div class="stat-label">Active Alerts</div>
-          </div>
-          <div class="stat-icon orange">
-            <i class="fa fa-exclamation-triangle"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-header">
-          <div>
-            <div class="stat-value">14</div>
-            <div class="stat-label">Staff On Duty</div>
-          </div>
-          <div class="stat-icon red">
-            <i class="fa fa-user-shield"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Content Grid -->
-    <div class="content-grid">
-      <!-- Left Column -->
-      <div>
-        <!-- Today's Tasks -->
-        <div class="panel" style="margin-bottom: 30px;">
-          <div class="panel-header">
-            <h2 class="panel-title">
-              <i class="fa fa-tasks"></i>
-              Today's Tasks
-            </h2>
-            <a href="#" class="view-all">View All</a>
-          </div>
-          <ul class="task-list">
-            <li class="task-item">
-              <input type="checkbox" class="task-checkbox">
-              <div class="task-content">
-                <div class="task-title">Morning cell inspection - Block C</div>
-                <div class="task-time">Due by 10:00 AM</div>
+        <div class="card-body">
+          <div class="shortcuts-grid">
+            <button *ngFor="let action of quickActions"
+                    class="shortcut-item"
+                    type="button"
+                    (click)="onQuickAction(action)">
+              <div class="shortcut-icon-wrapper">
+                <span class="material-icons">{{ action.icon }}</span>
               </div>
-              <span class="task-priority priority-high">High</span>
-            </li>
-            <li class="task-item">
-              <input type="checkbox" class="task-checkbox" checked>
-              <div class="task-content">
-                <div class="task-title">Review incident reports</div>
-                <div class="task-time">Completed at 8:30 AM</div>
-              </div>
-              <span class="task-priority priority-medium">Medium</span>
-            </li>
-            <li class="task-item">
-              <input type="checkbox" class="task-checkbox">
-              <div class="task-content">
-                <div class="task-title">Escort inmates to medical appointments</div>
-                <div class="task-time">Due by 2:00 PM</div>
-              </div>
-              <span class="task-priority priority-high">High</span>
-            </li>
-            <li class="task-item">
-              <input type="checkbox" class="task-checkbox">
-              <div class="task-content">
-                <div class="task-title">Update equipment inventory</div>
-                <div class="task-time">Due by 4:00 PM</div>
-              </div>
-              <span class="task-priority priority-low">Low</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="panel">
-          <div class="panel-header">
-            <h2 class="panel-title">
-              <i class="fa fa-bolt"></i>
-              Quick Actions
-            </h2>
-          </div>
-          <div class="quick-actions">
-            <button class="action-btn">
-              <i class="fa fa-file-lines"></i>
-              File Report
-            </button>
-            <button class="action-btn">
-              <i class="fa fa-user-plus"></i>
-              Inmate Intake
-            </button>
-            <button class="action-btn">
-              <i class="fa fa-key"></i>
-              Access Control
-            </button>
-            <button class="action-btn">
-              <i class="fa fa-truck"></i>
-              Request Supplies
-            </button>
-            <button class="action-btn">
-              <i class="fa fa-calendar-days"></i>
-              View Schedule
-            </button>
-            <button class="action-btn">
-              <i class="fa fa-phone"></i>
-              Emergency Contact
+              <span class="shortcut-label">{{ action.label }}</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Right Column -->
-      <div>
-        <!-- Today's Schedule -->
-        <div class="panel" style="margin-bottom: 30px;">
-          <div class="panel-header">
-            <h2 class="panel-title">
-              <i class="fa fa-calendar"></i>
-              Today's Schedule
-            </h2>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">08:00</div>
-            <div class="schedule-content">
-              <div class="schedule-title">Shift Briefing</div>
-              <div class="schedule-location">
-                <i class="fa fa-location-dot"></i>
-                Main Conference Room
+      <!-- Two Column Layout for Assignments and Activity -->
+      <div class="two-column-layout">
+        <!-- Left Column: My Assignments & Officer Work Queue -->
+        <div class="left-column">
+          <!-- My Assignments -->
+          <div class="card assignments-card">
+            <div class="card-header">
+              <h2>My Assignments ({{ cellInspections?.length || 0 }})</h2>
+              <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
+            </div>
+            <div class="card-body">
+              <div class="assignments-list">
+                <div *ngFor="let inspection of cellInspections?.slice(0, 6)"
+                     class="assignment-item"
+                     (click)="onInspectionClick(inspection)">
+                  <div class="assignment-info">
+                    <div class="assignment-title">{{ inspection.type }}</div>
+                    <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
+                  </div>
+                  <div class="assignment-status">
+                    <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
+                      {{ inspection.status }}
+                    </span>
+                    <span class="status-time">{{ inspection.statusTime }}</span>
+                  </div>
+                  <span class="material-icons chevron">chevron_right</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="schedule-item">
-            <div class="schedule-time">10:00</div>
-            <div class="schedule-content">
-              <div class="schedule-title">Block C Patrol</div>
-              <div class="schedule-location">
-                <i class="fa fa-location-dot"></i>
-                Cell Block C
-              </div>
+
+          <!-- Officers' Recent Activity Log -->
+          <div class="card activity-card">
+            <div class="card-header">
+              <h2>Officers' Recent Activity Log</h2>
+              <button class="link-btn" type="button" (click)="viewAllActivity()">See All</button>
             </div>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">14:00</div>
-            <div class="schedule-content">
-              <div class="schedule-title">Medical Escort Duty</div>
-              <div class="schedule-location">
-                <i class="fa fa-location-dot"></i>
-                Medical Wing
-              </div>
-            </div>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">16:00</div>
-            <div class="schedule-content">
-              <div class="schedule-title">End of Shift Report</div>
-              <div class="schedule-location">
-                <i class="fa fa-location-dot"></i>
-                Security Office
+            <div class="card-body">
+              <div class="activity-log-list">
+                <div *ngFor="let activity of recentActivity"
+                     class="activity-log-item"
+                     (click)="onActivityClick(activity)">
+                  <div class="activity-bullet"></div>
+                  <div class="activity-content">
+                    <div class="activity-main-text">{{ activity.text }}</div>
+                    <div class="activity-meta">{{ activity.subtext }} • {{ activity.time }}</div>
+                  </div>
+                  <span class="material-icons chevron">chevron_right</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Active Alerts -->
-        <div class="panel">
-          <div class="panel-header">
-            <h2 class="panel-title">
-              <i class="fa fa-bell"></i>
-              Active Alerts
-            </h2>
-          </div>
-          <div class="alert-item critical">
-            <i class="fa fa-exclamation-circle alert-icon"></i>
-            <div class="alert-content">
-              <div class="alert-title">Medical emergency - Block B</div>
-              <div class="alert-time">5 minutes ago</div>
+        <!-- Right Column: Officer Work Queue & Stats -->
+        <div class="right-column">
+          <!-- Officer Work Queue -->
+          <div class="card work-queue-card">
+            <div class="card-header">
+              <h2>Officer Work Queue ({{ dueInspections?.length || 0 }})</h2>
+              <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
+            </div>
+            <div class="card-body">
+              <div class="assignments-list">
+                <div *ngFor="let inspection of dueInspections"
+                     class="assignment-item"
+                     (click)="onInspectionClick(inspection)">
+                  <div class="assignment-info">
+                    <div class="assignment-title">{{ inspection.type }}</div>
+                    <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
+                  </div>
+                  <div class="assignment-status">
+                    <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
+                      {{ inspection.status }}
+                    </span>
+                    <span class="status-time">{{ inspection.statusTime }}</span>
+                  </div>
+                  <span class="material-icons chevron">chevron_right</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="alert-item">
-            <i class="fa fa-triangle-exclamation alert-icon"></i>
-            <div class="alert-content">
-              <div class="alert-title">Equipment maintenance scheduled</div>
-              <div class="alert-time">1 hour ago</div>
-            </div>
-          </div>
-          <div class="alert-item">
-            <i class="fa fa-info-circle alert-icon"></i>
-            <div class="alert-content">
-              <div class="alert-title">New policy updates available</div>
-              <div class="alert-time">2 hours ago</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Resources Section -->
-    <div class="panel full-width">
-      <div class="panel-header">
-        <h2 class="panel-title">
-          <i class="fa fa-book"></i>
-          Staff Resources
-        </h2>
-      </div>
-      <div class="resource-grid">
-        <div class="resource-card">
-          <i class="fa fa-book-open resource-icon"></i>
-          <div class="resource-title">Policy Manual</div>
-        </div>
-        <div class="resource-card">
-          <i class="fa fa-graduation-cap resource-icon"></i>
-          <div class="resource-title">Training Materials</div>
-        </div>
-        <div class="resource-card">
-          <i class="fa fa-heart resource-icon"></i>
-          <div class="resource-title">Employee Wellness</div>
-        </div>
-        <div class="resource-card">
-          <i class="fa fa-headset resource-icon"></i>
-          <div class="resource-title">IT Support</div>
-        </div>
-        <div class="resource-card">
-          <i class="fa fa-shield-halved resource-icon"></i>
-          <div class="resource-title">Safety Protocols</div>
-        </div>
-        <div class="resource-card">
-          <i class="fa fa-clipboard-list resource-icon"></i>
-          <div class="resource-title">Forms & Documents</div>
-        </div>
-        <div class="resource-card">
-          <i class="fa fa-users-gear resource-icon"></i>
-          <div class="resource-title">HR Portal</div>
-        </div>
-        <div class="resource-card">
-          <i class="fa fa-comments resource-icon"></i>
-          <div class="resource-title">Staff Forum</div>
+          <!-- Statistics Cards -->
+          <div class="stats-grid">
+            <div *ngFor="let stat of stats; let i = index" class="stat-card">
+              <div class="stat-value">{{ stat.value }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+              <div class="stat-sublabel" *ngIf="stat.sublabel">{{ stat.sublabel }}</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-    // Clock in button functionality
-    document.querySelector('.btn-primary').addEventListener('click', function () {
-      const now = new Date();
-      const time = now.toLocaleTimeString();
-      alert(`Clocked in at ${time}`);
-      this.innerHTML = '<i class="fa fa-check"></i> Clocked In';
-      this.style.background = 'linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%)';
-    });
-
-    // Task checkbox functionality
-    document.querySelectorAll('.task-checkbox').forEach(checkbox => {
-      checkbox.addEventListener('change', function () {
-        const taskItem = this.closest('.task-item');
-        if (this.checked) {
-          taskItem.style.opacity = '0.6';
-          taskItem.querySelector('.task-title').style.textDecoration = 'line-through';
-        } else {
-          taskItem.style.opacity = '1';
-          taskItem.querySelector('.task-title').style.textDecoration = 'none';
-        }
-      });
-    });
-
-    // Action button click handlers
-    document.querySelectorAll('.action-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        const action = this.textContent.trim();
-        alert(`Opening: ${action}`);
-      });
-    });
-
-    // Resource card click handlers
-    document.querySelectorAll('.resource-card').forEach(card => {
-      card.addEventListener('click', function () {
-        const resource = this.querySelector('.resource-title').textContent;
-        alert(`Opening: ${resource}`);
-      });
-    });
-  </script>
-</body>
-</html>
+</div>

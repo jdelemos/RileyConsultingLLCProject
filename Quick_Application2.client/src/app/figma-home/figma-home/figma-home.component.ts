@@ -60,6 +60,7 @@ export class FigmaHomeComponent implements OnInit, OnDestroy {
   // Quick Actions
   quickActions: QuickAction[] = [];
   inmateActions: QuickAction[] = [];
+  quickActions2: QuickAction[] = [];
 
   // Inspections
   cellInspections: Inspection[] = [];
@@ -88,8 +89,22 @@ export class FigmaHomeComponent implements OnInit, OnDestroy {
       { icon: 'warning', label: 'Incident Reports', action: 'incident-reports' },
       { icon: 'bar_chart', label: 'Security Reports', action: 'security-reports' },
       { icon: 'analytics', label: 'Analytics', action: 'analytics' },
-      { icon: 'event', label: 'Scheduling', action: 'scheduling' }
+      { icon: 'event', label: 'Scheduling', action: 'scheduling' },
+      // Add next to your existing quickActions array
+
     ];
+
+    // Keep your existing quickActions as-is…
+
+    this.quickActions2 = [
+      { icon: 'add', label: 'Book New Inmate', action: 'book-new-inmate' },
+      { icon: 'lock_open', label: 'Process Release', action: 'process-release' },
+      { icon: 'description', label: 'Log Incident', action: 'log-incident' },
+      { icon: 'sync_alt', label: 'Initiate Transfer', action: 'initiate-transfer' },
+      { icon: 'badge', label: 'Schedule Visitation', action: 'schedule-visitation' },
+      { icon: 'assignment', label: 'File Shift Report', action: 'file-shift-report' },
+    ];
+
 
     // Initialize Inmate Actions
     this.inmateActions = [
@@ -425,4 +440,7 @@ export class FigmaHomeComponent implements OnInit, OnDestroy {
       );
     }
   }
+
+
+
 }

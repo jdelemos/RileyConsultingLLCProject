@@ -1,240 +1,353 @@
-/* Global top + left nav visuals (scoped to AppComponent) */
+/* ==========================================================================
+   0) DESIGN TOKENS (keep rail + topbar in sync)
+   ========================================================================== */
 
-/* color palette inspired by screenshot */
-$brand-dark: #153d47;
-$brand-mid: #214c56;
-$brand-light: #f4f7f9;
-$accent: #1770a1;
-$muted: #8a9aa3;
-$sidebar-width: 78px; /* narrow icon bar like screenshot */
+$color-topbar-bg: #194058; // dark teal (figma)
+$color-rail-bg: #194058; // left rail teal
+$color-active-pill: #317cb5; // active nav pill
+$color-accent-bar: #c899eb; // purple strip on active pill
+$color-search-bg: #eef5f7; // search field background
+$color-search-focus: #317cb5; // focus ring color
+$color-badge-amber: #f59e0b; // notification badge
+$color-user-chip: #2b5264; // avatar chip
+$color-text-on-dark: #ffffff; // white on dark bars
+$color-text-muted: #7b95a1; // placeholder / muted text
+$color-body-bg: #f4f7f9; // app canvas
+
+$sidebar-width: 64px;
 $topbar-height: 64px;
 
-//:host {
-//  display: block;
-//  min-height: 100vh;
-//  background: $brand-light;
-//}
 
-///* prevent inherited text color and font from leaking */
-//:host > * {
-//  color: inherit;
-//  font-family: inherit;
-//}
+/* ==========================================================================
+   1) GLOBAL RESET / BASE
+   ========================================================================== */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: $color-body-bg;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* High-visibility keyboard focus for interactive elements */
+:focus-visible {
+  outline: 3px solid rgba($color-search-focus, 0.28);
+  outline-offset: 2px;
+}
 
 
-/* Topbar */
-.topbar {
+/* ==========================================================================
+   2) LEFT ICON RAIL
+   ========================================================================== */
+
+.left-rail {
+  position: fixed;
+  inset: 0 auto 0 0; /* top:0; right:auto; bottom:0; left:0 */
+  width: $sidebar-width; /* single source of truth */
+  background: $color-rail-bg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  z-index: 120; /* sits above the topbar edge if they meet */
+}
+
+/* Hamburger at the top of the rail (optional click target is a no-op today) */
+.hamburger {
+  margin: 4px 0 16px;
+}
+
+/* Icon-only nav stack */
+.icon-nav {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: $color-text-on-dark;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.92;
+  transition: background 120ms ease, opacity 120ms ease;
+
+  &:hover {
+    background: rgba(255,255,255,0.08);
+    opacity: 1;
+  }
+}
+
+.icon-btn .material-symbols-outlined {
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Active state with purple edge bar (matches figma) */
+.icon-btn.active {
+  background: $color-active-pill;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: $color-accent-bar;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
+
+
+/* ==========================================================================
+   3) TOP NAV BAR (EXACT Figma alignment)
+   ========================================================================== */
+
+/*
+  The bar spans the full viewport width (left: 0).
+  We pad the INSIDE by the rail width so brand/search/actions begin
+  to the right of the rail. This guarantees the hamburger can sit in the
+  true top-left while the bar’s content aligns perfectly with figma.
+*/
+
+$color-topbar-bg: #194058; // dark teal (figma)
+$color-rail-bg: #194058; // left rail teal
+$color-active-pill: #317cb5; // active nav pill
+$color-accent-bar: #c899eb; // purple strip on active pill
+$color-search-bg: #eef5f7; // search field background
+$color-search-focus: #317cb5; // focus ring color
+$color-badge-amber: #f59e0b; // notification badge
+$color-user-chip: #2b5264; // avatar chip
+$color-text-on-dark: #ffffff; // white on dark bars
+$color-text-muted: #7b95a1; // placeholder / muted text
+$color-body-bg: #f4f7f9; // app canvas
+
+$sidebar-width: 64px;
+$topbar-height: 64px;
+
+
+/* ==========================================================================
+   3) TOP NAV BAR (EXACT Figma alignment)
+   ========================================================================== */
+
+/*
+  The bar spans the full viewport width (left: 0).
+  We pad the INSIDE by the rail width so brand/search/actions begin
+  to the right of the rail. This guarantees the hamburger can sit in the
+  true top-left while the bar's content aligns perfectly with figma.
+*/
+
+header.topbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; /* full width bar */
   right: 0;
   height: $topbar-height;
-  background: $brand-dark;
-  color: #ffffff;
-  z-index: 50;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+  z-index: 110;
+  padding-left: calc(#{$sidebar-width} + 12px); /* 12px gap from rail */
+  background: $color-topbar-bg;
+  color: $color-text-on-dark;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  display: flex;
+  align-items: center;
 
   .topbar-inner {
-    height: 100%;
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 280px 1fr auto; /* brand | search | actions */
     align-items: center;
-    gap: 1rem;
-    padding: 0 18px;
+    gap: 12px;
+    padding-right: 16px; /* right breathing room */
   }
-
+  /* ----- 3.1 Brand (JMS chip + title) ----- */
   .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    min-width: 0;
 
     .logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #ffffff;
-      color: $brand-dark;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
+      background: $color-text-on-dark;
+      color: #194058; /* strong teal text inside white chip */
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      line-height: 1;
     }
 
     .app-title {
+      color: $color-text-on-dark;
       font-weight: 600;
-      font-size: 16px;
-      color: #e6f2f6;
+      white-space: nowrap;
+      opacity: .95;
     }
   }
-
+  /* ----- 3.2 Search (center pill) ----- */
   .topbar-center {
-    flex: 1 1 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 12px;
-
-    .global-search {
-      width: 60%;
-      max-width: 640px;
-      height: 36px;
-      border-radius: 18px;
-      border: none;
-      padding: 8px 14px;
-      font-size: 14px;
-      outline: none;
-      background: rgba(255,255,255,0.95);
-      color: #222;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    }
+    justify-content: center; /* center the pill like figma */
   }
 
+  .global-search {
+    width: min(960px, 100%); /* scales gracefully on small screens */
+    max-width: 980px; /* adjust to taste */
+    height: 36px;
+    background: $color-search-bg;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0 16px;
+    color: #0c2732;
+    outline: none;
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+
+    &:focus {
+      border-color: $color-search-focus;
+      box-shadow: 0 0 0 2px rgba($color-search-focus, .25);
+    }
+  }
+  /* ----- 3.3 Right actions: bell, user chip, logout ----- */
   .topbar-actions {
     display: flex;
     align-items: center;
     gap: 12px;
 
     .icon-btn {
+      width: 36px;
+      height: 36px;
+      border: 0;
+      outline: 0;
       background: transparent;
-      border: none;
-      color: #fff;
+      color: $color-text-on-dark;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 18px;
-      position: relative;
-      padding: 6px;
-    }
+      transition: background 120ms ease;
 
+      &:hover {
+        background: rgba(255,255,255,.08);
+      }
+    }
+    /* Notifications with small amber badge (figma) */
     .notifications {
       position: relative;
-
-      .badge {
-        position: absolute;
-        top: -6px;
-        right: -6px;
-        min-width: 18px;
-        height: 18px;
-        border-radius: 10px;
-        background: #ff4d4f;
-        color: #fff;
-        font-size: 11px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 4px;
-      }
     }
 
+    .notifications .badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      border-radius: 999px;
+      background: $color-badge-amber;
+      color: #0a0a0a;
+      font-size: 10px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* User chip (initials + name) */
     .user-info {
       display: flex;
-      gap: 8px;
       align-items: center;
-      color: #d9eef4;
+      gap: 8px;
+    }
 
-      .user-avatar {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: $brand-mid;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-weight: 600;
-      }
+    .user-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: $color-user-chip;
+      color: $color-text-on-dark;
+      font-weight: 700;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .user-name {
-        font-size: 13px;
-        opacity: 0.95;
+    .user-name {
+      font-size: 12px;
+      color: $color-text-on-dark;
+      opacity: .9;
+      white-space: nowrap;
+    }
+    /* Logout button (uses your existing (click)="logout()") */
+    .logout-btn {
+      /* inherits .icon-btn hover/focus */
+      .material-symbols-outlined {
+        font-size: 22px;
       }
     }
   }
 }
 
-/* Left sidebar */
-.left-sidebar {
-  position: fixed;
-  top: $topbar-height;
-  left: 0;
-  bottom: 0;
-  width: $sidebar-width;
-  background: $brand-mid;
-  color: #fff;
-  padding: 12px 8px;
-  box-shadow: 1px 0 0 rgba(0,0,0,0.06);
-  z-index: 40;
-}
 
-.left-sidebar .left-inner {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+/* ==========================================================================
+   4) CONTENT OFFSET (prevents content from hiding under bars)
+   ========================================================================== */
 
-.primary-nav {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    .nav-item {
-      margin: 8px 0;
-
-      .nav-btn {
-        width: 100%;
-        background: transparent;
-        border: none;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 8px;
-        border-radius: 8px;
-        cursor: pointer;
-        text-align: left;
-        font-size: 12px;
-        justify-content: flex-start;
-      }
-
-      .nav-btn:hover {
-        background: rgba(255,255,255,0.04);
-      }
-
-      .nav-icon {
-        width: 40px;
-        min-width: 40px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-      }
-
-      .nav-label {
-        display: none; /* keep narrow icon-only left bar like screenshot */
-        white-space: nowrap;
-      }
-    }
-  }
-}
-
-/* Main content area space */
 .app-content {
   margin-top: $topbar-height;
   margin-left: $sidebar-width;
   padding: 28px;
   min-height: calc(100vh - $topbar-height);
-  background: $brand-light;
+  background: $color-body-bg;
+
 }
 
-/* Small responsive tweaks */
-@media (min-width: 1100px) {
-  .left-sidebar .primary-nav .nav-item .nav-label {
-    display: none; /* still icon-first */
+.app-content:not(.guest) {
+  margin-top: $topbar-height;
+  margin-left: $sidebar-width;
+  padding: 28px;
+}
+
+/* Guest (login/forgot/reset): no bars, no offsets */
+.app-content.guest {
+  margin: 0;
+  padding: 0; // or 24–32px if you want breathing room
+  min-height: 100vh; // full viewport
+  display: flex; // center auth card (optional)
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   5) SMALL VIEWPORT TWEAKS (optional)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  header.topbar .topbar-inner {
+    grid-template-columns: 220px 1fr auto;
+  }
+
+  header.topbar .global-search {
+    width: min(680px, 100%);
   }
 }
 
-/* Accessibility focus ring */
-button:focus, .nav-btn:focus, .icon-btn:focus, .global-search:focus {
-  outline: 3px solid rgba(23,112,161,0.18);
-  outline-offset: 2px;
-}
+
