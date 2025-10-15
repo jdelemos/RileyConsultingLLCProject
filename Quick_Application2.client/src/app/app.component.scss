@@ -1,22 +1,21 @@
 /* ==========================================================================
-   0) DESIGN TOKENS (keep rail + topbar in sync)
+   0) DESIGN TOKENS
    ========================================================================== */
 
-$color-topbar-bg: #194058; // dark teal (figma)
-$color-rail-bg: #194058; // left rail teal
-$color-active-pill: #317cb5; // active nav pill
-$color-accent-bar: #c899eb; // purple strip on active pill
-$color-search-bg: #eef5f7; // search field background
-$color-search-focus: #317cb5; // focus ring color
-$color-badge-amber: #f59e0b; // notification badge
-$color-user-chip: #2b5264; // avatar chip
-$color-text-on-dark: #ffffff; // white on dark bars
-$color-text-muted: #7b95a1; // placeholder / muted text
-$color-body-bg: #f4f7f9; // app canvas
+$color-topbar-bg: #194058;
+$color-rail-bg: #194058;
+$color-active-pill: #317cb5;
+$color-accent-bar: #c899eb;
+$color-search-bg: #eef5f7;
+$color-search-focus: #317cb5;
+$color-badge-amber: #f59e0b;
+$color-user-chip: #2b5264;
+$color-text-on-dark: #ffffff;
+$color-text-muted: #7b95a1;
+$color-body-bg: #f4f7f9;
 
 $sidebar-width: 64px;
 $topbar-height: 64px;
-
 
 /* ==========================================================================
    1) GLOBAL RESET / BASE
@@ -26,6 +25,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: $color-body-bg;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 *,
@@ -34,12 +34,10 @@ html, body {
   box-sizing: border-box;
 }
 
-/* High-visibility keyboard focus for interactive elements */
 :focus-visible {
   outline: 3px solid rgba($color-search-focus, 0.28);
   outline-offset: 2px;
 }
-
 
 /* ==========================================================================
    2) LEFT ICON RAIL
@@ -47,22 +45,22 @@ html, body {
 
 .left-rail {
   position: fixed;
-  inset: 0 auto 0 0; /* top:0; right:auto; bottom:0; left:0 */
-  width: $sidebar-width; /* single source of truth */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: $sidebar-width;
   background: $color-rail-bg;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 8px 0;
-  z-index: 120; /* sits above the topbar edge if they meet */
+  z-index: 120;
 }
 
-/* Hamburger at the top of the rail (optional click target is a no-op today) */
 .hamburger {
   margin: 4px 0 16px;
 }
 
-/* Icon-only nav stack */
 .icon-nav {
   margin-top: 8px;
   display: flex;
@@ -87,17 +85,16 @@ html, body {
   transition: background 120ms ease, opacity 120ms ease;
 
   &:hover {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     opacity: 1;
+  }
+
+  .material-symbols-outlined {
+    font-size: 28px;
+    line-height: 1;
   }
 }
 
-.icon-btn .material-symbols-outlined {
-  font-size: 28px;
-  line-height: 1;
-}
-
-/* Active state with purple edge bar (matches figma) */
 .icon-btn.active {
   background: $color-active-pill;
   position: relative;
@@ -115,157 +112,112 @@ html, body {
   }
 }
 
-
 /* ==========================================================================
-   3) TOP NAV BAR (EXACT Figma alignment)
+   3) TOP NAV BAR
    ========================================================================== */
-
-/*
-  The bar spans the full viewport width (left: 0).
-  We pad the INSIDE by the rail width so brand/search/actions begin
-  to the right of the rail. This guarantees the hamburger can sit in the
-  true top-left while the bar’s content aligns perfectly with figma.
-*/
-
-$color-topbar-bg: #194058; // dark teal (figma)
-$color-rail-bg: #194058; // left rail teal
-$color-active-pill: #317cb5; // active nav pill
-$color-accent-bar: #c899eb; // purple strip on active pill
-$color-search-bg: #eef5f7; // search field background
-$color-search-focus: #317cb5; // focus ring color
-$color-badge-amber: #f59e0b; // notification badge
-$color-user-chip: #2b5264; // avatar chip
-$color-text-on-dark: #ffffff; // white on dark bars
-$color-text-muted: #7b95a1; // placeholder / muted text
-$color-body-bg: #f4f7f9; // app canvas
-$rail-gutter: 40px;  
-$sidebar-width: 64px;
-$topbar-height: 64px;
-/* Layout constants */
-$sidebar-width: 64px; // your left icon rail width
-$topbar-height: 64px;
-
-/* Colors */
-$topbar-bg: #194058; // matches left rail
-$on-dark: #ffffff;
-$search-bg: #eef5f7;
-$focus: #317cb5;
-$badge-amber: #f59e0b;
-$user-chip: #2b5264;
-$muted: #7b95a1;
-
-
-/* ==========================================================================
-   3) TOP NAV BAR (EXACT Figma alignment)
-   ========================================================================== */
-
-/*
-  The bar spans the full viewport width (left: 0).
-  We pad the INSIDE by the rail width so brand/search/actions begin
-  to the right of the rail. This guarantees the hamburger can sit in the
-  true top-left while the bar's content aligns perfectly with figma.
-*/
 
 header.topbar {
   position: fixed;
   top: 0;
-  left: 0; /* bar spans full width */
+  left: 0;
   right: 0;
   height: $topbar-height;
   z-index: 110;
-  background: $topbar-bg;
-  color: $on-dark;
+  background: $color-topbar-bg;
+  color: $color-text-on-dark;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
   .topbar-inner {
     width: 100%;
     display: grid;
-    grid-template-columns: 280px 1fr auto; /* brand | search | actions */
+    grid-template-columns: 320px 1fr auto;
     align-items: center;
-    gap: 12px;
-    padding: 0 16px 0 0; /* right padding only */
+    gap: 20px;
+    padding: 0 24px 0 calc(#{$sidebar-width} + 16px);
   }
-  /* ✅ Only the brand is offset to clear the left rail */
+  /* Brand */
   .brand {
-    margin-left: calc(#{$sidebar-width} + 12px); /* 12px visual gap */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     min-width: 0;
-
-    .brand-mark {
-      display: inline-flex;
-    }
-
-    .logo {
-      background: #fff;
-      color: $topbar-bg;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 999px;
-      line-height: 1;
-    }
-
-    .app-title {
-      font-weight: 600;
-      white-space: nowrap;
-      color: $on-dark;
-      opacity: .95;
-    }
   }
 
+  .logo-circle {
+    width: 42px;
+    height: 42px;
+    background: $color-text-on-dark;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    color: $color-topbar-bg;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .app-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: $color-text-on-dark;
+    white-space: nowrap;
+    opacity: 0.95;
+  }
+  /* Search */
   .topbar-center {
     display: flex;
     justify-content: center;
   }
 
   .global-search {
-    width: min(960px, 100%);
-    height: 36px;
-    background: $search-bg;
+    width: 100%;
+    max-width: 480px;
+    height: 38px;
+    background: $color-search-bg;
     border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 0 16px;
+    border-radius: 6px;
+    padding: 0 16px 0 40px;
     color: #0c2732;
+    font-size: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%237b95a1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 18px 18px;
 
     &::placeholder {
-      color: $muted;
+      color: $color-text-muted;
     }
 
     &:focus {
-      border-color: $focus;
-      box-shadow: 0 0 0 2px rgba($focus, .25);
+      border-color: $color-search-focus;
+      box-shadow: 0 0 0 2px rgba($color-search-focus, 0.25);
       outline: none;
     }
   }
-
+  /* Actions */
   .topbar-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 
     .icon-btn {
       width: 36px;
       height: 36px;
-      border: 0;
       background: transparent;
-      color: $on-dark;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 120ms ease;
 
       &:hover {
-        background: rgba(255,255,255,.08);
+        background: rgba(255, 255, 255, 0.08);
       }
 
-      &:focus-visible {
-        outline: 3px solid rgba($focus,.28);
-        outline-offset: 2px;
+      .material-symbols-outlined {
+        font-size: 22px;
       }
     }
 
@@ -276,90 +228,120 @@ header.topbar {
         position: absolute;
         top: -4px;
         right: -4px;
-        min-width: 16px;
-        height: 16px;
-        padding: 0 4px;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 5px;
         border-radius: 999px;
-        background: $badge-amber;
+        background: $color-badge-amber;
         color: #0a0a0a;
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 700;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        line-height: 1;
       }
     }
 
     .user-info {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      padding: 6px 8px 6px 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 120ms ease;
 
-      .user-avatar {
-        width: 28px;
-        height: 28px;
-        border-radius: 999px;
-        background: $user-chip;
-        color: $on-dark;
-        font-weight: 700;
-        font-size: 12px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .user-name {
-        font-size: 12px;
-        color: $on-dark;
-        opacity: .9;
-        white-space: nowrap;
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
       }
     }
 
-    .logout-btn .material-symbols-outlined {
-      font-size: 22px;
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: $color-user-chip;
+      color: $color-text-on-dark;
+      font-weight: 700;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .user-name {
+      font-size: 13px;
+      color: $color-text-on-dark;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .dropdown-arrow {
+      background: none;
+      border: none;
+      color: $color-text-on-dark;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      opacity: 0.7;
+
+      .material-symbols-outlined {
+        font-size: 20px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
 
-
 /* ==========================================================================
-   4) CONTENT OFFSET (prevents content from hiding under bars)
+   4) CONTENT OFFSET
    ========================================================================== */
 
 .app-content {
   margin-top: $topbar-height;
   margin-left: $sidebar-width;
-  padding: 40px;
-  min-height: calc(100vh - $topbar-height);
+  padding: 0;
+  min-height: calc(100vh - #{$topbar-height});
   background: $color-body-bg;
-
 }
 
-.app-content:not(.guest) {
-  margin-top: $topbar-height;
-  margin-left: $sidebar-width;
-  padding: 28px;
-}
-
-/* Guest (login/forgot/reset): no bars, no offsets */
 .app-content.guest {
   margin: 0;
-  padding: 0; // or 24–32px if you want breathing room
-  min-height: 100vh; // full viewport
-  display: flex; // center auth card (optional)
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* ==========================================================================
-   5) SMALL VIEWPORT TWEAKS (optional)
+   5) RESPONSIVE
    ========================================================================== */
 
 @media (max-width: 1024px) {
   header.topbar .topbar-inner {
-    grid-template-columns: 220px 1fr auto;
+    grid-template-columns: 240px 1fr auto;
+  }
+
+  header.topbar .global-search {
+    max-width: 360px;
   }
 }
 
+@media (max-width: 768px) {
+  header.topbar .topbar-inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+  }
 
+  header.topbar .app-title {
+    display: none;
+  }
+}

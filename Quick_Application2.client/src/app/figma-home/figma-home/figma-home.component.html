@@ -1,5 +1,4 @@
 <div class="page-wrapper">
-  <!-- Main Content Area -->
   <div class="page-inner">
     <div class="dashboard-container">
       <h1 class="page-title">My Dashboard</h1>
@@ -56,11 +55,11 @@
         </div>
       </div>
 
-      <!-- Two Column Layout for Assignments and Activity -->
+      <!-- Two Column Layout -->
       <div class="two-column-layout">
-        <!-- Left Column: My Assignments & Officer Work Queue -->
+        <!-- Left Column -->
         <div class="left-column">
-          <!-- My Assignments -->
+          <!-- My Assignments with Rainbow Scroll Indicator -->
           <div class="card assignments-card">
             <div class="card-header">
               <h2>My Assignments ({{ cellInspections?.length || 0 }})</h2>
@@ -68,7 +67,7 @@
             </div>
             <div class="card-body">
               <div class="assignments-list">
-                <div *ngFor="let inspection of cellInspections?.slice(0, 6)"
+                <div *ngFor="let inspection of cellInspections"
                      class="assignment-item"
                      (click)="onInspectionClick(inspection)">
                   <div class="assignment-info">
@@ -110,28 +109,23 @@
           </div>
         </div>
 
-        <!-- Right Column: Officer Work Queue & Stats -->
+        <!-- Right Column -->
         <div class="right-column">
-          <!-- Officer Work Queue -->
+          <!-- Officer Work Queue with Activities -->
           <div class="card work-queue-card">
             <div class="card-header">
-              <h2>Officer Work Queue ({{ dueInspections?.length || 0 }})</h2>
-              <button class="link-btn" type="button" (click)="viewAllInspections()">See All</button>
+              <h2>Officer Work Queue ({{ recentActivity?.length || 0 }})</h2>
+              <button class="link-btn" type="button" (click)="viewAllActivity()">See All</button>
             </div>
             <div class="card-body">
-              <div class="assignments-list">
-                <div *ngFor="let inspection of dueInspections"
-                     class="assignment-item"
-                     (click)="onInspectionClick(inspection)">
-                  <div class="assignment-info">
-                    <div class="assignment-title">{{ inspection.type }}</div>
-                    <div class="assignment-subtitle">{{ inspection.block }} • {{ inspection.cell }}</div>
-                  </div>
-                  <div class="assignment-status">
-                    <span class="status-badge" [ngClass]="getPriorityClass(inspection.priority)">
-                      {{ inspection.status }}
-                    </span>
-                    <span class="status-time">{{ inspection.statusTime }}</span>
+              <div class="activity-log-list">
+                <div *ngFor="let activity of recentActivity"
+                     class="activity-log-item"
+                     (click)="onActivityClick(activity)">
+                  <div class="activity-bullet"></div>
+                  <div class="activity-content">
+                    <div class="activity-main-text">{{ activity.text }}</div>
+                    <div class="activity-meta">{{ activity.subtext }} • {{ activity.time }}</div>
                   </div>
                   <span class="material-icons chevron">chevron_right</span>
                 </div>

@@ -3,35 +3,56 @@
 <!-- Top navigation (global) -->
 <header class="topbar" role="banner" aria-label="Application top bar">
   <div class="topbar-inner">
+    <!-- Left: Brand -->
     <div class="brand">
-      <div class="brand-mark">
-        <span class="material-symbols-outlined" aria-hidden="true">radio_button_unchecked</span>
+      <div class="logo-circle">
+        <span class="logo-text">JMS</span>
       </div>
-      <div class="logo">JMS</div>
-      <div class="app-title">{{ appTitle }}</div>
+      <div class="app-title">Jail Management System</div>
     </div>
 
+    <!-- Center: Global search -->
     <div class="topbar-center">
-      <input type="search" class="global-search"
-             placeholder="Search inmates, staff, or records..." aria-label="Search" />
+      <input type="search"
+             class="global-search"
+             placeholder="Search inmates, staff, or records..."
+             aria-label="Search" />
     </div>
 
+    <!-- Right: Actions -->
     <div class="topbar-actions">
-      <button class="icon-btn notifications" aria-label="Notifications" title="Notifications">
+      <!-- Notifications -->
+      <button class="icon-btn notifications"
+              aria-label="Notifications"
+              title="Notifications">
         <span class="badge" *ngIf="newNotificationCount > 0">{{ newNotificationCount }}</span>
         <span class="material-symbols-outlined" aria-hidden="true">notifications</span>
       </button>
-      <div class="user-info" title="User">
-        <div class="user-avatar" aria-hidden="true">OJ</div>
+
+      <!-- User chip -->
+      <<div class="user-info" title="User">
+        <div class="user-avatar" aria-hidden="true">
+          {{ (fullName || userName || 'Officer').substring(0, 2).toUpperCase() }}
+        </div>
         <div class="user-name">{{ fullName || userName || 'Officer' }}</div>
+
+        <button class="dropdown-arrow" aria-label="User menu">
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+
+        <!-- NEW: Logout button inside user-info -->
+        <button class="icon-btn logout-btn"
+                type="button"
+                title="Logout"
+                aria-label="Logout"
+                (click)="logout()">
+          <span class="material-symbols-outlined" aria-hidden="true">logout</span>
+        </button>
       </div>
-      <button class="icon-btn logout-btn" title="Logout" aria-label="Logout" (click)="logout()">
-        <span class="material-symbols-outlined" aria-hidden="true">logout</span>
-      </button>
+
     </div>
   </div>
 </header>
-
 
 <!-- Left navigation (icon rail) -->
 <aside class="left-rail" role="navigation" aria-label="Primary navigation">
@@ -54,7 +75,7 @@
        routerLink="/intake"
        routerLinkActive="active"
        title="Intake"
-       aria-label="Security / Cells">
+       aria-label="Intake">
       <span class="material-symbols-outlined">fingerprint</span>
     </a>
 
@@ -92,13 +113,10 @@
   </nav>
 </aside>
 
-
-<!-- App content placeholder - only top/left nav built here -->
+<!-- App content -->
 <main class="app-content" role="main" aria-live="polite">
-  <!-- Router outlet is present but the global styles file intentionally only includes top/left nav -->
   <router-outlet></router-outlet>
 </main>
-
 
 }
 
@@ -106,5 +124,4 @@
 <main class="app-content guest" role="main" aria-live="polite">
   <router-outlet></router-outlet>
 </main>
-
 }

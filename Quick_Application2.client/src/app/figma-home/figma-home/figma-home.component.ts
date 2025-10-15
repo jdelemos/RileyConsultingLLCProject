@@ -160,53 +160,161 @@ export class FigmaHomeComponent implements OnInit, OnDestroy {
       cell: [
         {
           id: '1',
-          type: 'Multi-level Processing',
-          block: 'Block A',
+          type: 'Cell Inspection',
+          block: 'Block C',
           cell: 'Cell 15',
-          status: 'In Progress',
-          statusTime: 'Friday 12:00 PM',
+          status: 'Overdue',
+          statusTime: 'Today 9:00 AM',
           priority: 'high' as const
         },
         {
           id: '2',
-          type: 'Usual Event',
-          block: 'Block B',
-          cell: 'Cell 8',
-          status: 'Scheduled',
-          statusTime: 'Friday 1:00 PM',
-          priority: 'medium' as const
+          type: 'New Intake Processing',
+          block: 'Block A',
+          cell: '',
+          status: 'Today 3:00 PM',
+          statusTime: 'Today 3:00 PM',
+          priority: 'high' as const
         },
         {
           id: '3',
-          type: 'Standard Event',
-          block: 'N/A',
-          cell: 'Awaiting cell',
-          status: 'Pending',
-          statusTime: 'Tomorrow 3:00 PM',
-          priority: 'low' as const
+          type: 'Medical Escort',
+          block: 'Inmate #4521 to Infirmary',
+          cell: '',
+          status: 'Tomorrow 1:00 PM',
+          statusTime: 'Tomorrow 1:00 PM',
+          priority: 'medium' as const
         },
         {
           id: '4',
-          type: 'Medical Review',
-          block: 'Block C',
-          cell: 'Cell 22',
-          status: 'Scheduled',
-          statusTime: 'Tomorrow 4:00 PM',
-          priority: 'high' as const
+          type: 'Visitor Processing',
+          block: 'Johnson Family Visit',
+          cell: '',
+          status: 'Thursday 12:00 PM',
+          statusTime: 'Thursday 12:00 PM',
+          priority: 'medium' as const
         },
         {
           id: '5',
           type: 'Visitor Processing',
-          block: 'North Facility',
-          cell: 'Visit',
+          block: 'Smith Family Visit',
+          cell: '',
+          status: 'Friday 1:00 PM',
+          statusTime: 'Friday 1:00 PM',
+          priority: 'low' as const
+        },
+        {
+          id: '6',
+          type: 'Equipment Check',
+          block: 'Radio and Safety Gear',
+          cell: '',
+          status: 'Pending',
+          statusTime: 'Saturday 10:00 AM',
+          priority: 'low' as const
+        },
+        {
+          id: '7',
+          type: 'Equipment Check',
+          block: 'Radio and Safety Gear',
+          cell: '',
+          status: 'Pending',
+          statusTime: 'Sunday 10:00 AM',
+          priority: 'low' as const
+        },
+        {
+          id: '8',
+          type: 'Cell Inspection',
+          block: 'Block D',
+          cell: 'Cell 8',
           status: 'Scheduled',
-          statusTime: 'Friday 7:00 PM',
+          statusTime: 'Monday 11:00 AM',
           priority: 'medium' as const
+        },
+        {
+          id: '9',
+          type: 'Medical Review',
+          block: 'Block E',
+          cell: 'Cell 20',
+          status: 'Scheduled',
+          statusTime: 'Monday 2:00 PM',
+          priority: 'high' as const
+        },
+        {
+          id: '10',
+          type: 'Safety Check',
+          block: 'Block F',
+          cell: 'Cell 3',
+          status: 'Pending',
+          statusTime: 'Tuesday 9:00 AM',
+          priority: 'low' as const
+        },
+        {
+          id: '11',
+          type: 'Intake Processing',
+          block: 'Block G',
+          cell: '',
+          status: 'Scheduled',
+          statusTime: 'Tuesday 3:00 PM',
+          priority: 'medium' as const
+        },
+        {
+          id: '12',
+          type: 'Cell Transfer',
+          block: 'Block H',
+          cell: 'Cell 14',
+          status: 'Scheduled',
+          statusTime: 'Wednesday 10:00 AM',
+          priority: 'high' as const
+        },
+        {
+          id: '13',
+          type: 'Maintenance Check',
+          block: 'Block I',
+          cell: 'Cell 7',
+          status: 'Pending',
+          statusTime: 'Wednesday 2:00 PM',
+          priority: 'low' as const
+        },
+        {
+          id: '14',
+          type: 'Security Sweep',
+          block: 'Block J',
+          cell: 'All Cells',
+          status: 'Scheduled',
+          statusTime: 'Thursday 8:00 AM',
+          priority: 'high' as const
         }
       ],
       due: [
         {
-          id: '6',
+          id: '15',
+          type: 'Cell Inspection',
+          block: 'Block C',
+          cell: 'Cell 15',
+          status: 'Overdue',
+          statusTime: 'Today 9:00 AM',
+          priority: 'high' as const
+        },
+        {
+          id: '16',
+          type: 'New Intake Processing',
+          block: 'Block A',
+          cell: '',
+          status: 'Today 3:00 PM',
+          statusTime: 'Today 3:00 PM',
+          priority: 'high' as const
+        },
+        {
+          id: '17',
+          type: 'Medical Escort',
+          block: 'Inmate #4521 to Infirmary',
+          cell: '',
+          status: 'Tomorrow 1:00 PM',
+          statusTime: 'Tomorrow 1:00 PM',
+          priority: 'medium' as const
+        },
+        {
+          id: '18',
           type: 'Medical Check',
           block: 'Block D',
           cell: 'Infirmary',
@@ -215,22 +323,112 @@ export class FigmaHomeComponent implements OnInit, OnDestroy {
           priority: 'high' as const
         },
         {
-          id: '7',
+          id: '19',
           type: 'Medical Review',
           block: 'Health Unit',
-          cell: 'Call #12',
+          cell: 'Cell #12',
           status: 'Due Soon',
           statusTime: 'Tomorrow 3:00 PM',
           priority: 'high' as const
         },
         {
-          id: '8',
+          id: '20',
           type: 'Standard',
           block: 'N/A',
           cell: 'Awaiting Assignment',
           status: 'Pending',
           statusTime: 'Tomorrow 4:00 PM',
           priority: 'low' as const
+        },
+        {
+          id: '21',
+          type: 'Cell Transfer',
+          block: 'Block E',
+          cell: 'Cell 22',
+          status: 'Due Soon',
+          statusTime: 'Friday 9:00 AM',
+          priority: 'high' as const
+        },
+        {
+          id: '22',
+          type: 'Equipment Inspection',
+          block: 'Block F',
+          cell: '',
+          status: 'Pending',
+          statusTime: 'Friday 11:00 AM',
+          priority: 'medium' as const
+        },
+        {
+          id: '23',
+          type: 'Security Review',
+          block: 'Block G',
+          cell: 'Cell 5',
+          status: 'Due Soon',
+          statusTime: 'Friday 2:00 PM',
+          priority: 'high' as const
+        },
+        {
+          id: '24',
+          type: 'Maintenance Request',
+          block: 'Block H',
+          cell: 'Cell 18',
+          status: 'Overdue',
+          statusTime: 'Yesterday 3:00 PM',
+          priority: 'high' as const
+        },
+        {
+          id: '25',
+          type: 'Safety Audit',
+          block: 'Block I',
+          cell: 'All Areas',
+          status: 'Due Soon',
+          statusTime: 'Saturday 10:00 AM',
+          priority: 'high' as const
+        },
+        {
+          id: '26',
+          type: 'Visitor Check',
+          block: 'Visitation Room',
+          cell: '',
+          status: 'Pending',
+          statusTime: 'Saturday 1:00 PM',
+          priority: 'low' as const
+        },
+        {
+          id: '27',
+          type: 'Cell Inspection',
+          block: 'Block J',
+          cell: 'Cell 9',
+          status: 'Due Soon',
+          statusTime: 'Sunday 9:00 AM',
+          priority: 'medium' as const
+        },
+        {
+          id: '28',
+          type: 'Medical Follow-up',
+          block: 'Block K',
+          cell: 'Infirmary',
+          status: 'Due Soon',
+          statusTime: 'Sunday 2:00 PM',
+          priority: 'high' as const
+        },
+        {
+          id: '29',
+          type: 'Intake Review',
+          block: 'Processing',
+          cell: '',
+          status: 'Pending',
+          statusTime: 'Monday 8:00 AM',
+          priority: 'medium' as const
+        },
+        {
+          id: '30',
+          type: 'Security Briefing',
+          block: 'All Staff',
+          cell: '',
+          status: 'Scheduled',
+          statusTime: 'Monday 1:00 PM',
+          priority: 'high' as const
         }
       ]
     };
