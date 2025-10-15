@@ -1,69 +1,106 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Observable, of } from 'rxjs';
+
+import { MockIntakeService } from '../services/mock-intake.service';
+import { IntakeInfo } from '../models/intake-info.model';
 
 @Component({
   selector: 'app-intake',
-  standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    FormsModule  // ✅ This enables [(ngModel)]
+  ],
   templateUrl: './intake.component.html',
-  styleUrls: ['./intake.component.scss']
+  styleUrls: ['./intake.component.scss'],
+  
 })
-export class IntakeComponent {
-  // Inmate Data
-  inmateName: string = 'Vezey, Colton';
-  inmateId: string = '#RIM-3024-0881';
-  inmateDob: string = '03/15/1987';
-  inmatePhotoUrl: string = '';
+export class IntakeComponent implements OnInit {
+  inmateId = 'RIM-3024-0881';
+  
+  showToast = false;
+  loading = false;
+  intakeData: IntakeInfo = {
+    inmateId: this.inmateId,
+    fullLegalName: '',
+    aliases: '',
+    dateOfBirth: '',
+    gender: '',
+    raceEthnicity: '',
+    address: '',
+    nationality: '',
+    maritalStatus: '',
+    languagesSpoken: '',
+    socialSecurityNumber: '',
+    governmentId: '',
+    height: '',
+    weight: '',
+    hairColor: '',
+    eyeColor: '',
+    scarsTattoosMarks: '',
+    emergencyContactName: '',
+    emergencyContactAddress: '',
+    emergencyContactPhone: '',
+    emergencyContactRelationship: '',
+    lastUpdated: new Date()
+  };
 
 
-  // Progress Tracking
-  completedSections: number = 0;
-  totalSections: number = 8;
-  startTime: string = '5:44';
-  lastSaved: string = '';
-
-  // Form Data - Basic Information
-  fullLegalName: string = '';
-  aliases: string = '';
-  dateOfBirth: string = '';
-  gender: string = '';
-  raceEthnicity: string = '';
-  address: string = '';
-  nationality: string = '';
-  maritalStatus: string = '';
-  languagesSpoken: string = '';
-  socialSecurityNumber: string = '';
-  governmentId: string = '';
-
-  // Form Data - Physical Description
-  height: string = '';
-  weight: string = '';
-  hairColor: string = '';
-  eyeColor: string = '';
-  scarsMarks: string = '';
-
-  // Form Data - Contact & Emergency
-  emergencyContactName: string = '';
-  emergencyContactAddress: string = '';
-  emergencyContactPhone: string = '';
-  emergencyContactRelationship: string = '';
-
-  // Photo Capture Status
-  frontMugshotCaptured: boolean = false;
-  profileMugshotCaptured: boolean = false;
-
-  // Biometric Status
-  fingerprintsCollected: boolean = false;
-  irisScanCollected: boolean = false;
 
   //Router
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private intakeService: MockIntakeService) { }
+ 
 
   ngOnInit(): void {
     // Initialize component
     this.loadInmateData();
     this.initializeForm();
+    this.loadIntakeData();
   }
+
+  loadIntakeData(): void {
+    this.loading = true;
+
+    this.intakeService.getIntakeInfo(this.inmateId).subscribe({
+      next: (data: IntakeInfo | undefined) => {
+        this.intakeData = data ?? {
+          inmateId: this.inmateId,
+          fullLegalName: '',
+          aliases: '',
+          dateOfBirth: '',
+          gender: '',
+          raceEthnicity: '',
+          address: '',
+          nationality: '',
+          maritalStatus: '',
+          languagesSpoken: '',
+          socialSecurityNumber: '',
+          governmentId: '',
+          height: '',
+          weight: '',
+          hairColor: '',
+          eyeColor: '',
+          scarsTattoosMarks: '',
+          emergencyContactName: '',
+          emergencyContactAddress: '',
+          emergencyContactPhone: '',
+          emergencyContactRelationship: '',
+          lastUpdated: new Date()
+        };
+
+        this.loading = false;
+        console.log('✅ Loaded intake data:', this.intakeData);
+      },
+      error: () => {
+        this.showToast = true;
+        this.loading = false;
+      }
+    });
+  }
+
+
 
   loadInmateData(): void {
     // Load inmate data from service
@@ -72,17 +109,72 @@ export class IntakeComponent {
   initializeForm(): void {
     // Initialize form with any existing data
   }
+  private intakeInfoStore: IntakeInfo | null = null;
 
-  capturePhoto(type: string): void {
-    // Handle photo capture ('front' | 'profile')
+  getIntakeInfo(inmateId: string): Observable<IntakeInfo> {
+    if (!this.intakeInfoStore) {
+      // Initialize with default structure if none exists yet
+      this.intakeInfoStore = {
+        inmateId,
+        lastUpdated: new Date(),
+        fullLegalName: '',
+        aliases: '',
+        dateOfBirth: '',
+        // etc. initialize or leave empty
+      } as IntakeInfo;
+    }
+    return of(this.intakeInfoStore);
   }
+
 
   nextPage(): void {
     this.router.navigate(['/medical-intake']);
   }
 
   saveForm(): void {
-    // Save form data
+    if (!this.intakeData) {
+      this.intakeData = { inmateId: this.inmateId, lastUpdated: new Date() } as any;
+    }
+
+    // Replace empty strings with null
+    for (const key of Object.keys(this.intakeData)) {
+      const value = (this.intakeData as any)[key];
+      if (value === '' || value === undefined) {
+        (this.intakeData as any)[key] = null;
+      }
+    }
+
+    this.intakeData.lastUpdated = new Date();
+
+    // Log *current* form state before saving
+    console.log('🟡 Current form data (before save):', { ...this.intakeData });
+
+    // Mock save to service
+    this.intakeService.updateIntakeInfo(this.intakeData).subscribe((updatedData) => {
+      console.log('🟢 Form saved successfully:', { ...updatedData });
+      alert('Form data successfully saved (mock).');
+    });
+  }
+
+  getCurrentIntake(): IntakeInfo | null {
+    return this.intakeInfoStore;
+  }
+
+  saveDraft(): void {
+    if (!this.intakeData) {
+      console.warn('No intake data found to save.');
+      return;
+    }
+
+    this.intakeService.updateIntakeInfo(this.intakeData).subscribe({
+      next: updated => {
+        console.log('Draft saved successfully:', updated);
+      },
+      error: err => {
+        console.error('Error saving draft:', err);
+        this.showToast = true;
+      }
+    });
   }
 
   validateForm(): boolean {
@@ -94,9 +186,12 @@ export class IntakeComponent {
     // Handle form changes
   }
 
-  calculateProgress(): number {
-    return (this.completedSections / this.totalSections) * 100;
+  updateIntakeInfo(updated: IntakeInfo): Observable<void> {
+    this.intakeInfoStore = { ...this.intakeInfoStore, ...updated, lastUpdated: new Date() };
+    return of();
   }
+
+  
 
   navigateToTab(tabIndex: number): void {
     // Navigate to different tab/section
@@ -110,19 +205,20 @@ export class IntakeComponent {
     // Handle fingerprint collection
   }
 
+  capturePhoto(type: 'front' | 'profile'): void {
+    console.log(`Captured ${type} photo (mock).`);
+    // Later this can open a webcam modal or photo upload handler
+  }
+
+  openSignaturePad(): void {
+    console.log('Opening signature pad (mock).');
+    // Placeholder for signature pad logic
+  }
+
   collectIrisScan(): void {
     // Handle iris scan collection
   }
 
-  onGenderChange(value: string): void {
-    this.gender = value;
-    this.onFormChange();
-  }
-
-  onRaceEthnicityChange(value: string): void {
-    this.raceEthnicity = value;
-    this.onFormChange();
-  }
 
   formatSSN(value: string): string {
     // Format SSN as XXX-XX-XXXX
@@ -132,5 +228,9 @@ export class IntakeComponent {
   formatPhone(value: string): string {
     // Format phone as XXX-XXX-XXXX
     return value;
+  }
+
+  closeToast(): void {
+    this.showToast = false;
   }
 }

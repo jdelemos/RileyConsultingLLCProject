@@ -85,11 +85,11 @@ export class FigmaHomeComponent implements OnInit, OnDestroy {
     // Initialize Quick Actions
     this.quickActions = [
       { icon: 'shield', label: 'Cell Management', action: 'cell-management' },
-      { icon: 'group', label: 'Inmate Management', action: 'inmate-management' },
-      { icon: 'warning', label: 'Incident Reports', action: 'incident-reports' },
-      { icon: 'bar_chart', label: 'Security Reports', action: 'security-reports' },
+      { icon: 'group', label: 'Staff Management', action: 'inmate-management' },
+      { icon: 'warning', label: 'Medical Records', action: 'incident-reports' },
+      { icon: 'bar_chart', label: 'Incident Reports', action: 'security-reports' },
       { icon: 'analytics', label: 'Analytics', action: 'analytics' },
-      { icon: 'event', label: 'Scheduling', action: 'scheduling' },
+      { icon: 'event', label: 'Calendar', action: 'scheduling' },
       // Add next to your existing quickActions array
 
     ];

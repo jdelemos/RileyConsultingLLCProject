@@ -12,6 +12,12 @@
     <TypeScriptConfiguration Remove="src\app\components\NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="src\app\models\intake-info-model.ts" />
+    <None Remove="src\app\models\mock-info-model.ts" />
+    <None Remove="src\app\services\mock-intake-service.ts" />
+    <None Remove="src\app\services\mock-medical-service.ts" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="src\app\components\NewFolder1\" />
   </ItemGroup>
 </Project>

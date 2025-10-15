@@ -183,221 +183,267 @@ $scheduled: #a855f7;
 }
 
 /* ---------- Assignments Card with Scroll Indicator ---------- */
-.assignments-card,
-.work-queue-card {
-  position: relative;
-
-  .card-body {
-    padding: 0;
-    max-height: 400px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /* Hide default scrollbar */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  /* Rainbow scroll indicator */
- 
+/* Shared base styles */
+.shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
 }
 
-/* ---------- Assignments List (FIGMA EXACT MATCH) ---------- */
-
-
-/* ---------- Assignments Card with Scrollbar ---------- */
-.assignments-card,
-.work-queue-card,
-.activity-card {
-  position: relative;
-
-  .card-body {
-    padding: 0;
-    max-height: 400px;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  /* Custom scrollbar styling */
-  .card-body::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .card-body::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-  }
-
-  .card-body::-webkit-scrollbar-thumb {
-    background: #3b82f6;
-    border-radius: 4px;
-  }
-
-  .card-body::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
-  }
-
-  /* Firefox scrollbar */
-  .card-body {
-    scrollbar-width: thin;
-    scrollbar-color: #3b82f6 #f1f1f1;
-  }
-}
-.assignments-list {
+.shortcut-item {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 0.5rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
-  .assignment-item {
-    padding: 1rem 1.25rem;
-    padding-left: 0.75rem;
-    border-radius: 0;
-    border: none;
-    border-left: 4px solid;
-    border-bottom: 1px solid #e5e7eb;
-    background: white;
-    display: grid;
-    grid-template-columns: 1fr auto 20px;
+/* ---------------------------- */
+/* Primary (Blue Background)    */
+/* ---------------------------- */
+.primary-shortcuts .shortcut-item {
+  background-color: #f9fbfc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+
+  .shortcut-icon-wrapper {
+    background-color: #2f4858; /* blue navy */
+    color: #ffffff;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
     align-items: center;
-    gap: 1rem;
-    cursor: pointer;
-    transition: all 0.15s ease;
+    justify-content: center;
+    margin-bottom: 8px;
+    box-shadow: 0 3px 6px rgba(47, 72, 88, 0.3);
+  }
 
-    &:first-child {
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-    }
+  &:hover .shortcut-icon-wrapper {
+    background-color: #1b2e3c;
+    transform: scale(1.05);
+  }
 
-    &:last-child {
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
-      border-bottom: none;
-    }
-    // Color-coded left borders matching Figma - each item gets its own color
-    &:nth-child(1) {
-      border-left-color: #ef4444;
-    }
-
-    &:nth-child(2) {
-      border-left-color: #f97316;
-    }
-
-    &:nth-child(3) {
-      border-left-color: #eab308;
-    }
-
-    &:nth-child(4) {
-      border-left-color: #22c55e;
-    }
-
-    &:nth-child(5) {
-      border-left-color: #06b6d4;
-    }
-
-    &:nth-child(6) {
-      border-left-color: #8b5cf6;
-    }
-
-    &:nth-child(7) {
-      border-left-color: #ec4899;
-    }
-
-    &:hover {
-      background: #f9fafb;
-    }
-
-    .assignment-info {
-      min-width: 0;
-
-      .assignment-title {
-        font-weight: 700;
-        color: $text-dark;
-        font-size: 0.9375rem;
-        margin-bottom: 0.25rem;
-        line-height: 1.3;
-        letter-spacing: -0.01em;
-      }
-
-      .assignment-subtitle {
-        color: $text-muted;
-        font-size: 0.8125rem;
-        font-weight: 400;
-        letter-spacing: 0;
-      }
-    }
-
-    .assignment-status {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.125rem;
-      flex-shrink: 0;
-      text-align: right;
-
-      .status-badge {
-        font-size: 0.8125rem;
-        font-weight: 700;
-        white-space: nowrap;
-        line-height: 1.2;
-        background: none;
-        padding: 0;
-        border: none;
-        letter-spacing: -0.01em;
-
-        &.overdue,
-        &.priority-high {
-          color: $overdue;
-        }
-
-        &.today,
-        &.in-progress {
-          color: $today;
-        }
-
-        &.tomorrow,
-        &.scheduled {
-          color: $tomorrow;
-        }
-
-        &.upcoming,
-        &.priority-low {
-          color: $upcoming;
-        }
-
-        &.pending {
-          color: $pending;
-        }
-
-        &.due-soon {
-          color: $overdue;
-        }
-      }
-
-      .status-time {
-        font-size: 0.8125rem;
-        color: $text-muted;
-        font-weight: 500;
-        letter-spacing: -0.01em;
-      }
-    }
-
-    .chevron {
-      color: #d1d5db;
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
+  .shortcut-label {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.95rem;
   }
 }
 
+/* ---------------------------- */
+/* Secondary (Inverted White BG)*/
+/* ---------------------------- */
+
+.secondary-shortcuts .shortcut-item {
+  background-color: #f9fbfc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+
+  .shortcut-icon-wrapper {
+    background-color: #2f4858; /* blue navy */
+    color: #ffffff;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    box-shadow: 0 3px 6px rgba(47, 72, 88, 0.3);
+  }
+  }
+  /* ---------- Assignments List (FIGMA EXACT MATCH) ---------- */
+  /* ---------- Assignments Card with Scrollbar ---------- */
+  .assignments-card,
+  .work-queue-card,
+  .activity-card {
+    position: relative;
+
+    .card-body {
+      padding: 0;
+      max-height: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    /* Custom scrollbar styling */
+    .card-body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .card-body::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    .card-body::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 4px;
+    }
+
+    .card-body::-webkit-scrollbar-thumb:hover {
+      background: #2563eb;
+    }
+    /* Firefox scrollbar */
+    .card-body {
+      scrollbar-width: thin;
+      scrollbar-color: #3b82f6 #f1f1f1;
+    }
+  }
+
+  .assignments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+
+    .assignment-item {
+      padding: 1rem 1.25rem;
+      padding-left: 0.75rem;
+      border-radius: 0;
+      border: none;
+      border-left: 4px solid;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr auto 20px;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+
+      &:first-child {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-bottom: none;
+      }
+      // Color-coded left borders matching Figma - each item gets its own color
+      &:nth-child(1) {
+        border-left-color: #ef4444;
+      }
+
+      &:nth-child(2) {
+        border-left-color: #f97316;
+      }
+
+      &:nth-child(3) {
+        border-left-color: #eab308;
+      }
+
+      &:nth-child(4) {
+        border-left-color: #22c55e;
+      }
+
+      &:nth-child(5) {
+        border-left-color: #06b6d4;
+      }
+
+      &:nth-child(6) {
+        border-left-color: #8b5cf6;
+      }
+
+      &:nth-child(7) {
+        border-left-color: #ec4899;
+      }
+
+      &:hover {
+        background: #f9fafb;
+      }
+
+      .assignment-info {
+        min-width: 0;
+
+        .assignment-title {
+          font-weight: 700;
+          color: $text-dark;
+          font-size: 0.9375rem;
+          margin-bottom: 0.25rem;
+          line-height: 1.3;
+          letter-spacing: -0.01em;
+        }
+
+        .assignment-subtitle {
+          color: $text-muted;
+          font-size: 0.8125rem;
+          font-weight: 400;
+          letter-spacing: 0;
+        }
+      }
+
+      .assignment-status {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.125rem;
+        flex-shrink: 0;
+        text-align: right;
+
+        .status-badge {
+          font-size: 0.8125rem;
+          font-weight: 700;
+          white-space: nowrap;
+          line-height: 1.2;
+          background: none;
+          padding: 0;
+          border: none;
+          letter-spacing: -0.01em;
+
+          &.overdue,
+          &.priority-high {
+            color: $overdue;
+          }
+
+          &.today,
+          &.in-progress {
+            color: $today;
+          }
+
+          &.tomorrow,
+          &.scheduled {
+            color: $tomorrow;
+          }
+
+          &.upcoming,
+          &.priority-low {
+            color: $upcoming;
+          }
+
+          &.pending {
+            color: $pending;
+          }
+
+          &.due-soon {
+            color: $overdue;
+          }
+        }
+
+        .status-time {
+          font-size: 0.8125rem;
+          color: $text-muted;
+          font-weight: 500;
+          letter-spacing: -0.01em;
+        }
+      }
+
+      .chevron {
+        color: #d1d5db;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+    }
+  }
 /* ---------- Activity Log (FIGMA EXACT MATCH) ---------- */
 .activity-log-list {
   display: flex;
   flex-direction: column;
   gap: 0;
-
 
   .activity-log-item {
     padding: 1rem 1.25rem;
@@ -413,7 +459,6 @@ $scheduled: #a855f7;
     cursor: pointer;
     transition: all 0.15s ease;
     border-left: 4px solid;
-
 
     &:first-child {
       border-top-left-radius: 6px;
@@ -437,33 +482,33 @@ $scheduled: #a855f7;
       flex-shrink: 0;
       margin-top: 0.5rem;
     }
-
+    // Default black borders for work queue (no bullets)
     &:nth-child(1) {
-      border-left-color: #ef4444;
+      border-left-color: #000000;
     }
 
     &:nth-child(2) {
-      border-left-color: #f97316;
+      border-left-color: #000000;
     }
 
     &:nth-child(3) {
-      border-left-color: #eab308;
+      border-left-color: #000000;
     }
 
     &:nth-child(4) {
-      border-left-color: #22c55e;
+      border-left-color: #000000;
     }
 
     &:nth-child(5) {
-      border-left-color: #06b6d4;
+      border-left-color: #000000;
     }
 
     &:nth-child(6) {
-      border-left-color: #8b5cf6;
+      border-left-color: #000000;
     }
 
     &:nth-child(7) {
-      border-left-color: #ec4899;
+      border-left-color: #000000;
     }
 
     .activity-content {
@@ -495,108 +540,161 @@ $scheduled: #a855f7;
   }
 }
 
-/* ---------- Stats Grid (FIGMA EXACT MATCH) ---------- */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-
-  .stat-card {
-    padding: 2rem 1.25rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid transparent;
-    transition: all 0.15s ease;
-
-    &:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+/* ---------- Officer Recent Activity Log - Rainbow Bullets ---------- */
+.activity-card {
+  .activity-log-item {
+    // Remove left border for officer activity log
+    border-left: none !important;
+    padding-left: 1.25rem;
+    // Rainbow colored bullets
+    &:nth-child(1) .activity-bullet {
+      background-color: #ef4444;
     }
-
-    &:nth-child(1) {
-      background: #dbeafe;
-      border-color: #bfdbfe;
+    // Red
+    &:nth-child(2) .activity-bullet {
+      background-color: #f97316;
     }
-
-    &:nth-child(2) {
-      background: #d1fae5;
-      border-color: #a7f3d0;
+    // Orange
+    &:nth-child(3) .activity-bullet {
+      background-color: #eab308;
     }
-
-    &:nth-child(3) {
-      background: #fef3c7;
-      border-color: #fde68a;
+    // Yellow
+    &:nth-child(4) .activity-bullet {
+      background-color: #22c55e;
     }
-
-    &:nth-child(4) {
-      background: #fee2e2;
-      border-color: #fecaca;
+    // Green
+    &:nth-child(5) .activity-bullet {
+      background-color: #06b6d4;
     }
-
-    .stat-value {
-      font-size: 4rem;
-      font-weight: 700;
-      color: $text-dark;
-      line-height: 1;
-      margin-bottom: 0.625rem;
-      letter-spacing: -0.03em;
+    // Cyan
+    &:nth-child(6) .activity-bullet {
+      background-color: #8b5cf6;
     }
-
-    .stat-label {
-      color: $text-dark;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-      line-height: 1.2;
+    // Purple
+    &:nth-child(7) .activity-bullet {
+      background-color: #ec4899;
     }
-
-    .stat-sublabel {
-      color: $text-muted;
-      font-size: 0.8125rem;
-      font-weight: 400;
-      line-height: 1.3;
+    // Pink
+    &:nth-child(8) .activity-bullet {
+      background-color: #ef4444;
     }
+    // Repeat red
   }
 }
 
-/* ---------- Responsive Adjustments ---------- */
-@media (max-width: 768px) {
-  .page-inner {
-    padding: 1rem;
+/* ---------- Officer Work Queue - No Bullets ---------- */
+.work-queue-card {
+  .activity-log-item {
+    // Hide bullets in work queue
+    .activity-bullet {
+      display: none;
+    }
+    // Adjust grid to remove bullet column
+    grid-template-columns: 1fr 20px;
+    padding-left: 1.25rem;
   }
-
-  .page-title {
-    font-size: 1.25rem;
-  }
-
-  .shortcuts-grid {
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 0.75rem;
-  }
-
-  .two-column-layout {
-    grid-template-columns: 1fr;
-  }
-
+}
+  /* ---------- Stats Grid (FIGMA EXACT MATCH) ---------- */
   .stats-grid {
-    gap: 0.625rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
 
     .stat-card {
-      padding: 1.5rem 1rem;
+      padding: 2rem 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      &:nth-child(1) {
+        background: #dbeafe;
+        border-color: #bfdbfe;
+      }
+
+      &:nth-child(2) {
+        background: #d1fae5;
+        border-color: #a7f3d0;
+      }
+
+      &:nth-child(3) {
+        background: #fef3c7;
+        border-color: #fde68a;
+      }
+
+      &:nth-child(4) {
+        background: #fee2e2;
+        border-color: #fecaca;
+      }
 
       .stat-value {
-        font-size: 3rem;
+        font-size: 4rem;
+        font-weight: 700;
+        color: $text-dark;
+        line-height: 1;
+        margin-bottom: 0.625rem;
+        letter-spacing: -0.03em;
+      }
+
+      .stat-label {
+        color: $text-dark;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.2;
+      }
+
+      .stat-sublabel {
+        color: $text-muted;
+        font-size: 0.8125rem;
+        font-weight: 400;
+        line-height: 1.3;
       }
     }
   }
-}
+  /* ---------- Responsive Adjustments ---------- */
+  @media (max-width: 768px) {
+    .page-inner {
+      padding: 1rem;
+    }
 
-@media (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
+    .page-title {
+      font-size: 1.25rem;
+    }
+
+    .shortcuts-grid {
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .two-column-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      gap: 0.625rem;
+
+      .stat-card {
+        padding: 1.5rem 1rem;
+
+        .stat-value {
+          font-size: 3rem;
+        }
+      }
+    }
   }
 
-  .shortcuts-grid {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 480px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .shortcuts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
-}
