@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-intake',
@@ -13,6 +14,7 @@ export class IntakeComponent {
   inmateId: string = '#RIM-3024-0881';
   inmateDob: string = '03/15/1987';
   inmatePhotoUrl: string = '';
+
 
   // Progress Tracking
   completedSections: number = 0;
@@ -54,7 +56,8 @@ export class IntakeComponent {
   fingerprintsCollected: boolean = false;
   irisScanCollected: boolean = false;
 
-  constructor() { }
+  //Router
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     // Initialize component
@@ -75,7 +78,7 @@ export class IntakeComponent {
   }
 
   nextPage(): void {
-    // Navigate to next page/section
+    this.router.navigate(['/medical-intake']);
   }
 
   saveForm(): void {

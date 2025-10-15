@@ -67,6 +67,11 @@ export const routes: Routes = [
     loadComponent: () => import('./intake/intake.component').then(m => m.IntakeComponent),
     title: 'intake'
   },
+  {
+    path: 'medical-intake',
+    loadComponent: () => import('./medical-intake/medical-intake.component').then(m => m.MedicalIntakeComponent),
+    title: 'medical-intake'
+  },
 
   {
     path: 'home',

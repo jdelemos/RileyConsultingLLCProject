@@ -3,53 +3,35 @@
 <!-- Top navigation (global) -->
 <header class="topbar" role="banner" aria-label="Application top bar">
   <div class="topbar-inner">
-
-    <!-- Left: Brand -->
     <div class="brand">
-      <!-- circular mark (optional placeholder) -->
       <div class="brand-mark">
         <span class="material-symbols-outlined" aria-hidden="true">radio_button_unchecked</span>
       </div>
-
       <div class="logo">JMS</div>
       <div class="app-title">{{ appTitle }}</div>
     </div>
 
-    <!-- Center: Global search -->
     <div class="topbar-center">
-      <input type="search"
-             class="global-search"
-             placeholder="Search inmates, staff, or records..."
-             aria-label="Search" />
+      <input type="search" class="global-search"
+             placeholder="Search inmates, staff, or records..." aria-label="Search" />
     </div>
 
-    <!-- Right: Actions -->
     <div class="topbar-actions">
-
-      <!-- Notifications -->
-      <button class="icon-btn notifications"
-              title="Notifications"
-              aria-label="Notifications">
+      <button class="icon-btn notifications" aria-label="Notifications" title="Notifications">
         <span class="badge" *ngIf="newNotificationCount > 0">{{ newNotificationCount }}</span>
         <span class="material-symbols-outlined" aria-hidden="true">notifications</span>
       </button>
-
-      <!-- User chip -->
       <div class="user-info" title="User">
         <div class="user-avatar" aria-hidden="true">OJ</div>
         <div class="user-name">{{ fullName || userName || 'Officer' }}</div>
       </div>
-
-      <!-- Logout (uses existing logout() function) -->
-      <button class="icon-btn logout-btn"
-              title="Logout"
-              aria-label="Logout"
-              (click)="logout()">
+      <button class="icon-btn logout-btn" title="Logout" aria-label="Logout" (click)="logout()">
         <span class="material-symbols-outlined" aria-hidden="true">logout</span>
       </button>
     </div>
   </div>
 </header>
+
 
 <!-- Left navigation (icon rail) -->
 <aside class="left-rail" role="navigation" aria-label="Primary navigation">

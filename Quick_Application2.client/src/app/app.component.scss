@@ -138,9 +138,21 @@ $color-user-chip: #2b5264; // avatar chip
 $color-text-on-dark: #ffffff; // white on dark bars
 $color-text-muted: #7b95a1; // placeholder / muted text
 $color-body-bg: #f4f7f9; // app canvas
-
+$rail-gutter: 40px;  
 $sidebar-width: 64px;
 $topbar-height: 64px;
+/* Layout constants */
+$sidebar-width: 64px; // your left icon rail width
+$topbar-height: 64px;
+
+/* Colors */
+$topbar-bg: #194058; // matches left rail
+$on-dark: #ffffff;
+$search-bg: #eef5f7;
+$focus: #317cb5;
+$badge-amber: #f59e0b;
+$user-chip: #2b5264;
+$muted: #7b95a1;
 
 
 /* ==========================================================================
@@ -157,16 +169,15 @@ $topbar-height: 64px;
 header.topbar {
   position: fixed;
   top: 0;
-  left: 0; /* full width bar */
+  left: 0; /* bar spans full width */
   right: 0;
   height: $topbar-height;
   z-index: 110;
-  padding-left: calc(#{$sidebar-width} + 12px); /* 12px gap from rail */
-  background: $color-topbar-bg;
-  color: $color-text-on-dark;
-  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  background: $topbar-bg;
+  color: $on-dark;
   display: flex;
   align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
 
   .topbar-inner {
     width: 100%;
@@ -174,18 +185,23 @@ header.topbar {
     grid-template-columns: 280px 1fr auto; /* brand | search | actions */
     align-items: center;
     gap: 12px;
-    padding-right: 16px; /* right breathing room */
+    padding: 0 16px 0 0; /* right padding only */
   }
-  /* ----- 3.1 Brand (JMS chip + title) ----- */
+  /* ✅ Only the brand is offset to clear the left rail */
   .brand {
+    margin-left: calc(#{$sidebar-width} + 12px); /* 12px visual gap */
     display: flex;
     align-items: center;
     gap: 10px;
     min-width: 0;
 
+    .brand-mark {
+      display: inline-flex;
+    }
+
     .logo {
-      background: $color-text-on-dark;
-      color: #194058; /* strong teal text inside white chip */
+      background: #fff;
+      color: $topbar-bg;
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 999px;
@@ -193,39 +209,38 @@ header.topbar {
     }
 
     .app-title {
-      color: $color-text-on-dark;
       font-weight: 600;
       white-space: nowrap;
+      color: $on-dark;
       opacity: .95;
     }
   }
-  /* ----- 3.2 Search (center pill) ----- */
+
   .topbar-center {
     display: flex;
-    justify-content: center; /* center the pill like figma */
+    justify-content: center;
   }
 
   .global-search {
-    width: min(960px, 100%); /* scales gracefully on small screens */
-    max-width: 980px; /* adjust to taste */
+    width: min(960px, 100%);
     height: 36px;
-    background: $color-search-bg;
+    background: $search-bg;
     border: 1px solid transparent;
     border-radius: 999px;
     padding: 0 16px;
     color: #0c2732;
-    outline: none;
 
     &::placeholder {
-      color: $color-text-muted;
+      color: $muted;
     }
 
     &:focus {
-      border-color: $color-search-focus;
-      box-shadow: 0 0 0 2px rgba($color-search-focus, .25);
+      border-color: $focus;
+      box-shadow: 0 0 0 2px rgba($focus, .25);
+      outline: none;
     }
   }
-  /* ----- 3.3 Right actions: bell, user chip, logout ----- */
+
   .topbar-actions {
     display: flex;
     align-items: center;
@@ -235,9 +250,8 @@ header.topbar {
       width: 36px;
       height: 36px;
       border: 0;
-      outline: 0;
       background: transparent;
-      color: $color-text-on-dark;
+      color: $on-dark;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -248,60 +262,62 @@ header.topbar {
       &:hover {
         background: rgba(255,255,255,.08);
       }
-    }
-    /* Notifications with small amber badge (figma) */
-    .notifications {
-      position: relative;
+
+      &:focus-visible {
+        outline: 3px solid rgba($focus,.28);
+        outline-offset: 2px;
+      }
     }
 
-    .notifications .badge {
-      position: absolute;
-      top: -4px;
-      right: -4px;
-      min-width: 16px;
-      height: 16px;
-      padding: 0 4px;
-      border-radius: 999px;
-      background: $color-badge-amber;
-      color: #0a0a0a;
-      font-size: 10px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .notifications {
+      position: relative;
+
+      .badge {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        min-width: 16px;
+        height: 16px;
+        padding: 0 4px;
+        border-radius: 999px;
+        background: $badge-amber;
+        color: #0a0a0a;
+        font-size: 10px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
-    /* User chip (initials + name) */
+
     .user-info {
       display: flex;
       align-items: center;
       gap: 8px;
-    }
 
-    .user-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: $color-user-chip;
-      color: $color-text-on-dark;
-      font-weight: 700;
-      font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .user-name {
-      font-size: 12px;
-      color: $color-text-on-dark;
-      opacity: .9;
-      white-space: nowrap;
-    }
-    /* Logout button (uses your existing (click)="logout()") */
-    .logout-btn {
-      /* inherits .icon-btn hover/focus */
-      .material-symbols-outlined {
-        font-size: 22px;
+      .user-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        background: $user-chip;
+        color: $on-dark;
+        font-weight: 700;
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
+
+      .user-name {
+        font-size: 12px;
+        color: $on-dark;
+        opacity: .9;
+        white-space: nowrap;
+      }
+    }
+
+    .logout-btn .material-symbols-outlined {
+      font-size: 22px;
     }
   }
 }
@@ -314,7 +330,7 @@ header.topbar {
 .app-content {
   margin-top: $topbar-height;
   margin-left: $sidebar-width;
-  padding: 28px;
+  padding: 40px;
   min-height: calc(100vh - $topbar-height);
   background: $color-body-bg;
 
@@ -343,10 +359,6 @@ header.topbar {
 @media (max-width: 1024px) {
   header.topbar .topbar-inner {
     grid-template-columns: 220px 1fr auto;
-  }
-
-  header.topbar .global-search {
-    width: min(680px, 100%);
   }
 }
 

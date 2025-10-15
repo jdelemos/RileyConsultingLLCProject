@@ -1,0 +1,303 @@
+<div class="page-container">
+  <!-- Header Card -->
+  <div class="header-card">
+    <div class="header-left">
+      <h1 class="page-title">Medical Information</h1>
+      <div class="header-meta">
+        <span class="meta-item">1 of 8 sections completed</span>
+        <span class="meta-item status-started">
+          <span class="material-symbols-outlined">schedule</span>
+          Intake: 14/24
+        </span>
+        <span class="meta-item">
+          <span class="material-symbols-outlined">save</span>
+          Save Draft
+        </span>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="intake-progress">
+        <label>Intake Progress</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 25%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inmate Photo Card -->
+    <div class="inmate-card">
+      <img src="https://via.placeholder.com/80" alt="Inmate photo" class="inmate-photo">
+      <div class="inmate-info">
+        <div class="inmate-name">Vezey, Colton</div>
+        <div class="inmate-id">ID: #RIM-3024-0881</div>
+        <div class="inmate-dob">DOB: 03/15/1987</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs">
+    <button class="nav-tab completed">
+      <span class="material-symbols-outlined">check_circle</span>
+      Personal ID
+      <span class="tab-subtitle">8/8 Complete</span>
+    </button>
+    <button class="nav-tab active">
+      <span class="material-symbols-outlined">favorite</span>
+      Medical
+      <span class="tab-subtitle">In Progress</span>
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">gavel</span>
+      Legal Info
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">security</span>
+      Security
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">dashboard</span>
+      Background
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">inventory_2</span>
+      Property
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">school</span>
+      Orientation
+    </button>
+    <button class="nav-tab">
+      <span class="material-symbols-outlined">more_horiz</span>
+      Misc.
+    </button>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="content-grid">
+    <!-- Left Column: Forms -->
+    <div class="form-column">
+      <!-- Vital Signs Section -->
+      <div class="form-section">
+        <h2 class="section-title">
+          <span class="material-symbols-outlined icon-red">favorite</span>
+          Vital Signs
+        </h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Blood Pressure</label>
+            <input type="text" placeholder="Systolic" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Heart Rate (BPM)</label>
+            <input type="text" placeholder="72" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Temperature (°F)</label>
+            <input type="text" placeholder="98.6" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Respiratory Rate</label>
+            <input type="text" placeholder="16" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Height (ft/in)</label>
+            <input type="text" placeholder="5'11&quot;" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Weight (lbs)</label>
+            <input type="text" placeholder="175" class="form-input">
+          </div>
+        </div>
+      </div>
+
+      <!-- Substance Use Screening Section -->
+      <div class="form-section">
+        <h2 class="section-title">
+          <span class="material-symbols-outlined icon-yellow">warning</span>
+          Substance Use Screening
+        </h2>
+
+        <div class="form-group">
+          <label>Recent Substance Use</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span>Alcohol (within 24 hours)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span>Illegal Drugs (within 72 hours)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span>Prescription Drug Abuse</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Withdrawal Risk Assessment</label>
+          <select class="form-input">
+            <option>No Risk</option>
+            <option>Low Risk</option>
+            <option>Moderate Risk</option>
+            <option>High Risk</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Additional Notes</label>
+          <textarea placeholder="Any additional substance use history or concerns..." class="form-input" rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Medical Clearance Section -->
+      <div class="form-section">
+        <h2 class="section-title">
+          <span class="material-symbols-outlined icon-green">check_circle</span>
+          Medical Clearance
+        </h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Immediate Medical Needs</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="medicalNeeds" value="none">
+                <span>None Required</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="medicalNeeds" value="routine">
+                <span>Routine Follow-up</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="medicalNeeds" value="urgent">
+                <span>Urgent Care Required</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Housing Restrictions</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox">
+                <span>Medical Isolation</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox">
+                <span>Suicide Watch</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox">
+                <span>Wheelchair Accessible</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Medical Officer Signature</label>
+          <div class="signature-box" (click)="openSignaturePad()">
+            <span class="material-symbols-outlined">draw</span>
+            <span>Click to add digital signature</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Medical History & Physical Exam -->
+    <div class="sidebar-column">
+      <!-- Medical History Section -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <span class="material-symbols-outlined icon-blue">medical_information</span>
+          Medical History
+        </h3>
+
+        <div class="form-group">
+          <label>Current Medications</label>
+          <textarea placeholder="List all current medications, dosages, and frequency..." class="form-input" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Allergies</label>
+          <textarea placeholder="List any known allergies to medications, foods, or substances..." class="form-input" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Chronic Conditions</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span>Diabetes</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span>Hypertension</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span>Heart Disease</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span>Asthma</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Physical Examination Section -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <span class="material-symbols-outlined icon-purple">stethoscope</span>
+          Physical Examination
+        </h3>
+
+        <div class="form-group">
+          <label>Visible Injuries or Marks</label>
+          <textarea placeholder="Cuts, bruises, fractures, etc." class="form-input" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Mental State Assessment</label>
+          <select class="form-input">
+            <option>Alert and Oriented</option>
+            <option>Confused</option>
+            <option>Agitated</option>
+            <option>Unresponsive</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Examination Notes</label>
+          <textarea placeholder="Document any significant findings from physical examination" class="form-input" rows="4"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Page Button -->
+  <div class="form-actions">
+    <button class="btn-next" (click)="nextPage()">
+      Next Page
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" *ngIf="showToast">
+    <span class="material-symbols-outlined">cancel</span>
+    <span>Cannot save. [Error] form details, please complete to finish</span>
+    <button class="toast-close" (click)="closeToast()">×</button>
+  </div>
+</div>
